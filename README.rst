@@ -2,13 +2,32 @@
 .. contents:: Table of Contents
    :depth: 3
 
+Architecture
+============
+
+Low power sections::
+
+             +-----------+
+             |           |
+             | +----\    |
+      +----->|       \   |
+             |        \  |
+             |           |
+             +-----------+
+
+High power sections::
+
+   dasd
+   
+   
+
 Input circuit
 =============
 
 Input EMI suppression
 ---------------------
 
-To protect the input from EMI use the following Zobel network::
+To protect the input from EMI we will use the following Zobel network::
 
           + Positive input
           |
@@ -24,10 +43,11 @@ To protect the input from EMI use the following Zobel network::
           |
           - Negative input (or ground)
          
-Since most of input cables fall between 50 and 100ohm impedance we are using
-the 75ohm as the middle value. The resistor Rzi is ``Rzi=75ohm`` and the
-capacitor Czi is ``Czi=220pF``. This network should be placed right at the
-input connector, not on the main amplifier PCB.
+Since most of input cables characteric impedance falls in range between
+50 and 100ohm impedance we are using the 75ohm as the middle value. The 
+resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``. 
+This network should be placed right at the input connector, not on the 
+main amplifier PCB.
 
 Input OPAMP should be JFET type since JFET inputs are more immune to EMI.
 
@@ -45,6 +65,13 @@ Power amplifier
 Output EMI suppression
 ----------------------
 
+Output network consists of upstream and downstream Zobel Network and of ouput
+coil (Ld) with parallel, damping resistor (Rd). Upstream Zobel network provides a 
+low-inductance load for the output stage at very high frequencies and allows
+high-frequency currents to circulate local to the output stage. The downstream Zobel
+network provides a good resistive termination right at the speaker terminals at high
+frequencies, helping to reduce RFI ingress and damp resonances with, or reflections
+from, the speaker cables. 
 The output circuit is the following::
 
       Ld
@@ -53,8 +80,8 @@ The output circuit is the following::
       |       xxx   |
       |             |
       |  +-------+  |
-    +-+--|       |--+
-  Vout   +-------+  |
+    *-+--|       |--+--*
+  Vout   +-------+  |   Vspeaker
                     |
         Rd          |
                   ----- Cz2 = 100nF
@@ -68,10 +95,10 @@ The output circuit is the following::
                     |
                    +++
 
-The inductance provides high frequency isolation. The inductance should be
+The output coil Ld provides high frequency isolation. The inductance value should be
 between 2.2uH up to 3.3uH. Output shunt resistor should be between 2.2 Ohm and
 4.7 Ohm. See Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., 
-Output networks, chapter 7.
+Output networks, chapter 7 for effect on power amplifier transfer function.
 
 Paralleling multiple modules
 ----------------------------
