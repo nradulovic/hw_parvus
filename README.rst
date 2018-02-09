@@ -7,17 +7,19 @@ Architecture
 
 Low power sections::
 
-             +-----------+
-             |           |
-             | +----\    |
-      +----->|       \   |
-             |        \  |
-             |           |
-             +-----------+
+             +-----------+   +-----------+
+             |           |   |           |
+      0dB    | +----\    |   |           |
+      +----->|       \   |-->|           |
+             |        \  |   |           |
+             |           |   |           |
+             +-----------+   +-----------+
 
+             EMI Filtering
+             
 High power sections::
 
-   dasd
+      
    
    
 
@@ -29,7 +31,7 @@ Input EMI suppression
 
 To protect the input from EMI we will use the following Zobel network::
 
-          + Positive input
+          + Positive input or negative input
           |
           |
         ----- Czi
@@ -41,23 +43,25 @@ To protect the input from EMI we will use the following Zobel network::
          | |
          +-+
           |
-          - Negative input (or ground)
+          - Ground
          
-Since most of input cables characteric impedance falls in range between
-50 and 100ohm impedance we are using the 75ohm as the middle value. The 
+For most input cables characteristic impedance falls in range between
+50 and 100ohm impedance and we are using the 75ohm as the middle value. The 
 resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``. 
 This network should be placed right at the input connector, not on the 
 main amplifier PCB.
 
-Input OPAMP should be JFET type since JFET inputs are more immune to EMI.
+Input OPAMP should be JFET type since JFET differential inputs are more immune 
+to EMI.
 
 Differential buffer
 -------------------
 
-The buffer consists of PNP transistor, a 100ohm resistor and a CCS of 20mA. The
-resistor is connected between transistor BE. This way it is bootstrapped by the
-transistor Vbe which gives about 6mA flowing into OPAMP output. This technique
-is used to improve OPAMP output stage.
+The buffer consists of a PNP transistor, a 100ohm resistor and a CCS of 20mA. 
+The resistor is connected between transistor BE pins. This way it is 
+bootstrapped by the transistor Vbe voltage which gives about 6mA constant 
+current flowing into OPAMP output. This technique is used to improve OPAMP 
+output stage linearity.
 
 Power amplifier
 ===============
@@ -65,13 +69,13 @@ Power amplifier
 Output EMI suppression
 ----------------------
 
-Output network consists of upstream and downstream Zobel Network and of ouput
-coil (Ld) with parallel, damping resistor (Rd). Upstream Zobel network provides a 
-low-inductance load for the output stage at very high frequencies and allows
-high-frequency currents to circulate local to the output stage. The downstream Zobel
-network provides a good resistive termination right at the speaker terminals at high
-frequencies, helping to reduce RFI ingress and damp resonances with, or reflections
-from, the speaker cables. 
+Output network consists of upstream and downstream Zobel Network and of output
+coil (Ld) with parallel, damping resistor (Rd). Upstream Zobel network provides
+a low-inductance load for the output stage at very high frequencies and allows
+high-frequency currents to circulate local to the output stage. The downstream
+Zobel network provides a good resistive termination right at the speaker
+terminals at high frequencies, helping to reduce RFI ingress and damp
+resonances with, or reflections from, the speaker cables. 
 The output circuit is the following::
 
       Ld
@@ -95,10 +99,11 @@ The output circuit is the following::
                     |
                    +++
 
-The output coil Ld provides high frequency isolation. The inductance value should be
-between 2.2uH up to 3.3uH. Output shunt resistor should be between 2.2 Ohm and
-4.7 Ohm. See Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., 
-Output networks, chapter 7 for effect on power amplifier transfer function.
+The output coil Ld provides high frequency isolation of output load from output
+stage in LM3886. The inductance value should be between 2.2uH up to 3.3uH. 
+Output shunt resistor should be between 2.2 Ohm and 4.7 Ohm. See 
+*Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7* 
+for effect on power amplifier transfer function.
 
 Paralleling multiple modules
 ----------------------------
@@ -107,8 +112,8 @@ Ballast resistor
 ````````````````
 
 Each amplifier will connect to output bus via ballast resistor. The ballast
-resistor is made of three 1 Ohm resistors wired in parallel, Rb=0.33 Ohm. 
-Maximum output current of the power amplifier is:
+resistor is made of three 1 Ohm resistors wired in parallel, which gives 
+``Rb=0.33 Ohm``.Maximum output current of the power amplifier is:
 
 .. math::
 
@@ -127,7 +132,8 @@ variable ``N=3``. Maximum power dissipation in ballast resistor is therefore:
 
     Pbdiss(max)=((Io(max)/N)**2*Rb)/3=2.75W
     
-Resistors with power dissipation of 3 Watts is a good choice here.
+Resistors with power dissipation of 3 Watts is a good and very conservative
+choice.
 
 Power dissipation
 -----------------
@@ -135,19 +141,20 @@ Power dissipation
 NOTE:
 
 * Try to keep power dissipation to around 40W per IC package. (from PDF
-  document AN-1192 Overture Series High Power Solutions)
+  document *AN-1192 Overture Series High Power Solutions*)
 
-Fortunately, with music signals the power dissipation should be lower. Music
-signal is about 2 to 10 times as lighter than sinusoid signal. The power
-transformer is 200VA, meaning that each channel gets 100VA of power. Since the
-maximum output power at 8ohms is 50W we get that the transformer supports crest
-factor of 4 (see: 
-https://www.neurochrome.com/taming-the-lm3886-chip-amplifier/power-supply-design/).
+Fortunately, with music signals the power dissipation should be lower. 
+Effective power of music signal is about 2 to 10 times as smaller than 
+effective power of sinusoid signal. The power transformer is 200VA, meaning 
+that each channel gets 100VA of power. Since the maximum output power at 8ohms 
+is approximately 50W we get that the transformer supports crest factor of 4 
+(see: 
+*https://www.neurochrome.com/taming-the-lm3886-chip-amplifier/power-supply-design*).
 
 This means that effective output power is around ``50W/4 = 12.5W``.
 
-Maximum voltages at ``Pdiss=50W``, ``PHI=60degrees`` (with including
-quiescent current dissipation):
+Maximum voltages at ``Pdiss=50W``, ``PHI=60degrees`` (including quiescent 
+dissipation):
 
 +-------------+-------------+-----------+--------------+
 | Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
@@ -173,7 +180,6 @@ sag under these conditions and that music signal has much lower effective power
 comparing to instantaneous power.
 
 Transformer specification is the following:
-
  * ``S=200VA``, power rating.
  * ``Usn1=24Veff``, first secondary nominal voltage.
  * ``Usn2=24Veff``, second secondary nominal voltage.
@@ -203,9 +209,9 @@ The equivalent gain circuit resistance needs to stay below 600ohms. This is so
 because all noise measurements in data-sheet were done with 600ohms or 0ohms.
 
 Using low feedback gain is preferred for several reasons:
- - there is more loop gain available to reduce the distortion
- - reduced outout noues
- - lower offset at output
+ * there is more loop gain available to reduce the distortion
+ * reduced outout noues
+ * lower offset at output
 
 Nominal gain is:
 
@@ -255,22 +261,18 @@ Using E24 series of resistors:
 +-----------+-----------+---------+
 
 Chosen values for E24 series:
-
  * Rf = 8.2kOhm
  * Rg = 510 Ohm
     
 Chosen values for E48 series:
-
  * Rf = 8.25kOhm
  * Rg = 511 Ohm
  
 Chosen values when using parallel E24 series (two resistor):
-
  * Rf = 16kOhm
  * Rg = 1kOhm
 
 Chosen values when using parallel E48 series (two resistor):
-
  * Rf = 16.2kOhm
  * Rg = 1kOhm
 
@@ -371,7 +373,6 @@ Frequency compensation
 ----------------------
 
 The LM3886 is modeled in the following way:
-
  * ``Aol=115dB``, typical open loop gain.
  * ``Fp1=15 Hz``, dominant pole.
  * ``Fp2=1.7e6 Hz``, a pole which probably originates from output stage.
@@ -387,14 +388,14 @@ The LM3886 is modeled in the following way:
 Lead compensation
 `````````````````
 
-Lead compensation schematic ::
+Equivalent feedback network with lead compensation circuit::
 
           + Vout
           |
           *------+
           |      |
          +-+ Rf  |
-         | |   ----- Cl
+         | |   ----- Cf=Cl (+Csi, see Input pin capacitance compensation)
          | |   -----
          +-+     |
    Vf     |      |
@@ -405,9 +406,10 @@ Lead compensation schematic ::
          | |
          +-+
           |
-         +++
+         +++ Ground
 
-The transfer function of this feedback circuit is given as:
+Resistors `Rf` and `Rg` are part of feedback network. Capacitor `Cf` is the
+compensation capacitor. The transfer function of this network is given as:
 
 .. math::
 
@@ -447,40 +449,94 @@ pole we can use ``wz`` equation above:
     fp2 = 1.7e6 Hz
     
     Cl=1/(2*pi*Rf*fp2)=11.4pF
-    
-Since the ``Cl`` value is quite low we can freely put a bit bigger capacitor
-here since we can also compensate for input pin parasitic capacitance. Standard
-values are 12pF and 15pF. We choose the 15pF value here. 
 
 Outcome:
- 
  * By using this compensation we improve the loop gain phase around UGB point
    and at higher frequencies.
- * The ``Cl`` in this compensation is known to reduce the closed loop
-   bandwidth. Since the ``fp2`` value is so high the impact to closed loop
-   bandwidth is diminished.
+ * The ``Cf`` in this compensation is known to reduce the closed loop
+   bandwidth. Since the ``Cf`` value is so small the impact to closed loop
+   bandwidth should be minimal.
+
+Input pin capacitance compensation
+``````````````````````````````````
+
+Input pins have the following parasitic capacitances associated:
+ * Cdiff
+ * Cm
+ * Cstray
+ 
+The LM3886 datasheet does not specify any parameter regarding parasitic input
+capacitances. We can use a rough estimation of values based on experience on
+using other audio BJT OPAMPS, and typical values are 2pF for all 3 parameters.
+In inverting configurations with `+` input grounded all three capacitances are
+tied in parallel, so the total input capacitance becomes:
+
+.. math::
+
+    Cinput = Cdiff+Cm+Cstray=2pF+2pF+2pF=6pF
     
+To mitigate this capacitance we can add capacitance `Csi` parallel to `Rf` 
+resistor. To compensate for this the following equation is applied:
+
+.. math::
+
+    Rf*Csi=Rg*Cinput
+    
+    Csi=Cinput*Rg/Rf=0.4pF
+    
+Since we are already using lead compensation we just add this value to existing
+`Cl` capacitor.
+
+Also, note that LM3886 model has tree more additional poles: 
+ * ``Fp2=9e6 Hz``, pole which probably originates from input or intermediate 
+   stages.
+ * ``Fp3=10e6 Hz``, pole which probably originates from input or intermediate 
+   stages.
+ * A pole from ``Rops=240m``, open loop output stage impedance which in
+   conjunction with output Zobel and connected load forms another high
+   frequency pole.
+   
+Although all above poles are very high in frequency they still have their
+impact on lower frequency part of transfer function and reduce a few degrees of
+phase margin at UGBW point (approx. 500kHz). Because of these poles we can
+freely put a bit bigger `Cf` capacitor value in the feedback network. Rough
+estimation is to put additional 1-2pF.
+
+Since the standard values of capacitors are 12pF and 15pF, we choose the 15pF 
+as the final value for `Cl` capacitor:
+
+.. math::
+
+    Cf=Cl+Csi=11.4+0.4+2pF=13.8pF
+    
+    Cf=15pF 
+
 Power supply
 ============
 
 Before rectifier diodes a snubber RC circuit should be placed to decrease diode
-switching impulse. Recommended values are ``Rs = 1 Ohm``, ``Cs = 470nF``::
+switching impulse. Recommended values are ``Rsn = 1 Ohm``, ``Csn = 470nF``::
 
           + Vsupply
           |
           |
-        ----- Cs = 470nF
+        ----- Csn = 470nF
         -----
           |
           |
-         +-+  Rs = 1 Ohm
+         +-+  Rsn = 1 Ohm
          | |
          | |
          +-+
           |
-         +++
+         +++ Ground
 
 This snubber may be placed near the IC power supply lines, too.
+
+Using stabilized power supplies, for example by using LT1083 regulator is only
+meaningful at lower output powers. The regulation becomes really expensive when
+used in high power amplifiers. Regulated power supplies are OK when used up to
+powers of 20W-30W @ 8 Ohm.ta
 
 NOTE:
 
