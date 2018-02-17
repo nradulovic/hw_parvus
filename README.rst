@@ -406,7 +406,7 @@ Equivalent feedback network with lead compensation circuit::
          | |
          +-+
           |
-         +++ Ground
+          + Input
 
 Resistors `Rf` and `Rg` are part of feedback network. Capacitor `Cf` is the
 compensation capacitor. The transfer function of this network is given as:
@@ -536,10 +536,9 @@ This snubber may be placed near the IC power supply lines, too.
 Using stabilized power supplies, for example by using LT1083 regulator is only
 meaningful at lower output powers. The regulation becomes really expensive when
 used in high power amplifiers. Regulated power supplies are OK when used up to
-powers of 20W-30W @ 8 Ohm.ta
+powers of 20W-30W @ 8 Ohm.
 
 NOTE:
-
  * On case chassis there should be a safety ground screw just near at the input
    220V socket.
 
