@@ -2,26 +2,17 @@
 .. contents:: Table of Contents
    :depth: 3
 
+Introduction
+============
+
+This document shall describe procedures to build audio power amplifier using
+LM1875 or LM3886 integrated circuits.
+
 Architecture
 ============
 
-Low power sections::
-
-             +-----------+   +-----------+
-             |           |   |           |
-      0dB    | +----\    |   |           |
-      +----->|       \   |-->|           |
-             |        \  |   |           |
-             |           |   |           |
-             +-----------+   +-----------+
-
-             EMI Filtering
-             
-High power sections::
-
-      
-   
-   
+Low power sections:
+High power sections:
 
 Input circuit
 =============
@@ -56,6 +47,10 @@ to EMI.
 
 Differential buffer
 -------------------
+
+__NOTE__:
+
+ This buffer is needed in case parallel output amplifiers are used.
 
 The buffer consists of a PNP transistor, a 100ohm resistor and a CCS of 20mA. 
 The resistor is connected between transistor BE pins. This way it is 
@@ -141,7 +136,8 @@ Power dissipation
 NOTE:
 
 * Try to keep power dissipation to around 40W per IC package. (from PDF
-  document *AN-1192 Overture Series High Power Solutions*)
+  document *AN-1192 Overture Series High Power Solutions*) for LM3886.
+* Maximum power dissipation should be around 25W per IC package for LM1875.
 
 Fortunately, with music signals the power dissipation should be lower. 
 Effective power of music signal is about 2 to 10 times as smaller than 
@@ -153,24 +149,30 @@ is approximately 50W we get that the transformer supports crest factor of 4
 
 This means that effective output power is around ``50W/4 = 12.5W``.
 
-Maximum voltages at ``Pdiss=50W``, ``PHI=60degrees`` (including quiescent 
-dissipation):
+Maximum voltages at:
+ * Maximum ``Pdiss=50W`` for LM3886, and ``Pdiss=30W`` for LM1875.
+ * Load phase is ``LoadPHI=60degrees``.
+ * Including quiescent current dissipation.
+ * Case temperature is 60C degrees.
+ * Taking into account OPS SOA.
 
-+-------------+-------------+-----------+--------------+
-| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
-+-------------+-------------+-----------+--------------+
-| 16          | 37          | 3.0       | 46.8         |
-+-------------+-------------+-----------+--------------+
-| 12          | 33          | 3.1       | 48.1         |
-+-------------+-------------+-----------+--------------+
-| 8           | 28          | 3.2       | 49.8         |
-+-------------+-------------+-----------+--------------+
-| 6           | 24          | 3.3       | 47.2         |
-+-------------+-------------+-----------+--------------+
-| 4           | 22          | 3.4       | 47.0         |
-+-------------+-------------+-----------+--------------+
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| Chip        |                LM3886                  |                LM1875                  |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| 16          | 33          | 2.2       | 31.4         | 26          | 2.2       | 19.1         |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| 12          | 29          | 2.3       | 31.6         | 24          | 2.6       | 21.1         |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| 8           | 25          | 2.5       | 34.2         | 23          | 4.4       | 26.8         |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| 6           | 22          | 2.6       | 34.7         | 21          | 4.6       | 28.9         |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
+| 4           | 19          | 2.9       | 37.4         | 16          | 5.2       | 22.6         |
++-------------+-------------+-----------+--------------+-------------+-----------+--------------+
 
-This table tells us that if we want to drive 4ohm load at 33V we need 3 pieces
+This table tells us that if we want to drive 4ohm load at 33V we need 4 pieces
 of LM3886 in parallel. This is quite a number of ICs, but fortunately, the
 table presumes that the power supply can produce constant 33V at continuous
 load and the signal is sinusoid. This is not the case with unregulated power
@@ -179,7 +181,7 @@ stored in power supply capacitors and how much will the transformer voltages
 sag under these conditions and that music signal has much lower effective power
 comparing to instantaneous power.
 
-Transformer specification is the following:
+Transformer specification for LM3886 amplifier is the following:
  * ``S=200VA``, power rating.
  * ``Usn1=24Veff``, first secondary nominal voltage.
  * ``Usn2=24Veff``, second secondary nominal voltage.
@@ -189,11 +191,21 @@ Secondary internal resistance is:
 
 .. math::
 
-    Usu=Usn1*(1+(k/100))=24*(1+(5/100))=25.2Veff
+    Usu=Usn1*(1+(k/100))
     
-    Isn=S/(Usn1+Usn2)=4.17Aeff
+    Isn=S/(Usn1+Usn2)
+    
+    Ri=(Usn1-Usu)/Isn
+    
+Using values from above we get:
 
-    Ri=(Usn1-Usu)/Isn=288mOhm
+.. math:: 
+    
+    Usu=24*(1+(5/100))=25.2Veff
+    
+    Isn=4.17Aeff
+
+    Ri=288mOhm
     
 The power supply section is using two banks of 10mF capacitors with 0.22Ohm
 resistor in series between them. This arrangement gives time constant about
@@ -372,18 +384,23 @@ super gain clone ``.ppt``.
 Frequency compensation
 ----------------------
 
-The LM3886 is modeled in the following way:
- * ``Aol=115dB``, typical open loop gain.
- * ``Fp1=15 Hz``, dominant pole.
- * ``Fp2=1.7e6 Hz``, a pole which probably originates from output stage.
- * ``Fp2=9e6 Hz``, pole which probably originates from input or intermediate 
-   stages.
- * ``Fp3=10e6 Hz``, pole which probably originates from input or intermediate 
-   stages.
- * ``Rops=240m``, open loop output stage impedance. The OPS open loop impedance
-   is unusually low because the LM3886 uses output inclusive Miller
-   compensation which can be observed on the equivalent schematic in the
-   data-sheet.
+The LM1875/LM3886 are modeled in the following way:
+ * ``Aol``, typical open loop gain at DC.
+ * ``Fp1``, dominant pole.
+ * ``Fp2``, a pole which probably originates from output stage.
+ * ``Fp3``, pole which probably originates from input or intermediate stages.
+ * ``Fp4 Hz``, pole which probably originates from input or intermediate stages.
+ * ``Rops``, open loop output stage impedance. The OPS open loop impedance is 
+   unusually low because the LM3886 uses output inclusive Miller compensation
+   which can be observed on the equivalent schematic in the data-sheet.
+
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+| Chip      | Aol [dB]  | Fp1 [Hz]  | Fp2 [Hz]  | Fp3 [Hz]  | Fp4 [Hz]  | Rops [Ohm]|
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+| LM1875    | 90        | 15        | 1.5e6     | 8e6       | 9e6       | 500e-3    |
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+| LM3886    | 115       | 15        | 1.7e6     | 9e6       | 10e6      | 240e-3    |
++-----------+-----------+-----------+-----------+-----------+-----------+-----------+
 
 Lead compensation
 `````````````````
@@ -438,9 +455,21 @@ Where:
     Re=Rf||Rg=Rf*Rg/(Rf+Rg)
 
 With this compensation we want to compensate for LM3886 ``fp2`` pole. Although
-the ``fp2`` pole has a high value of 1.7MHz it still has quite the effect on
-the gain phase near unity gain bandwidth (UGB) value. To compensate for ``fp2``
-pole we can use ``wz`` equation above:
+the ``fp2`` pole has a high value of it still has quite the effect on the gain 
+phase near unity gain bandwidth (UGBW) value. To compensate for ``fp2``
+pole we can use ``wz`` equation above. 
+
+For LM1875 we would get:
+
+.. math::
+    
+    Rf = 8.2kOhm
+    
+    fp2 = 1.5e6 Hz
+    
+    Cl=1/(2*pi*Rf*fp2)=12.9pF
+    
+For LM3886 we would get:
 
 .. math::
     
@@ -451,7 +480,7 @@ pole we can use ``wz`` equation above:
     Cl=1/(2*pi*Rf*fp2)=11.4pF
 
 Outcome:
- * By using this compensation we improve the loop gain phase around UGB point
+ * By using this compensation we improve the loop gain phase around UGBW point
    and at higher frequencies.
  * The ``Cf`` in this compensation is known to reduce the closed loop
    bandwidth. Since the ``Cf`` value is so small the impact to closed loop
@@ -465,11 +494,11 @@ Input pins have the following parasitic capacitances associated:
  * Cm
  * Cstray
  
-The LM3886 datasheet does not specify any parameter regarding parasitic input
-capacitances. We can use a rough estimation of values based on experience on
-using other audio BJT OPAMPS, and typical values are 2pF for all 3 parameters.
-In inverting configurations with `+` input grounded all three capacitances are
-tied in parallel, so the total input capacitance becomes:
+The LM1875/LM3886 datasheets do not specify any parameter regarding parasitic
+input capacitances. We can use a rough estimation of values based on experience
+on using other audio BJT OPAMPS, and typical values are 2pF for all 3
+parameters. In inverting configurations with `+` input grounded all three
+capacitances are tied in parallel, so the total input capacitance becomes:
 
 .. math::
 
@@ -487,28 +516,44 @@ resistor. To compensate for this the following equation is applied:
 Since we are already using lead compensation we just add this value to existing
 `Cl` capacitor.
 
-Also, note that LM3886 model has tree more additional poles: 
- * ``Fp2=9e6 Hz``, pole which probably originates from input or intermediate 
+Also, note that LM1875/LM3886 model has tree more additional poles: 
+ * ``Fp2``, pole which probably originates from input or intermediate 
    stages.
- * ``Fp3=10e6 Hz``, pole which probably originates from input or intermediate 
+ * ``Fp3``, pole which probably originates from input or intermediate 
    stages.
- * A pole from ``Rops=240m``, open loop output stage impedance which in
-   conjunction with output Zobel and connected load forms another high
-   frequency pole.
+ * A pole from ``Rops``, open loop output stage impedance which in conjunction 
+   with output Zobel and connected load forms another high frequency pole.
    
 Although all above poles are very high in frequency they still have their
 impact on lower frequency part of transfer function and reduce a few degrees of
-phase margin at UGBW point (approx. 500kHz). Because of these poles we can
+phase margin at UGBW point (approx. at 500kHz). Because of these poles we can
 freely put a bit bigger `Cf` capacitor value in the feedback network. Rough
 estimation is to put additional 1-2pF.
 
-Since the standard values of capacitors are 12pF and 15pF, we choose the 15pF 
-as the final value for `Cl` capacitor:
+For LM1875 we get:
+
+.. math::
+
+    Cf=Cl+Csi=12.9+0.4+2pF=15.3pF
+    
+Since the closest, standard values of capacitors are 15pF and 18pF, we choose
+the 18pF as the final value for `Cl` capacitor:
+
+.. math::
+
+    Cf=18pF 
+    
+For LM3886 we get:
 
 .. math::
 
     Cf=Cl+Csi=11.4+0.4+2pF=13.8pF
     
+Since the closest, standard values of capacitors are 12pF and 15pF, we choose
+the 15pF as the final value for `Cl` capacitor:
+
+.. math::
+
     Cf=15pF 
 
 Power supply
