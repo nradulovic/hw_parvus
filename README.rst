@@ -5,14 +5,21 @@
 Introduction
 ============
 
-This document shall describe procedures to build audio power amplifier using
-LM3886 integrated circuits.
+This document shall describe rationales used to design and build audio power
+amplifier modules using LM3886 integrated circuit.
 
 Architecture
 ============
 
-Low power sections:
-High power sections:
+The complete power amplifier consists of three sections:
+
+* Input circuit
+* Power amplifier
+* Power supply
+
+**Input circuitry** and **Power amplifier** sections are located on single 
+PCB while the **Power supply** is located on separate PCB.
+
 
 Input circuit
 =============
@@ -24,26 +31,26 @@ To protect the input from EMI we will use the following Zobel network::
 
           + Positive input or negative input
           |
-          |
-        ----- Czi
-        -----
-          |
-          |
          +-+  Rzi
          | |
          | |
          +-+
           |
-          - Ground
+          |
+        ----- Czi
+        -----
+          |
+          - Signal Ground (SGND)
          
 For most input cables characteristic impedance falls in range between
-50 and 100ohm impedance and we are using the 75ohm as the middle value. The 
-resistor Rzi is ``Rzi=100ohm`` and the capacitor Czi is ``Czi=220pF``. 
-This network should be placed right at the input connector, not on the 
-main amplifier PCB.
+50 and 100ohm impedance. The resistor Rzi is ``Rzi=100ohm`` and the capacitor 
+Czi is ``Czi=220pF``. This network should be placed right at the input 
+connector, not on the main amplifier PCB.
 
-Input OPAMP should be JFET type since JFET differential inputs are more immune 
-to EMI.
+Input low-pass filter
+---------------------
+
+The input low pass filter consists of two sections. 
 
 Differential buffer (optional)
 ------------------------------
@@ -51,12 +58,15 @@ Differential buffer (optional)
 **NOTE:**
 
 * This buffer is needed in case parallel output amplifiers are used.
+* If an input OPAMP is used it should be of JFET type since JFET differential 
+  inputs are more immune to EMI.
 
 The buffer consists of a PNP transistor, a 100ohm resistor and a CCS of 20mA. 
 The resistor is connected between transistor BE pins. This way it is 
 bootstrapped by the transistor Vbe voltage which gives about 6mA constant 
 current flowing into OPAMP output. This technique is used to improve OPAMP 
 output stage linearity.
+
 
 Power amplifier
 ===============
@@ -107,9 +117,12 @@ The equivalent gain circuit resistance needs to stay below 600ohms. This is so
 because all noise measurements in data-sheet were done with 600ohms or 0ohms.
 
 Using low feedback gain is preferred for several reasons:
- * there is more loop gain available to reduce the distortion
- * reduced outout noues
- * lower offset at output
+
+* there is more loop gain available to reduce the distortion
+* reduced output noise
+* lower offset at output
+
+The datasheet specifies that the gain should be at least ``G>10`` or greater.
 
 
 Inverting mode
@@ -167,22 +180,22 @@ Using E24 series of resistors:
 
 Chosen values for E24 series:
 
-* Rf = 8.2kOhm
+* Rf = 7.5kOhm
 * Rg = 510 Ohm
     
 Chosen values for E48 series:
 
-* Rf = 8.25kOhm
-* Rg = 511 Ohm
+* Rf = 7.5kOhm
+* Rg = 499 Ohm
  
 Chosen values when using parallel E24 series (two resistor):
 
-* Rf = 16kOhm
+* Rf = 15kOhm
 * Rg = 1kOhm
 
 Chosen values when using parallel E48 series (two resistor):
 
-* Rf = 16.2kOhm
+* Rf = 15kOhm
 * Rg = 1kOhm
 
 
@@ -195,7 +208,11 @@ feedback network. Taking into acount both networks we have a total gain of:
 
 .. math::
 
-    G=Rf/Rg
+    Gpos=Rf/(Rf+Rg)
+
+    Gneg=(Rf+Rg)/Rg
+    
+    Gtotal=Gpos*Gneg=Rf/Rg
 
 Using E24 series of resistors:
 
@@ -258,7 +275,6 @@ Power dissipation
 
 * Try to keep power dissipation to around 40W per IC package. (from PDF
   document *AN-1192 Overture Series High Power Solutions*) for LM3886.
-* Maximum power dissipation should be around 25W per IC package for LM1875.
 
 Fortunately, with music signals the power dissipation should be lower. 
 Effective power of music signal is about 2 to 10 times as smaller than 
@@ -272,27 +288,25 @@ This means that effective output power is around ``50W/4 = 12.5W``.
 
 Maximum voltages at:
 
-* Maximum ``Pdiss=50W`` for LM3886, and ``Pdiss=30W`` for LM1875.
+* Maximum ``Pdiss=50W``
 * Load phase is ``LoadPHI=60degrees``.
 * Including quiescent current dissipation.
 * Case temperature is 60C degrees.
 * Taking into account OPS SOA.
 
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| Chip        |                LM3886                  |                LM1875                  |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| 16          | 33          | 2.2       | 31.4         | 26          | 2.2       | 19.1         |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| 12          | 29          | 2.3       | 31.6         | 24          | 2.6       | 21.1         |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| 8           | 25          | 2.5       | 34.2         | 23          | 4.4       | 26.8         |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| 6           | 22          | 2.6       | 34.7         | 21          | 4.6       | 28.9         |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
-| 4           | 19          | 2.9       | 37.4         | 16          | 5.2       | 22.6         |
-+-------------+-------------+-----------+--------------+-------------+-----------+--------------+
++-------------+-------------+-----------+--------------+
+| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
++-------------+-------------+-----------+--------------+
+| 16          | 33          | 2.2       | 31.4         |
++-------------+-------------+-----------+--------------+
+| 12          | 29          | 2.3       | 31.6         |
++-------------+-------------+-----------+--------------+
+| 8           | 25          | 2.5       | 34.2         |
++-------------+-------------+-----------+--------------+
+| 6           | 22          | 2.6       | 34.7         |
++-------------+-------------+-----------+--------------+
+| 4           | 19          | 2.9       | 37.4         |
++-------------+-------------+-----------+--------------+
 
 This table tells us that if we want to drive 4ohm load at 33V we need 4 pieces
 of LM3886 in parallel. This is quite a number of ICs, but fortunately, the
@@ -422,7 +436,7 @@ a specific non E24 resistance.
 The equivalent resistance of the loop gain circuitry must be below 600ohms.
 
 The LM3886 shall be in differential connection. The lower arm of the gain loop
-circuitry shall use 500ohm resistor. Using 220uF we get 1.44Hz lower corner
+circuitry shall use 499ohm resistor. Using 470uF we get 0.68Hz lower corner
 frequency. Also, the signal is applied to inverting input. See Bob Cordell
 super gain clone ``.ppt``.
 
@@ -562,20 +576,30 @@ Also, note that LM3886 model has tree more additional poles:
 * A pole from ``Rops``, open loop output stage impedance which in conjunction 
   with output Zobel and connected load forms another high frequency pole.
    
+Higher poles compensation
+`````````````````````````
+
 Although all above poles are very high in frequency they still have their
 impact on lower frequency part of transfer function and reduce a few degrees of
 phase margin at UGBW point (approx. at 500kHz). Because of these poles we can
 freely put a bit bigger `Cf` capacitor value in the feedback network. Rough
-estimation is to put additional 1-2pF.
+estimation is to put additional 1-2pF:
 
-For LM3886 we get:
+.. math::
+    
+    Chp=2pF
+
+Total Cf capacitance
+````````````````````
+
+The capacitance ``Cf`` is therefore:
 
 .. math::
 
-    Cf=Cl+Csi=12.5+0.4+2pF=14.4pF
+    Cf=Cl+Csi+Chp=12.5+0.4+2=14.9pF
     
-Since the closest, standard values of capacitors are 12pF and 15pF, we choose
-the 15pF as the final value for `Cl` capacitor:
+Since the closest and next bigger standard value of capacitors is 15pF, we 
+choose this value as the final value for `Cl` capacitor:
 
 .. math::
 
