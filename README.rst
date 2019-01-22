@@ -38,19 +38,19 @@ To protect the input from EMI we will use the following Zobel network::
          
 For most input cables characteristic impedance falls in range between
 50 and 100ohm impedance and we are using the 75ohm as the middle value. The 
-resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``. 
+resistor Rzi is ``Rzi=100ohm`` and the capacitor Czi is ``Czi=220pF``. 
 This network should be placed right at the input connector, not on the 
 main amplifier PCB.
 
 Input OPAMP should be JFET type since JFET differential inputs are more immune 
 to EMI.
 
-Differential buffer
--------------------
+Differential buffer (optional)
+------------------------------
 
-__NOTE__:
+**NOTE**:
 
- This buffer is needed in case parallel output amplifiers are used.
+* This buffer is needed in case parallel output amplifiers are used.
 
 The buffer consists of a PNP transistor, a 100ohm resistor and a CCS of 20mA. 
 The resistor is connected between transistor BE pins. This way it is 
@@ -100,6 +100,122 @@ Output shunt resistor should be between 2.2 Ohm and 4.7 Ohm. See
 *Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7* 
 for effect on power amplifier transfer function.
 
+Gain value
+----------
+
+The equivalent gain circuit resistance needs to stay below 600ohms. This is so
+because all noise measurements in data-sheet were done with 600ohms or 0ohms.
+
+Using low feedback gain is preferred for several reasons:
+ * there is more loop gain available to reduce the distortion
+ * reduced outout noues
+ * lower offset at output
+
+
+Inverting mode
+``````````````
+
+Using inverted topology since we want to reduce common mode distortion in the
+input stage.
+
+Nominal gain is:
+
+.. math::
+
+    G=-Rf/Rg
+
+
+Using E24 series of resistors:
+
++-----------+-----------+---------+
+| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
++-----------+-----------+---------+
+| 510       |  7.5      | -14.7   |
++-----------+-----------+---------+
+| *510*     |  *8.2*    | *-16.0* |
++-----------+-----------+---------+
+| 510       |  9.1      | -17.8   |
++-----------+-----------+---------+
+| 510       | 10.0      | -19.6   |
++-----------+-----------+---------+
+| 510       | 11.0      | -21.5   |
++-----------+-----------+---------+
+
+Using E24 series of resistors:
+
++-----------+-----------+---------+
+| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
++-----------+-----------+---------+
+| 511       |  7.50     | -14.7   |
++-----------+-----------+---------+
+| 511       |  7.87     | -15.4   |
++-----------+-----------+---------+
+| *511*     |  *8.25*   | *-16.1* |
++-----------+-----------+---------+
+| 511       |  8.66     | -16.9   |
++-----------+-----------+---------+
+| 511       |  9.09     | -17.8   |
++-----------+-----------+---------+
+| 511       |  9.53     | -18.6   |
++-----------+-----------+---------+
+| 511       | 10.00     | -19.6   |
++-----------+-----------+---------+
+| 511       | 10.50     | -20.5   |
++-----------+-----------+---------+
+| 511       | 11.00     | -21.5   |
++-----------+-----------+---------+
+
+Chosen values for E24 series:
+ * Rf = 8.2kOhm
+ * Rg = 510 Ohm
+    
+Chosen values for E48 series:
+ * Rf = 8.25kOhm
+ * Rg = 511 Ohm
+ 
+Chosen values when using parallel E24 series (two resistor):
+ * Rf = 16kOhm
+ * Rg = 1kOhm
+
+Chosen values when using parallel E48 series (two resistor):
+ * Rf = 16.2kOhm
+ * Rg = 1kOhm
+
+Non-inverting mode
+``````````````````
+
+In non-inverting mode we have two resistor networks. At the positive input we
+have a resistor divider network and on the negative input we have negative
+feedback network. Taking into acount both networks we have a total gain of:
+
+.. math::
+
+    G=Rf/Rg
+
+Using E24 series of resistors:
+
++-----------+-----------+---------+
+| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
++-----------+-----------+---------+
+| 510       |  7.5      | 14.7    |
++-----------+-----------+---------+
+| *510*     |  *8.2*    | *16.0*  |
++-----------+-----------+---------+
+| 510       |  9.1      | 17.8    |
++-----------+-----------+---------+
+| 510       | 10.0      | 19.6    |
++-----------+-----------+---------+
+| 510       | 11.0      | 21.5    |
++-----------+-----------+---------+
+
+Using E48 series of resistors:
+
++-----------+-----------+---------+
+| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
++-----------+-----------+---------+
+| *499*     |  7.5      | 15.0    |
++-----------+-----------+---------+
+
 Paralleling multiple modules
 ----------------------------
 
@@ -131,7 +247,7 @@ Resistors with power dissipation of 3 Watts is a good and very conservative
 choice.
 
 Power dissipation
------------------
+`````````````````
 
 NOTE:
 
@@ -211,86 +327,8 @@ The power supply section is using two banks of 10mF capacitors with 0.22Ohm
 resistor in series between them. This arrangement gives time constant about
 100ms when going from unloaded to full load state.
 
-Gain value
-----------
-
-Using inverted topology since we want to reduce common mode distortion in the
-input stage.
-
-The equivalent gain circuit resistance needs to stay below 600ohms. This is so
-because all noise measurements in data-sheet were done with 600ohms or 0ohms.
-
-Using low feedback gain is preferred for several reasons:
- * there is more loop gain available to reduce the distortion
- * reduced outout noues
- * lower offset at output
-
-Nominal gain is:
-
-.. math::
-
-    G=-Rf/Rg
-
-
-Using E24 series of resistors:
-
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| 510       |  7.5      | -14.7   |
-+-----------+-----------+---------+
-| *510*     |  *8.2*    | *-16.0* |
-+-----------+-----------+---------+
-| 510       |  9.1      | -17.8   |
-+-----------+-----------+---------+
-| 510       | 10.0      | -19.6   |
-+-----------+-----------+---------+
-| 510       | 11.0      | -21.5   |
-+-----------+-----------+---------+
-
-Using E24 series of resistors:
-
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| 511       |  7.50     | -14.7   |
-+-----------+-----------+---------+
-| 511       |  7.87     | -15.4   |
-+-----------+-----------+---------+
-| *511*     |  *8.25*   | *-16.1* |
-+-----------+-----------+---------+
-| 511       |  8.66     | -16.9   |
-+-----------+-----------+---------+
-| 511       |  9.09     | -17.8   |
-+-----------+-----------+---------+
-| 511       |  9.53     | -18.6   |
-+-----------+-----------+---------+
-| 511       | 10.00     | -19.6   |
-+-----------+-----------+---------+
-| 511       | 10.50     | -20.5   |
-+-----------+-----------+---------+
-| 511       | 11.00     | -21.5   |
-+-----------+-----------+---------+
-
-Chosen values for E24 series:
- * Rf = 8.2kOhm
- * Rg = 510 Ohm
-    
-Chosen values for E48 series:
- * Rf = 8.25kOhm
- * Rg = 511 Ohm
- 
-Chosen values when using parallel E24 series (two resistor):
- * Rf = 16kOhm
- * Rg = 1kOhm
-
-Chosen values when using parallel E48 series (two resistor):
- * Rf = 16.2kOhm
- * Rg = 1kOhm
-
-
 Gain errors
------------
+```````````
 
 Nominal absolute gain is:
 
@@ -473,11 +511,11 @@ For LM3886 we would get:
 
 .. math::
     
-    Rf = 8.2kOhm
+    Rf = 7.5kOhm
     
     fp2 = 1.7e6 Hz
     
-    Cl=1/(2*pi*Rf*fp2)=11.4pF
+    Cl=1/(2*pi*Rf*fp2)=12.5pF
 
 Outcome:
  * By using this compensation we improve the loop gain phase around UGBW point
@@ -547,7 +585,7 @@ For LM3886 we get:
 
 .. math::
 
-    Cf=Cl+Csi=11.4+0.4+2pF=13.8pF
+    Cf=Cl+Csi=12.5+0.4+2pF=14.4pF
     
 Since the closest, standard values of capacitors are 12pF and 15pF, we choose
 the 15pF as the final value for `Cl` capacitor:
