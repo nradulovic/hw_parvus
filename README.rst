@@ -6,7 +6,7 @@ Introduction
 ============
 
 This document shall describe procedures to build audio power amplifier using
-LM1875 or LM3886 integrated circuits.
+LM3886 integrated circuits.
 
 Architecture
 ============
@@ -48,7 +48,7 @@ to EMI.
 Differential buffer (optional)
 ------------------------------
 
-**NOTE**:
+**NOTE:**
 
 * This buffer is needed in case parallel output amplifiers are used.
 
@@ -166,20 +166,25 @@ Using E24 series of resistors:
 +-----------+-----------+---------+
 
 Chosen values for E24 series:
- * Rf = 8.2kOhm
- * Rg = 510 Ohm
+
+* Rf = 8.2kOhm
+* Rg = 510 Ohm
     
 Chosen values for E48 series:
- * Rf = 8.25kOhm
- * Rg = 511 Ohm
+
+* Rf = 8.25kOhm
+* Rg = 511 Ohm
  
 Chosen values when using parallel E24 series (two resistor):
- * Rf = 16kOhm
- * Rg = 1kOhm
+
+* Rf = 16kOhm
+* Rg = 1kOhm
 
 Chosen values when using parallel E48 series (two resistor):
- * Rf = 16.2kOhm
- * Rg = 1kOhm
+
+* Rf = 16.2kOhm
+* Rg = 1kOhm
+
 
 Non-inverting mode
 ``````````````````
@@ -249,7 +254,7 @@ choice.
 Power dissipation
 `````````````````
 
-NOTE:
+**NOTE:**
 
 * Try to keep power dissipation to around 40W per IC package. (from PDF
   document *AN-1192 Overture Series High Power Solutions*) for LM3886.
@@ -266,11 +271,12 @@ is approximately 50W we get that the transformer supports crest factor of 4
 This means that effective output power is around ``50W/4 = 12.5W``.
 
 Maximum voltages at:
- * Maximum ``Pdiss=50W`` for LM3886, and ``Pdiss=30W`` for LM1875.
- * Load phase is ``LoadPHI=60degrees``.
- * Including quiescent current dissipation.
- * Case temperature is 60C degrees.
- * Taking into account OPS SOA.
+
+* Maximum ``Pdiss=50W`` for LM3886, and ``Pdiss=30W`` for LM1875.
+* Load phase is ``LoadPHI=60degrees``.
+* Including quiescent current dissipation.
+* Case temperature is 60C degrees.
+* Taking into account OPS SOA.
 
 +-------------+-------------+-----------+--------------+-------------+-----------+--------------+
 | Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
@@ -298,10 +304,11 @@ sag under these conditions and that music signal has much lower effective power
 comparing to instantaneous power.
 
 Transformer specification for LM3886 amplifier is the following:
- * ``S=200VA``, power rating.
- * ``Usn1=24Veff``, first secondary nominal voltage.
- * ``Usn2=24Veff``, second secondary nominal voltage.
- * ``k=5%``, regulation.
+
+* ``S=200VA``, power rating.
+* ``Usn1=24Veff``, first secondary nominal voltage.
+* ``Usn2=24Veff``, second secondary nominal voltage.
+* ``k=5%``, regulation.
 
 Secondary internal resistance is:
 
@@ -422,20 +429,19 @@ super gain clone ``.ppt``.
 Frequency compensation
 ----------------------
 
-The LM1875/LM3886 are modeled in the following way:
- * ``Aol``, typical open loop gain at DC.
- * ``Fp1``, dominant pole.
- * ``Fp2``, a pole which probably originates from output stage.
- * ``Fp3``, pole which probably originates from input or intermediate stages.
- * ``Fp4 Hz``, pole which probably originates from input or intermediate stages.
- * ``Rops``, open loop output stage impedance. The OPS open loop impedance is 
-   unusually low because the LM3886 uses output inclusive Miller compensation
-   which can be observed on the equivalent schematic in the data-sheet.
+The LM3886 is modeled in the following way:
+
+* ``Aol``, typical open loop gain at DC.
+* ``Fp1``, dominant pole.
+* ``Fp2``, a pole which probably originates from output stage.
+* ``Fp3``, pole which probably originates from input or intermediate stages.
+* ``Fp4 Hz``, pole which probably originates from input or intermediate stages.
+* ``Rops``, open loop output stage impedance. The OPS open loop impedance is 
+  unusually low because the LM3886 uses output inclusive Miller compensation
+  which can be observed on the equivalent schematic in the data-sheet.
 
 +-----------+-----------+-----------+-----------+-----------+-----------+-----------+
 | Chip      | Aol [dB]  | Fp1 [Hz]  | Fp2 [Hz]  | Fp3 [Hz]  | Fp4 [Hz]  | Rops [Ohm]|
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-| LM1875    | 90        | 15        | 1.5e6     | 8e6       | 9e6       | 500e-3    |
 +-----------+-----------+-----------+-----------+-----------+-----------+-----------+
 | LM3886    | 115       | 15        | 1.7e6     | 9e6       | 10e6      | 240e-3    |
 +-----------+-----------+-----------+-----------+-----------+-----------+-----------+
@@ -497,17 +503,7 @@ the ``fp2`` pole has a high value of it still has quite the effect on the gain
 phase near unity gain bandwidth (UGBW) value. To compensate for ``fp2``
 pole we can use ``wz`` equation above. 
 
-For LM1875 we would get:
-
-.. math::
-    
-    Rf = 8.2kOhm
-    
-    fp2 = 1.5e6 Hz
-    
-    Cl=1/(2*pi*Rf*fp2)=12.9pF
-    
-For LM3886 we would get:
+For LM3886 we get:
 
 .. math::
     
@@ -518,21 +514,24 @@ For LM3886 we would get:
     Cl=1/(2*pi*Rf*fp2)=12.5pF
 
 Outcome:
- * By using this compensation we improve the loop gain phase around UGBW point
-   and at higher frequencies.
- * The ``Cf`` in this compensation is known to reduce the closed loop
-   bandwidth. Since the ``Cf`` value is so small the impact to closed loop
-   bandwidth should be minimal.
+
+* By using this compensation we improve the loop gain phase around UGBW point
+  and at higher frequencies.
+* The ``Cf`` in this compensation is known to reduce the closed loop
+  bandwidth. Since the ``Cf`` value is so small the impact to closed loop
+  bandwidth should be minimal.
+
 
 Input pin capacitance compensation
 ``````````````````````````````````
 
 Input pins have the following parasitic capacitances associated:
- * Cdiff
- * Cm
- * Cstray
+
+* Cdiff
+* Cm
+* Cstray
  
-The LM1875/LM3886 datasheets do not specify any parameter regarding parasitic
+The LM3886 datasheets do not specify any parameter regarding parasitic
 input capacitances. We can use a rough estimation of values based on experience
 on using other audio BJT OPAMPS, and typical values are 2pF for all 3
 parameters. In inverting configurations with `+` input grounded all three
@@ -554,13 +553,14 @@ resistor. To compensate for this the following equation is applied:
 Since we are already using lead compensation we just add this value to existing
 `Cl` capacitor.
 
-Also, note that LM1875/LM3886 model has tree more additional poles: 
- * ``Fp2``, pole which probably originates from input or intermediate 
-   stages.
- * ``Fp3``, pole which probably originates from input or intermediate 
-   stages.
- * A pole from ``Rops``, open loop output stage impedance which in conjunction 
-   with output Zobel and connected load forms another high frequency pole.
+Also, note that LM3886 model has tree more additional poles: 
+
+* ``Fp2``, pole which probably originates from input or intermediate 
+  stages.
+* ``Fp3``, pole which probably originates from input or intermediate 
+  stages.
+* A pole from ``Rops``, open loop output stage impedance which in conjunction 
+  with output Zobel and connected load forms another high frequency pole.
    
 Although all above poles are very high in frequency they still have their
 impact on lower frequency part of transfer function and reduce a few degrees of
@@ -568,19 +568,6 @@ phase margin at UGBW point (approx. at 500kHz). Because of these poles we can
 freely put a bit bigger `Cf` capacitor value in the feedback network. Rough
 estimation is to put additional 1-2pF.
 
-For LM1875 we get:
-
-.. math::
-
-    Cf=Cl+Csi=12.9+0.4+2pF=15.3pF
-    
-Since the closest, standard values of capacitors are 15pF and 18pF, we choose
-the 18pF as the final value for `Cl` capacitor:
-
-.. math::
-
-    Cf=18pF 
-    
 For LM3886 we get:
 
 .. math::
@@ -593,6 +580,7 @@ the 15pF as the final value for `Cl` capacitor:
 .. math::
 
     Cf=15pF 
+
 
 Power supply
 ============
@@ -621,8 +609,9 @@ meaningful at lower output powers. The regulation becomes really expensive when
 used in high power amplifiers. Regulated power supplies are OK when used up to
 powers of 20W-30W @ 8 Ohm.
 
-NOTE:
- * On case chassis there should be a safety ground screw just near at the input
-   220V socket.
+**NOTE:**
+
+* On case chassis there should be a safety ground screw just near at the input
+  220V socket.
 
 
