@@ -14,729 +14,6 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L Amplifier_Audio:LM3886 U1
-U 1 1 5B63C01F
-P 6300 2600
-F 0 "U1" H 6641 2646 50  0000 L CNN
-F 1 "LM3886" H 6641 2555 50  0000 L CNN
-F 2 "Package_TO_SOT_THT:TO-220-11_P3.4x5.08mm_StaggerOdd_Lead4.85mm_Vertical" H 6300 2600 50  0001 C CIN
-F 3 "http://www.ti.com/lit/ds/symlink/lm3886.pdf" H 6300 2600 50  0001 C CNN
-	1    6300 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C11
-U 1 1 5B680C19
-P 3500 5150
-F 0 "C11" H 3615 5302 50  0000 L CNN
-F 1 "100n" H 3615 5211 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3538 5000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1784425.pdf" H 3500 5150 50  0001 C CNN
-F 4 "100V" H 3615 5112 60  0000 L CNN "Voltage"
-F 5 "PP" H 3615 5006 60  0000 L CNN "Type"
-F 6 "Farnell:1890265" H 3500 5150 60  0001 C CNN "Vendor"
-F 7 "WIMA:MKP2D031001F00KSSD" H 3500 5150 60  0001 C CNN "Manufacturer"
-	1    3500 5150
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1 C12
-U 1 1 5B680C1A
-P 4100 5150
-F 0 "C12" H 4215 5249 50  0000 L CNN
-F 1 "100u" H 4215 5158 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 4100 5150 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 4100 5150 50  0001 C CNN
-F 4 "50V" H 4215 5059 60  0000 L CNN "Voltage"
-F 5 "Farnell:2346269" H 4100 5150 60  0001 C CNN "Vendor"
-F 6 "Rybicon:50YXJ100MT78X11.5" H 4100 5150 60  0001 C CNN "Manufacturer"
-	1    4100 5150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	4100 4900 4100 5000
-$Comp
-L power:VCC #PWR04
-U 1 1 5B680C1D
-P 6300 2200
-F 0 "#PWR04" H 6300 2050 50  0001 C CNN
-F 1 "VCC" H 6300 2350 50  0000 C CNN
-F 2 "" H 6300 2200 50  0001 C CNN
-F 3 "" H 6300 2200 50  0001 C CNN
-	1    6300 2200
-	0    1    1    0   
-$EndComp
-$Comp
-L power:VEE #PWR07
-U 1 1 5ABAC04C
-P 6300 3000
-F 0 "#PWR07" H 6300 2850 50  0001 C CNN
-F 1 "VEE" H 6300 3150 50  0000 C CNN
-F 2 "" H 6300 3000 50  0001 C CNN
-F 3 "" H 6300 3000 50  0001 C CNN
-	1    6300 3000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6200 3000 6200 2900
-Wire Wire Line
-	6200 2300 6200 2200
-Wire Wire Line
-	6700 2600 6700 3200
-Wire Wire Line
-	6600 2600 6700 2600
-Wire Wire Line
-	6700 3800 6600 3800
-Wire Wire Line
-	5800 2700 5800 3200
-Wire Wire Line
-	5800 3800 5900 3800
-Wire Wire Line
-	6200 3800 6300 3800
-$Comp
-L power:GNDPWR #PWR01
-U 1 1 5ABAD102
-P 7900 1150
-AR Path="/5ABAD102" Ref="#PWR01"  Part="1" 
-AR Path="/5ABAAF3C/5ABAD102" Ref="#PWR?"  Part="1" 
-F 0 "#PWR01" H 7900 950 50  0001 C CNN
-F 1 "GNDPWR" H 7900 1020 50  0000 C CNN
-F 2 "" H 7900 1100 50  0001 C CNN
-F 3 "" H 7900 1100 50  0001 C CNN
-	1    7900 1150
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R9
-U 1 1 5ABAD520
-P 8150 2600
-F 0 "R9" V 7761 2600 50  0000 C CNN
-F 1 "4.7" V 7852 2600 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal" V 8080 2600 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2099800.pdf" H 8150 2600 50  0001 C CNN
-F 4 "Vishay:PR02000204708JA100" V 8150 2600 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:2614544" V 8150 2600 50  0001 C CNN "Vendor"
-F 6 "2W" V 7943 2600 50  0000 C CNN "Power"
-F 7 "MF" V 8034 2600 50  0000 C CNN "Type"
-	1    8150 2600
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:L L1
-U 1 1 5B680C22
-P 8150 2900
-F 0 "L1" V 8340 2900 50  0000 C CNN
-F 1 "2u" V 8249 2900 50  0000 C CNN
-F 2 "Inductor_THT:L_Axial_L12.0mm_D5.0mm_P15.24mm_Horizontal_Fastron_MISC" H 8150 2900 50  0001 C CNN
-F 3 "" H 8150 2900 50  0001 C CNN
-	1    8150 2900
-	0    -1   -1   0   
-$EndComp
-Connection ~ 7900 2600
-Wire Wire Line
-	7900 2900 8000 2900
-$Comp
-L Device:R R2
-U 1 1 5ABADAC1
-P 7900 1450
-F 0 "R2" H 7970 1587 50  0000 L CNN
-F 1 "4.7" H 7970 1496 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0411_L9.9mm_D3.6mm_P15.24mm_Horizontal" V 7830 1450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2099800.pdf" H 7900 1450 50  0001 C CNN
-F 4 "Vishay:PR02000204708JA100" V 7900 1450 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:2614544" V 7900 1450 50  0001 C CNN "Vendor"
-F 6 "2W" H 7970 1405 50  0000 L CNN "Power"
-F 7 "MF" H 7970 1314 50  0000 L CNN "Type"
-	1    7900 1450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	7900 2000 7900 2600
-Wire Wire Line
-	7900 1700 7900 1600
-Wire Wire Line
-	7900 1300 7900 1150
-$Comp
-L power:VCC #PWR03
-U 1 1 5B680C24
-P 7600 2100
-F 0 "#PWR03" H 7600 1950 50  0001 C CNN
-F 1 "VCC" H 7600 2250 50  0000 C CNN
-F 2 "" H 7600 2100 50  0001 C CNN
-F 3 "" H 7600 2100 50  0001 C CNN
-	1    7600 2100
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VEE #PWR08
-U 1 1 5ABAF97F
-P 7600 3100
-F 0 "#PWR08" H 7600 2950 50  0001 C CNN
-F 1 "VEE" H 7600 3250 50  0000 C CNN
-F 2 "" H 7600 3100 50  0001 C CNN
-F 3 "" H 7600 3100 50  0001 C CNN
-	1    7600 3100
-	-1   0    0    1   
-$EndComp
-Wire Wire Line
-	7600 3000 7600 3100
-Wire Wire Line
-	7600 2200 7600 2100
-$Comp
-L Device:CP1 C4
-U 1 1 5ABAFDD9
-P 5150 2000
-F 0 "C4" V 4792 2000 50  0000 C CNN
-F 1 "470u" V 4883 2000 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5150 2000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 5150 2000 50  0001 C CNN
-F 4 "16V" V 4982 2000 60  0000 C CNN "Voltage"
-F 5 "Farnell:1144610" H 5150 2000 60  0001 C CNN "Vendor"
-F 6 "Rybicon:16YXJ470M8X11.5" H 5150 2000 60  0001 C CNN "Manufacturer"
-	1    5150 2000
-	0    1    1    0   
-$EndComp
-Text Notes 5850 3700 0    60   ~ 0
-Fz=1.6e6\nFp=6.6e6
-$Comp
-L Diode:1N5404 D2
-U 1 1 5AC0CCC8
-P 7600 2850
-F 0 "D2" V 7554 2929 50  0000 L CNN
-F 1 "1N5404" V 7645 2929 50  0000 L CNN
-F 2 "Diode_THT:D_DO-201AD_P12.70mm_Horizontal" H 7600 2675 50  0001 C CNN
-F 3 "http://www.onsemi.com/PowerSolutions/supportDoc.do?type=models&rpn=1N5404" H 7600 2850 50  0001 C CNN
-F 4 "ON Semiconductor:1N5404RL" H 1800 -1500 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:9556141" H 1800 -1500 50  0001 C CNN "Vendor"
-	1    7600 2850
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R13
-U 1 1 5AC10204
-P 6050 3800
-F 0 "R13" V 6165 3800 50  0000 C CNN
-F 1 "1k6" V 6256 3800 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5980 3800 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 6050 3800 50  0001 C CNN
-F 4 "Farnell:2329892" V 6050 3800 50  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR0204F1K6" V 6050 3800 50  0001 C CNN "Manufacturer"
-F 6 "0.25W" V 6355 3800 60  0000 C CNN "Power"
-F 7 "MF" V 6461 3800 60  0000 C CNN "Type"
-	1    6050 3800
-	0    -1   1    0   
-$EndComp
-Wire Wire Line
-	6700 1100 6700 1400
-Wire Wire Line
-	6700 2000 6200 2000
-Connection ~ 5800 2000
-Wire Wire Line
-	6200 3200 6700 3200
-Connection ~ 6700 3200
-Connection ~ 5800 3200
-Wire Wire Line
-	5800 2500 6000 2500
-Wire Wire Line
-	5800 2700 6000 2700
-$Comp
-L Device:C C8
-U 1 1 5AC80639
-P 6450 3800
-F 0 "C8" V 5986 3800 50  0000 C CNN
-F 1 "15p" V 6077 3800 50  0000 C CNN
-F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 6488 3650 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 6450 3800 50  0001 C CNN
-F 4 "100V" V 6176 3800 60  0000 C CNN "Voltage"
-F 5 "NP0" V 6282 3800 60  0000 C CNN "Type"
-F 6 "Farnel:1100498" H 6450 3800 60  0001 C CNN "Vendor"
-F 7 "AVX:SR151A150JAR" H 6450 3800 60  0001 C CNN "Manufacturer"
-	1    6450 3800
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:C C14
-U 1 1 5AC8C9A2
-P 3500 5650
-F 0 "C14" H 3615 5802 50  0000 L CNN
-F 1 "100n" H 3615 5711 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 3538 5500 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1784425.pdf" H 3500 5650 50  0001 C CNN
-F 4 "100V" H 3615 5612 60  0000 L CNN "Voltage"
-F 5 "PP" H 3615 5506 60  0000 L CNN "Type"
-F 6 "Farnell:1890265" H 3500 5650 60  0001 C CNN "Vendor"
-F 7 "WIMA:MKP2D031001F00KSSD" H 3500 5650 60  0001 C CNN "Manufacturer"
-	1    3500 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C2
-U 1 1 5B680C32
-P 7900 1850
-F 0 "C2" H 8015 2002 50  0000 L CNN
-F 1 "220n" H 8015 1911 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 7938 1700 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/815363.pdf" H 7900 1850 50  0001 C CNN
-F 4 "100V" H 8015 1812 60  0000 L CNN "Voltage"
-F 5 "PET" H 8015 1706 60  0000 L CNN "Type"
-F 6 "Farnell:1890146" H 7900 1850 60  0001 C CNN "Vendor"
-F 7 "WIMA:MKS2D032201C00KSSD" H 7900 1850 60  0001 C CNN "Manufacturer"
-	1    7900 1850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5700 3200 5800 3200
-$Comp
-L Device:CP1 C15
-U 1 1 5ACDCA60
-P 4100 5650
-F 0 "C15" H 4215 5749 50  0000 L CNN
-F 1 "100u" H 4215 5658 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 4100 5650 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 4100 5650 50  0001 C CNN
-F 4 "50V" H 4215 5559 60  0000 L CNN "Voltage"
-F 5 "Farnell:2346269" H 4100 5650 60  0001 C CNN "Vendor"
-F 6 "Rybicon:50YXJ100MT78X11.5" H 4100 5650 60  0001 C CNN "Manufacturer"
-	1    4100 5650
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:CP1 C7
-U 1 1 5AD5D094
-P 5150 3200
-F 0 "C7" V 4792 3200 50  0000 C CNN
-F 1 "470u" V 4883 3200 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 5150 3200 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 5150 3200 50  0001 C CNN
-F 4 "16V" V 4982 3200 60  0000 C CNN "Voltage"
-F 5 "Farnell:1144610" H 5150 3200 60  0001 C CNN "Vendor"
-F 6 "Rybicon:16YXJ470M8X11.5" H 5150 3200 60  0001 C CNN "Manufacturer"
-	1    5150 3200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6200 3000 6300 3000
-$Comp
-L Device:R R10
-U 1 1 5AD67EF8
-P 5550 3200
-F 0 "R10" V 5131 3200 50  0000 C CNN
-F 1 "499" V 5222 3200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5480 3200 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 5550 3200 50  0001 C CNN
-F 4 "Farnell:2330163" V 5550 3200 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F499R" V 5550 3200 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 5321 3200 60  0000 C CNN "Type"
-F 7 "0.6W" V 5427 3200 60  0000 C CNN "Power"
-	1    5550 3200
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R7
-U 1 1 5AD68773
-P 6050 2000
-F 0 "R7" V 5631 2000 50  0000 C CNN
-F 1 "7k5" V 5722 2000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5980 2000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 6050 2000 50  0001 C CNN
-F 4 "Farnell:2330223" V 6050 2000 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F7K5" V 6050 2000 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 5821 2000 60  0000 C CNN "Type"
-F 7 "0.6W" V 5927 2000 60  0000 C CNN "Power"
-	1    6050 2000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R11
-U 1 1 5AD68E38
-P 6050 3200
-F 0 "R11" V 5631 3200 50  0000 C CNN
-F 1 "7k5" V 5722 3200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5980 3200 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 6050 3200 50  0001 C CNN
-F 4 "Farnell:2330223" V 6050 3200 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F7K5" V 6050 3200 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 5821 3200 60  0000 C CNN "Type"
-F 7 "0.6W" V 5927 3200 60  0000 C CNN "Power"
-	1    6050 3200
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	8300 2900 8400 2900
-Wire Wire Line
-	8400 2900 8400 2600
-Wire Wire Line
-	8300 2600 8400 2600
-Wire Wire Line
-	5800 1400 5900 1400
-Wire Wire Line
-	6200 1400 6300 1400
-$Comp
-L Device:R R1
-U 1 1 5B680C40
-P 6050 1400
-F 0 "R1" V 5600 1400 50  0000 C CNN
-F 1 "1k6" V 5700 1400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 5980 1400 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 6050 1400 50  0001 C CNN
-F 4 "TE Connectivity:LR0204F1K6" V 6050 1400 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:2329892" V 6050 1400 50  0001 C CNN "Vendor"
-F 6 "MF" V 5800 1400 60  0000 C CNN "Type"
-F 7 "0.25W" V 5900 1400 60  0000 C CNN "Power"
-	1    6050 1400
-	0    -1   1    0   
-$EndComp
-$Comp
-L Device:C C1
-U 1 1 5B1A76D8
-P 6450 1400
-F 0 "C1" V 6610 1400 50  0000 C CNN
-F 1 "15p" V 6701 1400 50  0000 C CNN
-F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 6488 1250 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 6450 1400 50  0001 C CNN
-F 4 "100V" V 6800 1400 60  0000 C CNN "Voltage"
-F 5 "NP0" V 6906 1400 60  0000 C CNN "Type"
-F 6 "Farnel:1100498" H 6450 1400 60  0001 C CNN "Vendor"
-F 7 "AVX:SR151A150JAR" H 6450 1400 60  0001 C CNN "Manufacturer"
-	1    6450 1400
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6600 1400 6700 1400
-Wire Wire Line
-	7900 2600 7900 2900
-Wire Wire Line
-	7900 2600 8000 2600
-Wire Wire Line
-	5800 2000 5900 2000
-Wire Wire Line
-	5800 2000 5800 2500
-Wire Wire Line
-	5800 3200 5900 3200
-Wire Wire Line
-	6700 3200 6700 3800
-Wire Wire Line
-	5800 3200 5800 3800
-Wire Wire Line
-	6700 1400 6700 2000
-Wire Wire Line
-	5800 1400 5800 2000
-$Comp
-L Device:R R6
-U 1 1 5B60E4BF
-P 5550 2000
-F 0 "R6" V 5131 2000 50  0000 C CNN
-F 1 "499" V 5222 2000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5480 2000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 5550 2000 50  0001 C CNN
-F 4 "Farnell:2330163" V 5550 2000 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F499R" V 5550 2000 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 5321 2000 60  0000 C CNN "Type"
-F 7 "0.6W" V 5427 2000 60  0000 C CNN "Power"
-	1    5550 2000
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	5400 2000 5300 2000
-Wire Wire Line
-	5700 2000 5800 2000
-$Comp
-L Diode:1N5404 D1
-U 1 1 5B680C2D
-P 7600 2350
-F 0 "D1" V 7554 2429 50  0000 L CNN
-F 1 "1N5404" V 7645 2429 50  0000 L CNN
-F 2 "Diode_THT:D_DO-201AD_P12.70mm_Horizontal" H 7600 2175 50  0001 C CNN
-F 3 "http://www.onsemi.com/PowerSolutions/supportDoc.do?type=models&rpn=1N5404" H 7600 2350 50  0001 C CNN
-F 4 "ON Semiconductor:1N5404RL" H 1800 -1500 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:9556141" H 1800 -1500 50  0001 C CNN "Vendor"
-	1    7600 2350
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	6700 2600 7600 2600
-Connection ~ 6700 2600
-Wire Wire Line
-	7600 2500 7600 2600
-Connection ~ 7600 2600
-Wire Wire Line
-	7600 2600 7900 2600
-Wire Wire Line
-	7600 2600 7600 2700
-Wire Wire Line
-	8400 2600 9000 2600
-Connection ~ 8400 2600
-$Comp
-L Device:C C6
-U 1 1 5B680C27
-P 4100 2550
-F 0 "C6" H 4215 2702 50  0000 L CNN
-F 1 "1n" H 4215 2611 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm" H 4138 2400 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 4100 2550 50  0001 C CNN
-F 4 "100V" H 4215 2512 60  0000 L CNN "Voltage"
-F 5 "NP0" H 4215 2406 60  0000 L CNN "Type"
-F 6 "Farnell:1100513" H 4100 2550 60  0001 C CNN "Vendor"
-F 7 "AVX:SR211A102KAR" H 4100 2550 60  0001 C CNN "Manufacturer"
-	1    4100 2550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C C5
-U 1 1 5B680C28
-P 3500 2550
-F 0 "C5" H 3615 2702 50  0000 L CNN
-F 1 "220p" H 3615 2611 50  0000 L CNN
-F 2 "Capacitor_THT:C_Disc_D4.3mm_W1.9mm_P5.00mm" H 3538 2400 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 3500 2550 50  0001 C CNN
-F 4 "100V" H 3615 2512 60  0000 L CNN "Voltage"
-F 5 "NP0" H 3615 2406 60  0000 L CNN "Type"
-F 6 "Farnell:1100508" H 3500 2550 60  0001 C CNN "Vendor"
-F 7 "AVX:SR211A221JAR" H 3500 2550 60  0001 C CNN "Manufacturer"
-	1    3500 2550
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:R R4
-U 1 1 5B680C3A
-P 3200 2000
-F 0 "R4" V 2781 2000 50  0000 C CNN
-F 1 "100" V 2872 2000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3130 2000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 3200 2000 50  0001 C CNN
-F 4 "Farnell:2329854" V 3200 2000 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR0204F100R" V 3200 2000 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 2971 2000 60  0000 C CNN "Type"
-F 7 "0.25W" V 3077 2000 60  0000 C CNN "Power"
-	1    3200 2000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R5
-U 1 1 5B680C3B
-P 3800 2000
-F 0 "R5" V 3381 2000 50  0000 C CNN
-F 1 "100" V 3472 2000 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 3730 2000 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 3800 2000 50  0001 C CNN
-F 4 "Farnell:2329854" V 3800 2000 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR0204F100R" V 3800 2000 60  0001 C CNN "Manufacturer"
-F 6 "MF" V 3571 2000 60  0000 C CNN "Type"
-F 7 "0.25W" V 3677 2000 60  0000 C CNN "Power"
-	1    3800 2000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R12
-U 1 1 5B193CC4
-P 2600 3450
-F 0 "R12" H 2670 3602 50  0000 L CNN
-F 1 "10" H 2670 3511 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2530 3450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2600 3450 50  0001 C CNN
-F 4 "Farnell:2329993" V 2600 3450 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F10R" V 2600 3450 60  0001 C CNN "Manufacturer"
-F 6 "0.6W" H 2670 3412 60  0000 L CNN "Power"
-F 7 "MF" H 2670 3306 60  0000 L CNN "Type"
-	1    2600 3450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3950 2000 4100 2000
-Wire Wire Line
-	4100 3200 4100 2700
-Wire Wire Line
-	3350 2000 3500 2000
-Connection ~ 3500 2000
-Connection ~ 4100 2000
-Connection ~ 3500 3200
-Wire Wire Line
-	4100 2400 4100 2000
-Wire Wire Line
-	3500 2700 3500 3200
-Wire Wire Line
-	2900 2400 2900 2000
-Wire Wire Line
-	2900 2700 2900 3200
-$Comp
-L Device:R R8
-U 1 1 5B680C3C
-P 2900 2550
-F 0 "R8" H 2970 2702 50  0000 L CNN
-F 1 "100k" H 2970 2611 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 2830 2550 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2900 2550 50  0001 C CNN
-F 4 "Farnell:2329853" V 2900 2550 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR0204F100K" V 2900 2550 60  0001 C CNN "Manufacturer"
-F 6 "MF" H 2970 2512 60  0000 L CNN "Type"
-F 7 "0.25W" H 2970 2406 60  0000 L CNN "Power"
-	1    2900 2550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	3500 2400 3500 2000
-Connection ~ 4100 3200
-Wire Wire Line
-	3500 2000 3650 2000
-Wire Wire Line
-	3500 3200 4100 3200
-$Comp
-L power:GNDPWR #PWR010
-U 1 1 5B680C44
-P 2600 3700
-F 0 "#PWR010" H 2600 3500 50  0001 C CNN
-F 1 "GNDPWR" H 2604 3546 50  0000 C CNN
-F 2 "" H 2600 3650 50  0001 C CNN
-F 3 "" H 2600 3650 50  0001 C CNN
-	1    2600 3700
-	1    0    0    -1  
-$EndComp
-Connection ~ 6700 1400
-Wire Wire Line
-	5000 3200 4700 3200
-Wire Wire Line
-	2600 3200 2600 3300
-Wire Wire Line
-	4700 1100 4700 3200
-Connection ~ 4700 3200
-$Comp
-L power:GNDPWR #PWR06
-U 1 1 5B6616D4
-P 6800 2900
-AR Path="/5B6616D4" Ref="#PWR06"  Part="1" 
-AR Path="/5ABAAF3C/5B6616D4" Ref="#PWR?"  Part="1" 
-F 0 "#PWR06" H 6800 2700 50  0001 C CNN
-F 1 "GNDPWR" H 6800 2770 50  0000 C CNN
-F 2 "" H 6800 2850 50  0001 C CNN
-F 3 "" H 6800 2850 50  0001 C CNN
-	1    6800 2900
-	0    -1   -1   0   
-$EndComp
-Wire Wire Line
-	6800 2900 6300 2900
-Wire Wire Line
-	2600 3600 2600 3700
-$Comp
-L Device:CP1 C10
-U 1 1 5AC0A8E9
-P 2900 5150
-F 0 "C10" H 3015 5249 50  0000 L CNN
-F 1 "2m2" H 3015 5158 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2900 5150 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2900 5150 50  0001 C CNN
-F 4 "50V" H 3015 5059 60  0000 L CNN "Voltage"
-F 5 "Farnell:2346272" H 2900 5150 60  0001 C CNN "Vendor"
-F 6 "Rubycon:50YXJ2200M16X35.5 " H 2900 5150 60  0001 C CNN "Manufacturer"
-	1    2900 5150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VCC #PWR013
-U 1 1 5B680C2B
-P 4400 4800
-F 0 "#PWR013" H 4400 4650 50  0001 C CNN
-F 1 "VCC" H 4400 4950 50  0000 C CNN
-F 2 "" H 4400 4800 50  0001 C CNN
-F 3 "" H 4400 4800 50  0001 C CNN
-	1    4400 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:VEE #PWR015
-U 1 1 5B680C2C
-P 4400 6000
-F 0 "#PWR015" H 4400 5850 50  0001 C CNN
-F 1 "VEE" H 4400 6150 50  0000 C CNN
-F 2 "" H 4400 6000 50  0001 C CNN
-F 3 "" H 4400 6000 50  0001 C CNN
-	1    4400 6000
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG01
-U 1 1 5B680C33
-P 2900 4800
-F 0 "#FLG01" H 2900 4875 50  0001 C CNN
-F 1 "PWR_FLAG" H 2900 4950 50  0000 C CNN
-F 2 "" H 2900 4800 50  0001 C CNN
-F 3 "" H 2900 4800 50  0001 C CNN
-	1    2900 4800
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG03
-U 1 1 5B680C34
-P 2900 6000
-F 0 "#FLG03" H 2900 6075 50  0001 C CNN
-F 1 "PWR_FLAG" H 2900 6150 50  0000 C CNN
-F 2 "" H 2900 6000 50  0001 C CNN
-F 3 "" H 2900 6000 50  0001 C CNN
-	1    2900 6000
-	-1   0    0    1   
-$EndComp
-$Comp
-L power:GNDPWR #PWR014
-U 1 1 5ADE314C
-P 2300 5450
-F 0 "#PWR014" H 2300 5250 50  0001 C CNN
-F 1 "GNDPWR" H 2300 5320 50  0000 C CNN
-F 2 "" H 2300 5400 50  0001 C CNN
-F 3 "" H 2300 5400 50  0001 C CNN
-	1    2300 5450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:PWR_FLAG #FLG02
-U 1 1 5B680C3E
-P 2300 5250
-F 0 "#FLG02" H 2300 5325 50  0001 C CNN
-F 1 "PWR_FLAG" H 2300 5400 50  0000 C CNN
-F 2 "" H 2300 5250 50  0001 C CNN
-F 3 "" H 2300 5250 50  0001 C CNN
-	1    2300 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2900 4800 2900 4900
-Connection ~ 2900 4900
-Wire Wire Line
-	2900 5800 2900 5900
-Connection ~ 2900 5900
-Wire Wire Line
-	2900 5300 2900 5400
-Connection ~ 2900 5400
-Wire Wire Line
-	4400 4900 4400 4800
-Wire Wire Line
-	2300 5450 2300 5400
-Wire Wire Line
-	2900 4900 2900 5000
-Wire Wire Line
-	2900 5900 2900 6000
-Wire Wire Line
-	2900 5900 3500 5900
-Wire Wire Line
-	2900 5400 2900 5500
-Wire Wire Line
-	2900 4900 3500 4900
-Wire Wire Line
-	4400 6000 4400 5900
-Wire Wire Line
-	4700 1100 6700 1100
-$Comp
-L Connector:Screw_Terminal_01x02 J2
-U 1 1 5ABB2BD1
-P 9200 2500
-F 0 "J2" H 9279 2492 50  0000 L CNN
-F 1 "output" H 9279 2401 50  0000 L CNN
-F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.5_1x02_P3.50mm_Vertical" H 9200 2500 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2325421.pdf" H 9200 2500 50  0001 C CNN
-F 4 "Farnell:1792766" H 9200 2500 60  0001 C CNN "Vendor"
-F 5 "Phoenix:MKDSN2,5/2-5.08" H 9200 2500 60  0001 C CNN "Manufacturer"
-	1    9200 2500
-	1    0    0    -1  
-$EndComp
 Wire Notes Line
 	800  6600 2600 6600
 Wire Notes Line
@@ -748,10 +25,10 @@ Wire Notes Line
 Text Notes 800  6550 0    60   ~ 0
 Mounting components
 $Comp
-L Mechanical:MountingHole MK1
+L Mechanical:MountingHole MK?
 U 1 1 5AE4F4CA
 P 1200 6900
-F 0 "MK1" H 1200 7150 50  0000 C CNN
+F 0 "MK?" H 1200 7150 50  0000 C CNN
 F 1 "Mounting_Hole" H 1200 7050 50  0000 C CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 1200 6900 50  0001 C CNN
 F 3 "" H 1200 6900 50  0001 C CNN
@@ -759,10 +36,10 @@ F 3 "" H 1200 6900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MK3
+L Mechanical:MountingHole MK?
 U 1 1 5AE4FF11
 P 1200 7200
-F 0 "MK3" H 1200 7050 50  0000 C CNN
+F 0 "MK?" H 1200 7050 50  0000 C CNN
 F 1 "Mounting_Hole" H 1200 6950 50  0000 C CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 1200 7200 50  0001 C CNN
 F 3 "" H 1200 7200 50  0001 C CNN
@@ -770,10 +47,10 @@ F 3 "" H 1200 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MK4
+L Mechanical:MountingHole MK?
 U 1 1 5AE4FFFC
 P 2200 7200
-F 0 "MK4" H 2100 7246 50  0000 R CNN
+F 0 "MK?" H 2100 7246 50  0000 R CNN
 F 1 "Mounting_Hole" H 2100 7155 50  0000 R CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 2200 7200 50  0001 C CNN
 F 3 "" H 2200 7200 50  0001 C CNN
@@ -781,10 +58,10 @@ F 3 "" H 2200 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Mechanical:MountingHole MK2
+L Mechanical:MountingHole MK?
 U 1 1 5AE500F0
 P 2200 6900
-F 0 "MK2" H 2100 6946 50  0000 R CNN
+F 0 "MK?" H 2100 6946 50  0000 R CNN
 F 1 "Mounting_Hole" H 2100 6855 50  0000 R CNN
 F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 2200 6900 50  0001 C CNN
 F 3 "" H 2200 6900 50  0001 C CNN
@@ -792,36 +69,10 @@ F 3 "" H 2200 6900 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Connector_Generic:Conn_01x03 J1
-U 1 1 5AE50566
-P 2000 2100
-F 0 "J1" H 1920 2417 50  0000 C CNN
-F 1 "input" H 1920 2326 50  0000 C CNN
-F 2 "TerminalBlock_Phoenix:TerminalBlock_Phoenix_PT-1,5-3-3.5-H_1x03_P3.50mm_Horizontal" H 2000 2100 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2322648.pdf" H 2000 2100 50  0001 C CNN
-F 4 "Phoenix:MKDS1/3-3,5" H -500 200 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:2478587" H -500 200 50  0001 C CNN "Vendor"
-	1    2000 2100
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Connector:Screw_Terminal_01x03 J3
-U 1 1 5AE51422
-P 1800 5400
-F 0 "J3" H 1880 5442 50  0000 L CNN
-F 1 "powersupply" H 1880 5351 50  0000 L CNN
-F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_3-G-3.5_1x03_P3.50mm_Vertical" H 1800 5400 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2325422.pdf" H 1800 5400 50  0001 C CNN
-F 4 "Phoenix:MKDSN2,5/3-5.08" H -3750 1100 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:1792767" H -3750 1100 50  0001 C CNN "Vendor"
-	1    1800 5400
-	-1   0    0    -1  
-$EndComp
-$Comp
-L Graphic:Logo_Open_Hardware_Small LOGO2
+L Graphic:Logo_Open_Hardware_Small LOGO?
 U 1 1 5AE56655
 P 2950 7200
-F 0 "LOGO2" H 3197 7271 50  0000 L CNN
+F 0 "LOGO?" H 3197 7271 50  0000 L CNN
 F 1 "OSHW Logo" H 3197 7180 50  0000 L CNN
 F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 2950 7200 50  0001 C CNN
 F 3 "" H 2950 7200 50  0001 C CNN
@@ -829,40 +80,10 @@ F 3 "" H 2950 7200 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDPWR #PWR05
-U 1 1 5B625C49
-P 8900 2800
-F 0 "#PWR05" H 8900 2600 50  0001 C CNN
-F 1 "GNDPWR" H 8904 2646 50  0000 C CNN
-F 2 "" H 8900 2750 50  0001 C CNN
-F 3 "" H 8900 2750 50  0001 C CNN
-	1    8900 2800
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2300 2100 2200 2100
-Wire Wire Line
-	2300 2100 2300 3700
-$Comp
-L power:GNDPWR #PWR09
-U 1 1 5B618FF8
-P 2300 3700
-F 0 "#PWR09" H 2300 3500 50  0001 C CNN
-F 1 "GNDPWR" H 2304 3546 50  0000 C CNN
-F 2 "" H 2300 3650 50  0001 C CNN
-F 3 "" H 2300 3650 50  0001 C CNN
-	1    2300 3700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8900 2500 9000 2500
-Wire Wire Line
-	8900 2500 8900 2800
-$Comp
-L Graphic:Logo_Open_Hardware_Small LOGO1
+L Graphic:Logo_Open_Hardware_Small LOGO?
 U 1 1 5B612B64
 P 2950 6700
-F 0 "LOGO1" H 3197 6771 50  0000 L CNN
+F 0 "LOGO?" H 3197 6771 50  0000 L CNN
 F 1 "Kicad_Logo" H 3197 6680 50  0000 L CNN
 F 2 "Symbol:KiCad-Logo_5mm_Copper" H 2950 6700 50  0001 C CNN
 F 3 "~" H 2950 6700 50  0001 C CNN
@@ -870,226 +91,965 @@ F 3 "~" H 2950 6700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Graphic:Logo_Open_Hardware_Small #LOGO1
-U 1 1 5B6132D1
-P 4000 6700
-F 0 "#LOGO1" H 4000 6975 50  0001 C CNN
-F 1 "Logo_Open_Hardware_Small" H 4000 6475 50  0001 C CNN
-F 2 "" H 4000 6700 50  0001 C CNN
-F 3 "~" H 4000 6700 50  0001 C CNN
-	1    4000 6700
+L tda7293:TDA7293 U?
+U 1 1 5C37C649
+P 3900 3400
+AR Path="/5C37C649" Ref="U?"  Part="1" 
+AR Path="/5C37BC7C/5C37C649" Ref="U?"  Part="1" 
+F 0 "U?" H 4341 3446 50  0000 L CNN
+F 1 "TDA7293" H 4341 3355 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical" H 3900 3400 50  0001 C CIN
+F 3 "http://www.farnell.com/datasheets/1761334.pdf" H 3900 3400 50  0001 C CNN
+F 4 "ST:TDA7293V" H 0   900 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:1366582" H 0   900 50  0001 C CNN "Supplier1"
+	1    3900 3400
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2300 5400 2900 5400
-Connection ~ 2300 5400
+	4900 4100 4900 3400
 Wire Wire Line
-	2300 5400 2300 5250
-Wire Wire Line
-	2000 5400 2300 5400
-Wire Wire Line
-	2000 5300 2000 4900
-Wire Wire Line
-	2000 4900 2900 4900
-Wire Wire Line
-	2000 5500 2000 5900
-Wire Wire Line
-	2000 5900 2900 5900
-Connection ~ 4100 4900
-Wire Wire Line
-	4100 4900 4400 4900
-Wire Wire Line
-	2900 5400 3500 5400
-Wire Wire Line
-	3500 5400 3500 5300
-Wire Wire Line
-	3500 5400 4100 5400
-Wire Wire Line
-	4100 5400 4100 5300
-Connection ~ 3500 5400
-Wire Wire Line
-	3500 5400 3500 5500
-Wire Wire Line
-	4100 5400 4100 5500
-Connection ~ 4100 5400
-Wire Wire Line
-	3500 5000 3500 4900
-Connection ~ 3500 4900
-Wire Wire Line
-	3500 4900 4100 4900
-Wire Wire Line
-	3500 5800 3500 5900
-Connection ~ 3500 5900
-Wire Wire Line
-	3500 5900 4100 5900
-Wire Wire Line
-	4100 5800 4100 5900
-Connection ~ 4100 5900
-Wire Wire Line
-	4100 5900 4400 5900
-Wire Wire Line
-	2200 2000 2900 2000
-Wire Wire Line
-	2600 2200 2600 3200
-Wire Wire Line
-	2200 2200 2600 2200
-Wire Wire Line
-	2600 3200 2900 3200
-Connection ~ 2600 3200
-Wire Wire Line
-	5300 3200 5400 3200
-Wire Wire Line
-	6200 2200 6300 2200
-Wire Wire Line
-	6300 2300 7300 2300
+	4900 3400 4300 3400
 $Comp
-L power:VEE #PWR012
-U 1 1 5B71573F
-P 7300 4400
-F 0 "#PWR012" H 7300 4250 50  0001 C CNN
-F 1 "VEE" H 7300 4550 50  0000 C CNN
-F 2 "" H 7300 4400 50  0001 C CNN
-F 3 "" H 7300 4400 50  0001 C CNN
-	1    7300 4400
-	-1   0    0    1   
-$EndComp
-$Comp
-L Device:R R14
-U 1 1 5B7158A4
-P 7300 4150
-F 0 "R14" H 7370 4302 50  0000 L CNN
-F 1 "7k5" H 7370 4211 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal" V 7230 4150 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 7300 4150 50  0001 C CNN
-F 4 "Farnell:2329974" V 7300 4150 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR0204F7K5" V 7300 4150 60  0001 C CNN "Manufacturer"
-F 6 "MF" H 7370 4112 60  0000 L CNN "Type"
-F 7 "0.25W" H 7370 4006 60  0000 L CNN "Power"
-	1    7300 4150
+L Device:C C?
+U 1 1 5C37C8F9
+P 3200 3850
+F 0 "C?" H 3315 3987 50  0000 L CNN
+F 1 "3p3" H 3315 3896 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 3238 3700 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2577345.pdf" H 3200 3850 50  0001 C CNN
+F 4 "200V" H 3315 3805 50  0000 L CNN "Voltage"
+F 5 "NP0" H 3315 3714 50  0000 L CNN "Type"
+F 6 "Kemet:C315C339D2G5TA" V 3200 3850 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2819636" V 3200 3850 50  0001 C CNN "Supplier1"
+	1    3200 3850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7300 4300 7300 4400
+	1400 3500 1700 3500
+Wire Wire Line
+	2100 3500 2200 3500
+Wire Wire Line
+	3400 3300 3200 3300
+Wire Wire Line
+	2900 3300 2900 3100
+Connection ~ 2900 3300
+Wire Wire Line
+	1400 3300 1800 3300
+Text HLabel 1400 3300 0    50   Input ~ 0
+in_l
+Wire Wire Line
+	3900 3850 3900 3750
 $Comp
-L Device:CP1 C9
-U 1 1 5B72713C
-P 7750 3800
-F 0 "C9" V 7392 3800 50  0000 C CNN
-F 1 "100u" V 7483 3800 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 7750 3800 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 7750 3800 50  0001 C CNN
-F 4 "50V" V 7582 3800 60  0000 C CNN "Voltage"
-F 5 "Farnell:8126550" H 7750 3800 60  0001 C CNN "Vendor"
-F 6 "Rybicon:35ML100MEFC8X7.5" H 7750 3800 60  0001 C CNN "Manufacturer"
-	1    7750 3800
-	0    1    1    0   
+L Device:R R?
+U 1 1 5C37E8E0
+P 4900 4350
+F 0 "R?" H 4970 4487 50  0000 L CNN
+F 1 "3.9" H 4970 4396 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4830 4350 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 4900 4350 50  0001 C CNN
+F 4 "0.6W" H 4970 4305 50  0000 L CNN "Power"
+F 5 "MF" H 4970 4214 50  0000 L CNN "Type"
+F 6 "TE Connectivity:LR1F3R9" H 4900 4350 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330141" H 4900 4350 50  0001 C CNN "Supplier1"
+	1    4900 4350
+	1    0    0    -1  
 $EndComp
 $Comp
-L power:GNDPWR #PWR011
-U 1 1 5B7271B3
-P 8000 3800
-F 0 "#PWR011" H 8000 3600 50  0001 C CNN
-F 1 "GNDPWR" H 8004 3646 50  0000 C CNN
-F 2 "" H 8000 3750 50  0001 C CNN
-F 3 "" H 8000 3750 50  0001 C CNN
-	1    8000 3800
+L Device:C C?
+U 1 1 5C37E93E
+P 4900 4750
+F 0 "C?" H 5015 4887 50  0000 L CNN
+F 1 "100n" H 5015 4796 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.6mm_W3.0mm_P2.50mm_MKS02_FKP02" H 4938 4600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1306005.pdf" H 4900 4750 50  0001 C CNN
+F 4 "63V" H 5015 4705 50  0000 L CNN "Voltage"
+F 5 "PET" H 5015 4614 50  0000 L CNN "Type"
+F 6 "WIMA:MKS0C031000C00KSSD" H 0   900 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 0   900 50  0001 C CNN "Supplier1"
+	1    4900 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5C37E999
+P 4900 5000
+F 0 "#PWR?" H 4900 4800 50  0001 C CNN
+F 1 "GNDPWR" H 4904 4846 50  0000 C CNN
+F 2 "" H 4900 4950 50  0001 C CNN
+F 3 "" H 4900 4950 50  0001 C CNN
+	1    4900 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 5000 4900 4900
+Wire Wire Line
+	4900 4600 4900 4500
+Wire Wire Line
+	4900 4100 4900 4200
+Connection ~ 4900 4100
+Text Notes 2100 4100 0    50   ~ 0
+1.44 SHP
+Text Notes 2100 2700 0    50   ~ 0
+1.32 HP
+Wire Wire Line
+	4100 3050 4100 3000
+NoConn ~ 4000 3750
+$Comp
+L Device:L L?
+U 1 1 5C3808D7
+P 5150 3100
+F 0 "L?" V 5340 3100 50  0000 C CNN
+F 1 "4u" V 5249 3100 50  0000 C CNN
+F 2 "Inductor_THT:L_Axial_L20.3mm_D12.7mm_P7.62mm_Vertical_Vishay_IHA-201" H 5150 3100 50  0001 C CNN
+F 3 "~" H 5150 3100 50  0001 C CNN
+	1    5150 3100
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
-	7900 3800 8000 3800
+	5000 3400 4900 3400
+Connection ~ 4900 3400
 Wire Wire Line
-	7600 3800 7300 3800
+	5000 3100 4900 3100
 Wire Wire Line
-	7300 2300 7300 3400
-Connection ~ 7300 3800
-Wire Wire Line
-	7300 3800 7300 4000
+	4900 3100 4900 3400
 $Comp
-L Device:CP1 C13
-U 1 1 5B734DDC
-P 2900 5650
-F 0 "C13" H 3015 5749 50  0000 L CNN
-F 1 "2m2" H 3015 5658 50  0000 L CNN
-F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2900 5650 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2900 5650 50  0001 C CNN
-F 4 "50V" H 3015 5559 60  0000 L CNN "Voltage"
-F 5 "Farnell:2346272" H 2900 5650 60  0001 C CNN "Vendor"
-F 6 "Rubycon:50YXJ2200M16X35.5 " H 2900 5650 60  0001 C CNN "Manufacturer"
-	1    2900 5650
+L power:GNDPWR #PWR?
+U 1 1 5C3812B6
+P 5400 5000
+F 0 "#PWR?" H 5400 4800 50  0001 C CNN
+F 1 "GNDPWR" H 5404 4846 50  0000 C CNN
+F 2 "" H 5400 4950 50  0001 C CNN
+F 3 "" H 5400 4950 50  0001 C CNN
+	1    5400 5000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 5000 5400 4900
+Wire Wire Line
+	5400 4600 5400 4500
+Wire Wire Line
+	5400 3400 5300 3400
+Wire Wire Line
+	5400 3400 5400 4200
+Wire Wire Line
+	5300 3100 5400 3100
+Wire Wire Line
+	5400 3100 5400 3400
+Connection ~ 5400 3400
+$Comp
+L Device:D D?
+U 1 1 5C382803
+P 5150 2800
+F 0 "D?" H 5150 3016 50  0000 C CNN
+F 1 "1N5404" H 5150 2925 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 5150 2800 50  0001 C CNN
+F 3 "~" H 5150 2800 50  0001 C CNN
+	1    5150 2800
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:D_Zener D3
-U 1 1 5C46E8FF
-P 7300 3550
-F 0 "D3" V 7254 3471 50  0000 R CNN
-F 1 "BZX85C16" V 7345 3471 50  0000 R CNN
-F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 7300 3550 50  0001 C CNN
-F 3 "https://www.onsemi.com/pub/Collateral/BZX79C2V4-D.PDF" H 7300 3550 50  0001 C CNN
-F 4 "ON Semiconducter:BZX79C15" V 7300 3550 50  0001 C CNN "Manufacturer"
-F 5 "Farnell: 1467595" V 7300 3550 50  0001 C CNN "Vendor"
-	1    7300 3550
+L Device:D D?
+U 1 1 5C3828AD
+P 5150 2500
+F 0 "D?" H 5150 2716 50  0000 C CNN
+F 1 "1N5404" H 5150 2625 50  0000 C CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 5150 2500 50  0001 C CNN
+F 3 "~" H 5150 2500 50  0001 C CNN
+	1    5150 2500
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4900 3100 4900 2800
+Wire Wire Line
+	4900 2800 5000 2800
+Connection ~ 4900 3100
+Wire Wire Line
+	4900 2800 4900 2500
+Wire Wire Line
+	4900 2500 5000 2500
+Connection ~ 4900 2800
+Wire Wire Line
+	5400 3400 6200 3400
+Text HLabel 6200 3400 2    50   Output ~ 0
+out_l
+Wire Wire Line
+	3900 3050 3900 1900
+Wire Wire Line
+	3800 3050 3800 1600
+Wire Wire Line
+	4100 3750 4100 3800
+Text HLabel 6200 3800 2    50   Output ~ 0
+overload
+Wire Wire Line
+	3700 2950 3700 2000
+Wire Wire Line
+	3600 2950 3600 2000
+Wire Wire Line
+	3700 3850 3700 4400
+Wire Wire Line
+	3600 3850 3600 4400
+Text GLabel 3600 2000 1    50   Input ~ 0
++vs
+Text GLabel 3700 2000 1    50   Input ~ 0
++pwvs
+Text GLabel 3600 4400 3    50   Input ~ 0
+-vs
+Text GLabel 3700 4400 3    50   Input ~ 0
+-pwvs
+Text Notes 2100 6600 0    50   ~ 0
+1.44 SHP
+Text GLabel 5400 2500 2    50   Input ~ 0
++pwvs
+Wire Wire Line
+	5400 2500 5300 2500
+Text GLabel 5400 2800 2    50   Input ~ 0
+-pwvs
+Wire Wire Line
+	5400 2800 5300 2800
+Text GLabel 8700 4900 1    50   Input ~ 0
++vs
+Wire Wire Line
+	6300 2400 6300 2300
+Wire Wire Line
+	6300 1600 6300 2000
+$Comp
+L Device:R R?
+U 1 1 5C3D1E61
+P 6550 1600
+F 0 "R?" V 6161 1600 50  0000 C CNN
+F 1 "10k" V 6252 1600 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6480 1600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 6550 1600 50  0001 C CNN
+F 4 "1/8" V 6343 1600 50  0000 C CNN "Power"
+F 5 "C" V 6434 1600 50  0000 C CNN "Type"
+F 6 "Multicomp:MF12 20K" V 6550 1600 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:9342796" V 6550 1600 50  0001 C CNN "Supplier1"
+	1    6550 1600
 	0    1    1    0   
 $EndComp
 Wire Wire Line
-	7300 3700 7300 3800
+	6300 1600 6400 1600
+Connection ~ 6300 1600
+Wire Wire Line
+	7600 1900 7700 1900
+Text GLabel 8700 6100 3    50   Input ~ 0
+-vs
+Text GLabel 8700 4300 3    50   Input ~ 0
+-pwvs
 $Comp
-L power:GNDPWR #PWR02
-U 1 1 5C46F98F
-P 8400 1150
-AR Path="/5C46F98F" Ref="#PWR02"  Part="1" 
-AR Path="/5ABAAF3C/5C46F98F" Ref="#PWR?"  Part="1" 
-F 0 "#PWR02" H 8400 950 50  0001 C CNN
-F 1 "GNDPWR" H 8400 1020 50  0000 C CNN
-F 2 "" H 8400 1100 50  0001 C CNN
-F 3 "" H 8400 1100 50  0001 C CNN
-	1    8400 1150
+L power:GNDPWR #PWR?
+U 1 1 5C408BF0
+P 8600 5500
+F 0 "#PWR?" H 8600 5300 50  0001 C CNN
+F 1 "GNDPWR" V 8604 5391 50  0000 R CNN
+F 2 "" H 8600 5450 50  0001 C CNN
+F 3 "" H 8600 5450 50  0001 C CNN
+	1    8600 5500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8700 6100 8700 6000
+Connection ~ 8700 6000
+Wire Wire Line
+	8700 6000 8700 5900
+Wire Wire Line
+	8700 5400 8700 5500
+Wire Wire Line
+	8700 5500 8600 5500
+Wire Wire Line
+	8700 5600 8700 5500
+Connection ~ 8700 5500
+Wire Wire Line
+	8700 4900 8700 5000
+Connection ~ 8700 5000
+Wire Wire Line
+	8700 5000 8700 5100
+Wire Wire Line
+	8700 4300 8700 4200
+Connection ~ 8700 4200
+Wire Wire Line
+	8700 4200 8700 4100
+Wire Wire Line
+	8700 3600 8700 3700
+Wire Wire Line
+	8700 3800 8700 3700
+Connection ~ 8700 3700
+Wire Wire Line
+	8700 3100 8700 3200
+Connection ~ 8700 3200
+Wire Wire Line
+	8700 3200 8700 3300
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C460ED5
+P 6300 2400
+F 0 "#PWR?" H 6300 2150 50  0001 C CNN
+F 1 "GNDD" H 6304 2245 50  0000 C CNN
+F 2 "" H 6300 2400 50  0001 C CNN
+F 3 "" H 6300 2400 50  0001 C CNN
+	1    6300 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C480801
+P 3900 3850
+F 0 "#PWR?" H 3900 3600 50  0001 C CNN
+F 1 "GNDD" H 4050 3650 50  0000 C CNN
+F 2 "" H 3900 3850 50  0001 C CNN
+F 3 "" H 3900 3850 50  0001 C CNN
+	1    3900 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C469739
+P 2900 2950
+F 0 "R?" H 2970 2813 50  0000 L CNN
+F 1 "12k" H 2970 2904 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2830 2950 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2900 2950 50  0001 C CNN
+F 4 "0.6W" H 2970 2995 50  0000 L CNN "Power"
+F 5 "MF" H 2970 3086 50  0000 L CNN "Type"
+F 6 "TE Connectivity:LR1F12K" H 2900 2950 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330007" H 2900 2950 50  0001 C CNN "Supplier1"
+	1    2900 2950
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C47384F
+P 5400 4750
+F 0 "C?" H 5515 4887 50  0000 L CNN
+F 1 "100n" H 5515 4796 50  0000 L CNN
+F 2 "Capacitor_THT:C_Disc_D5.1mm_W3.2mm_P5.00mm" H 5438 4600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 5400 4750 50  0001 C CNN
+F 4 "100V" H 5515 4705 50  0000 L CNN "Voltage"
+F 5 "X7R" H 5515 4614 50  0000 L CNN "Type"
+F 6 "AVX:SR211C104KAR" H 0   900 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 0   900 50  0001 C CNN "Supplier1"
+	1    5400 4750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C473A01
+P 8700 5250
+F 0 "C?" H 8815 5387 50  0000 L CNN
+F 1 "100n" H 8815 5296 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.6mm_W3.0mm_P2.50mm_MKS02_FKP02" H 8738 5100 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1306005.pdf" H 8700 5250 50  0001 C CNN
+F 4 "63V" H 8815 5205 50  0000 L CNN "Voltage"
+F 5 "PET" H 8815 5114 50  0000 L CNN "Type"
+F 6 "WIMA:MKS0C031000C00KSSD" H 0   2100 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 0   2100 50  0001 C CNN "Supplier1"
+	1    8700 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C473E9B
+P 8700 5750
+F 0 "C?" H 8815 5887 50  0000 L CNN
+F 1 "100n" H 8815 5796 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.6mm_W3.0mm_P2.50mm_MKS02_FKP02" H 8738 5600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1306005.pdf" H 8700 5750 50  0001 C CNN
+F 4 "63V" H 8815 5705 50  0000 L CNN "Voltage"
+F 5 "PET" H 8815 5614 50  0000 L CNN "Type"
+F 6 "WIMA:MKS0C031000C00KSSD" H 0   2100 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 0   2100 50  0001 C CNN "Supplier1"
+	1    8700 5750
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C473F19
+P 8700 3950
+F 0 "C?" H 8815 4087 50  0000 L CNN
+F 1 "100n" H 8815 3996 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.6mm_W3.0mm_P2.50mm_MKS02_FKP02" H 8738 3800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1306005.pdf" H 8700 3950 50  0001 C CNN
+F 4 "63V" H 8815 3905 50  0000 L CNN "Voltage"
+F 5 "PET" H 8815 3814 50  0000 L CNN "Type"
+F 6 "WIMA:MKS0C031000C00KSSD" H 0   2100 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 0   2100 50  0001 C CNN "Supplier1"
+	1    8700 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C?
+U 1 1 5C473F9B
+P 8700 3450
+F 0 "C?" H 8815 3587 50  0000 L CNN
+F 1 "100n" H 8815 3496 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L4.6mm_W3.0mm_P2.50mm_MKS02_FKP02" H 8738 3300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1306005.pdf" H 8700 3450 50  0001 C CNN
+F 4 "63V" H 8815 3405 50  0000 L CNN "Voltage"
+F 5 "PET" H 8815 3314 50  0000 L CNN "Type"
+F 6 "WIMA:MKS0C031000C00KSSD" H 8700 3450 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1006004" H 8700 3450 50  0001 C CNN "Supplier1"
+	1    8700 3450
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6700 1600 6800 1600
+Wire Wire Line
+	4100 2700 4100 2600
+Wire Wire Line
+	4100 2600 4000 2600
+Wire Wire Line
+	4000 2600 4000 3050
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5C4A94C1
+P 8600 3700
+F 0 "#PWR?" H 8600 3500 50  0001 C CNN
+F 1 "GNDPWR" V 8604 3591 50  0000 R CNN
+F 2 "" H 8600 3650 50  0001 C CNN
+F 3 "" H 8600 3650 50  0001 C CNN
+	1    8600 3700
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8600 3700 8700 3700
+Text Notes 7000 5250 0    50   ~ 0
+Return to supply bypass \ncapacitor ground
+Wire Notes Line
+	6900 5000 8000 5000
+Wire Notes Line
+	6900 5350 6900 5000
+Wire Notes Line
+	4900 5350 8000 5350
+Wire Notes Line
+	8000 3700 8150 3700
+Wire Notes Line
+	8000 3700 8000 5350
+Text Notes 9000 2900 0    50   ~ 0
+Place the capacitors as\nclose as possible to IC\npins
+Text Notes 9000 4700 0    50   ~ 0
+Place the capacitors as\nclose as possible to IC\npins
+$Comp
+L Device:CP C?
+U 1 1 5C5E5E74
+P 1950 3500
+F 0 "C?" V 2113 3500 50  0000 C CNN
+F 1 "220u" V 2204 3500 50  0000 C CNN
+F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 1988 3350 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 1950 3500 50  0001 C CNN
+F 4 "10V" V 2295 3500 50  0000 C CNN "Voltage"
+F 5 "Rybicon:10YXF220MEFC6.3X11" V 1950 3500 50  0001 C CNN "Manufacturer"
+F 6 "Farnel:1144609" V 1950 3500 50  0001 C CNN "Supplier1"
+	1    1950 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C4C9B48
+P 6300 2150
+F 0 "C?" H 6182 2241 50  0000 R CNN
+F 1 "10u" H 6182 2150 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 6338 2000 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723232.pdf" H 6300 2150 50  0001 C CNN
+F 4 "35V" H 6182 2059 50  0000 R CNN "Voltage"
+F 5 "Multicomp:MCGPR16V106M5X11" H 6300 2150 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:9451056" H 6300 2150 50  0001 C CNN "Supplier1"
+	1    6300 2150
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	2100 3300 2200 3300
+$Comp
+L Device:CP C?
+U 1 1 5C4E1EBF
+P 1950 3300
+AR Path="/5C37BC48/5C4E1EBF" Ref="C?"  Part="1" 
+AR Path="/5C4751C0/5C4E1EBF" Ref="C?"  Part="1" 
+AR Path="/5C37BC7C/5C4E1EBF" Ref="C?"  Part="1" 
+F 0 "C?" V 1605 3300 50  0000 C CNN
+F 1 "10u" V 1696 3300 50  0000 C CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 1988 3150 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2124421.pdf" H 1950 3300 50  0001 C CNN
+F 4 "50V" V 1787 3300 50  0000 C CNN "Voltage"
+F 5 "Rybicon:50YXF10MEFC5X11" H 1950 3300 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:1144632" H 1950 3300 50  0001 C CNN "Supplier1"
+	1    1950 3300
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C4F9DF0
+P 7450 1900
+F 0 "R?" V 7565 1900 50  0000 C CNN
+F 1 "20k" V 7656 1900 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 7380 1900 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7450 1900 50  0001 C CNN
+F 4 "1/8" V 7747 1900 50  0000 C CNN "Power"
+F 5 "C" V 7838 1900 50  0000 C CNN "Type"
+F 6 "Multicomp:MF12 20K" V 7450 1900 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:9342796" V 7450 1900 50  0001 C CNN "Supplier1"
+	1    7450 1900
+	0    1    1    0   
+$EndComp
+Text HLabel 1400 3500 0    50   Input ~ 0
+ingnd_l
+Wire Wire Line
+	2900 2800 2900 2700
+Wire Wire Line
+	1700 3500 1700 2700
+Wire Wire Line
+	1700 2700 2900 2700
+Connection ~ 1700 3500
+Wire Wire Line
+	1700 3500 1800 3500
+Wire Wire Line
+	1700 3500 1700 4700
+Wire Wire Line
+	1700 4700 3800 4700
+Wire Wire Line
+	3800 3750 3800 4700
+Wire Wire Line
+	3200 3300 3200 3100
+Wire Wire Line
+	3200 2700 2900 2700
+Connection ~ 3200 3300
+Wire Wire Line
+	3200 3300 2900 3300
+Connection ~ 2900 2700
+Wire Wire Line
+	3200 2800 3200 2700
+$Comp
+L Device:R R?
+U 1 1 5C526310
+P 2350 3300
+F 0 "R?" V 1961 3300 50  0000 C CNN
+F 1 "499" V 2052 3300 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2280 3300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2350 3300 50  0001 C CNN
+F 4 "0.6W" V 2143 3300 50  0000 C CNN "Power"
+F 5 "MF" V 2234 3300 50  0000 C CNN "Type"
+F 6 "TE Connectivity:LR1F499R" V 2350 3300 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330163" V 2350 3300 50  0001 C CNN "Supplier1"
+	1    2350 3300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	2500 3300 2900 3300
+$Comp
+L Device:C C?
+U 1 1 5C525E08
+P 3200 2950
+F 0 "C?" H 3085 2813 50  0000 R CNN
+F 1 "220p" H 3085 2904 50  0000 R CNN
+F 2 "Capacitor_THT:C_Disc_D3.8mm_W2.6mm_P2.50mm" H 3238 2800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2095938.pdf" H 3200 2950 50  0001 C CNN
+F 4 "100V" H 3085 2995 50  0000 R CNN "Voltage"
+F 5 "NP0" H 3085 3086 50  0000 R CNN "Type"
+F 6 "AVX:SR151A221JAR" H 3200 2950 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:1100374" H 3200 2950 50  0001 C CNN "Supplier1"
+	1    3200 2950
+	-1   0    0    1   
+$EndComp
+Wire Notes Line
+	4900 5350 4900 5200
+Wire Wire Line
+	9300 3600 9300 3700
+Wire Wire Line
+	9300 4200 9300 4100
+Connection ~ 9300 3700
+Wire Wire Line
+	9300 3800 9300 3700
+$Comp
+L Device:CP C?
+U 1 1 5C5390F6
+P 9300 3450
+F 0 "C?" H 9182 3541 50  0000 R CNN
+F 1 "100u" H 9182 3450 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 9338 3300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9300 3450 50  0001 C CNN
+F 4 "35V" H 9182 3359 50  0000 R CNN "Voltage"
+F 5 "Rybicon:35YXF220MEFC10X12.5" V 9300 3450 50  0001 C CNN "Manufacturer"
+F 6 "Farnel:1144628" V 9300 3450 50  0001 C CNN "Supplier1"
+	1    9300 3450
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C539100
+P 9300 3950
+F 0 "C?" H 9182 4041 50  0000 R CNN
+F 1 "100u" H 9182 3950 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 9338 3800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9300 3950 50  0001 C CNN
+F 4 "35V" H 9182 3859 50  0000 R CNN "Voltage"
+F 5 "Rybicon:35YXF220MEFC10X12.5" V 9300 3950 50  0001 C CNN "Manufacturer"
+F 6 "Farnel:1144628" V 9300 3950 50  0001 C CNN "Supplier1"
+	1    9300 3950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9300 3200 9300 3300
+Wire Wire Line
+	9300 5000 9300 5100
+Connection ~ 9300 5500
+Wire Wire Line
+	9300 5500 9300 5600
+Wire Wire Line
+	9300 5400 9300 5500
+Wire Wire Line
+	9300 5900 9300 6000
+$Comp
+L Device:CP C?
+U 1 1 5C52D5BD
+P 9300 5250
+AR Path="/5C37BC48/5C52D5BD" Ref="C?"  Part="1" 
+AR Path="/5C37BC7C/5C52D5BD" Ref="C?"  Part="1" 
+F 0 "C?" H 9182 5341 50  0000 R CNN
+F 1 "47u" H 9182 5250 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 9338 5100 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9300 5250 50  0001 C CNN
+F 4 "50V" H 9182 5159 50  0000 R CNN "Voltage"
+F 5 "Rybicon:50YXF47MEFC6.3X11" H 9300 5250 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:1144633" H 9300 5250 50  0001 C CNN "Supplier1"
+	1    9300 5250
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C52D6FF
+P 9300 5750
+AR Path="/5C37BC48/5C52D6FF" Ref="C?"  Part="1" 
+AR Path="/5C37BC7C/5C52D6FF" Ref="C?"  Part="1" 
+F 0 "C?" H 9182 5841 50  0000 R CNN
+F 1 "47u" H 9182 5750 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 9338 5600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9300 5750 50  0001 C CNN
+F 4 "50V" H 9182 5659 50  0000 R CNN "Voltage"
+F 5 "Rybicon:50YXF47MEFC6.3X11" H 9300 5750 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:1144633" H 9300 5750 50  0001 C CNN "Supplier1"
+	1    9300 5750
+	-1   0    0    -1  
+$EndComp
+$Comp
+L Device:CP C?
+U 1 1 5C5349E4
+P 4100 2850
+AR Path="/5C37BC48/5C5349E4" Ref="C?"  Part="1" 
+AR Path="/5C37BC7C/5C5349E4" Ref="C?"  Part="1" 
+F 0 "C?" H 3982 2759 50  0000 R CNN
+F 1 "47u" H 3982 2850 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 4138 2700 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 4100 2850 50  0001 C CNN
+F 4 "50V" H 3982 2941 50  0000 R CNN "Voltage"
+F 5 "Rybicon:50YXF47MEFC6.3X11" H 4100 2850 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:1144633" H 4100 2850 50  0001 C CNN "Supplier1"
+	1    4100 2850
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C525602
+P 2350 3500
+F 0 "R?" V 2465 3500 50  0000 C CNN
+F 1 "499" V 2556 3500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2280 3500 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2350 3500 50  0001 C CNN
+F 4 "0.6W" V 2647 3500 50  0000 C CNN "Power"
+F 5 "MF" V 2738 3500 50  0000 C CNN "Type"
+F 6 "TE Connectivity:LR1F499R" V 2350 3500 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330163" V 2350 3500 50  0001 C CNN "Supplier1"
+	1    2350 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C527597
+P 2900 3850
+F 0 "R?" H 2830 3987 50  0000 R CNN
+F 1 "12k" H 2830 3896 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2830 3850 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2900 3850 50  0001 C CNN
+F 4 "0.6W" H 2830 3805 50  0000 R CNN "Power"
+F 5 "MF" H 2830 3714 50  0000 R CNN "Type"
+F 6 "TE Connectivity:LR1F12K" H 2900 3850 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330007" H 2900 3850 50  0001 C CNN "Supplier1"
+	1    2900 3850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C5298B8
+P 5150 3400
+F 0 "R?" V 5300 3400 50  0000 C CNN
+F 1 "3.9" V 5400 3400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5080 3400 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 5150 3400 50  0001 C CNN
+F 4 "0.6W" V 5500 3400 50  0000 C CNN "Power"
+F 5 "MF" V 5600 3400 50  0000 C CNN "Type"
+F 6 "TE Connectivity:LR1F3R9" H 5150 3400 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2330141" H 5150 3400 50  0001 C CNN "Supplier1"
+	1    5150 3400
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5C52AA95
+P 5400 4350
+F 0 "R?" H 5470 4487 50  0000 L CNN
+F 1 "10" H 5470 4396 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5330 4350 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 5400 4350 50  0001 C CNN
+F 4 "0.6W" H 5470 4305 50  0000 L CNN "Power"
+F 5 "MF" H 5470 4214 50  0000 L CNN "Type"
+F 6 "TE Connectivity:LR1F10R" H 5400 4350 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:2329993" H 5400 4350 50  0001 C CNN "Supplier1"
+	1    5400 4350
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3800 1600 6300 1600
+Wire Wire Line
+	4100 3800 6200 3800
+Wire Wire Line
+	2500 3500 2900 3500
+Wire Wire Line
+	2900 4100 3200 4100
+Wire Wire Line
+	2900 4100 2900 4000
+Connection ~ 2900 3500
+Wire Wire Line
+	2900 3500 3200 3500
+Wire Wire Line
+	3200 3500 3200 3700
+Connection ~ 3200 3500
+Wire Wire Line
+	3200 3500 3400 3500
+Connection ~ 3200 4100
+Wire Wire Line
+	3200 4100 4900 4100
+Wire Wire Line
+	2900 3700 2900 3500
+Wire Wire Line
+	3200 4000 3200 4100
+Wire Wire Line
+	8700 3200 9300 3200
+Wire Wire Line
+	8700 3700 9300 3700
+Wire Wire Line
+	8700 4200 9300 4200
+Wire Wire Line
+	8700 5000 9300 5000
+Wire Wire Line
+	8700 5500 9300 5500
+Wire Wire Line
+	8700 6000 9300 6000
+$Comp
+L Device:R R?
+U 1 1 5C583D8F
+P 7050 1600
+F 0 "R?" V 6600 1600 50  0000 C CNN
+F 1 "30k" V 6700 1600 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P5.08mm_Horizontal" V 6980 1600 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7050 1600 50  0001 C CNN
+F 4 "1/8" V 6800 1600 50  0000 C CNN "Power"
+F 5 "C" V 6900 1600 50  0000 C CNN "Type"
+F 6 "Multicomp:MF12 20K" V 7050 1600 50  0001 C CNN "Manufacturer"
+F 7 "Farnell:9342796" V 7050 1600 50  0001 C CNN "Supplier1"
+	1    7050 1600
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7200 1600 7700 1600
+Wire Wire Line
+	6800 1600 6800 1300
+Wire Wire Line
+	6800 1300 7300 1300
+Wire Wire Line
+	7700 1300 7700 1600
+Connection ~ 6800 1600
+Wire Wire Line
+	6800 1600 6900 1600
+Connection ~ 7700 1600
+$Comp
+L Device:D D?
+U 1 1 5C58F451
+P 7450 1300
+F 0 "D?" H 7450 1084 50  0000 C CNN
+F 1 "1N4148" H 7450 1175 50  0000 C CNN
+F 2 "" H 7450 1300 50  0001 C CNN
+F 3 "~" H 7450 1300 50  0001 C CNN
+	1    7450 1300
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	8400 2000 8400 2600
+	7600 1300 7700 1300
 Wire Wire Line
-	8400 1700 8400 1600
+	9300 3700 9900 3700
 Wire Wire Line
-	8400 1300 8400 1150
+	9900 3700 9900 3600
+Wire Wire Line
+	9900 3200 9300 3200
+Connection ~ 9300 3200
+Wire Wire Line
+	9300 4200 9900 4200
+Wire Wire Line
+	9900 4200 9900 4100
+Connection ~ 9300 4200
+Connection ~ 9900 3700
 $Comp
-L Device:C C3
-U 1 1 5C4739E5
-P 8400 1850
-F 0 "C3" H 8515 2002 50  0000 L CNN
-F 1 "100n" H 8515 1911 50  0000 L CNN
-F 2 "Capacitor_THT:C_Rect_L7.0mm_W3.5mm_P5.00mm" H 8438 1700 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1784425.pdf" H 8400 1850 50  0001 C CNN
-F 4 "100V" H 8515 1812 60  0000 L CNN "Voltage"
-F 5 "PP" H 8515 1706 60  0000 L CNN "Type"
-F 6 "Farnell:1890265" H 8400 1850 60  0001 C CNN "Vendor"
-F 7 "WIMA:MKP2D031001F00KSSD" H 8400 1850 60  0001 C CNN "Manufacturer"
-	1    8400 1850
+L Device:CP C?
+U 1 1 5C59C488
+P 9900 3450
+F 0 "C?" H 9782 3541 50  0000 R CNN
+F 1 "2m2" H 9782 3450 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 9938 3300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9900 3450 50  0001 C CNN
+F 4 "35V" H 9782 3359 50  0000 R CNN "Voltage"
+F 5 "Rybicon:35YXF220MEFC10X12.5" V 9900 3450 50  0001 C CNN "Manufacturer"
+F 6 "Farnel:1144628" V 9900 3450 50  0001 C CNN "Supplier1"
+	1    9900 3450
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3300 9900 3200
+$Comp
+L Device:CP C?
+U 1 1 5C59C52F
+P 9900 3950
+F 0 "C?" H 9782 4041 50  0000 R CNN
+F 1 "2m2" H 9782 3950 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D10.0mm_P5.00mm" H 9938 3800 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2321304.pdf" H 9900 3950 50  0001 C CNN
+F 4 "35V" H 9782 3859 50  0000 R CNN "Voltage"
+F 5 "Rybicon:35YXF220MEFC10X12.5" V 9900 3950 50  0001 C CNN "Manufacturer"
+F 6 "Farnel:1144628" V 9900 3950 50  0001 C CNN "Supplier1"
+	1    9900 3950
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	9900 3800 9900 3700
+Wire Wire Line
+	7700 1600 7700 1900
+Text GLabel 8700 3100 1    50   Input ~ 0
++pwvs
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5C6276A7
+P 900 5300
+F 0 "J?" H 820 5617 50  0000 C CNN
+F 1 "Conn_01x03" H 820 5526 50  0000 C CNN
+F 2 "" H 900 5300 50  0001 C CNN
+F 3 "~" H 900 5300 50  0001 C CNN
+	1    900  5300
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1300 5400 2    50   Input ~ 0
+-pwvs
+Text GLabel 1300 5200 2    50   Input ~ 0
++pwvs
+Wire Wire Line
+	1300 5200 1100 5200
+Wire Wire Line
+	1100 5400 1300 5400
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5C62FFEF
+P 1200 5500
+F 0 "#PWR?" H 1200 5300 50  0001 C CNN
+F 1 "GNDPWR" H 1204 5346 50  0000 C CNN
+F 2 "" H 1200 5450 50  0001 C CNN
+F 3 "" H 1200 5450 50  0001 C CNN
+	1    1200 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	1200 5500 1200 5300
+Wire Wire Line
+	1200 5300 1100 5300
+$Comp
+L Connector_Generic:Conn_01x02 J?
+U 1 1 5C638AA8
+P 900 5950
+F 0 "J?" H 820 6167 50  0000 C CNN
+F 1 "Conn_01x02" H 820 6076 50  0000 C CNN
+F 2 "" H 900 5950 50  0001 C CNN
+F 3 "~" H 900 5950 50  0001 C CNN
+	1    900  5950
+	-1   0    0    -1  
+$EndComp
+Text GLabel 1300 6050 2    50   Input ~ 0
+-vs
+Text GLabel 1300 5950 2    50   Input ~ 0
++vs
+Wire Wire Line
+	1300 5950 1100 5950
+Wire Wire Line
+	1100 6050 1300 6050
+Wire Wire Line
+	3900 1900 6800 1900
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5C64A606
+P 8550 1600
+F 0 "J?" H 8630 1642 50  0000 L CNN
+F 1 "Conn_01x03" H 8630 1551 50  0000 L CNN
+F 2 "" H 8550 1600 50  0001 C CNN
+F 3 "~" H 8550 1600 50  0001 C CNN
+	1    8550 1600
+	1    0    0    -1  
+$EndComp
+Text GLabel 8250 1400 1    50   Input ~ 0
++pwvs
+Wire Wire Line
+	8250 1400 8250 1500
+Wire Wire Line
+	8250 1500 8350 1500
+Wire Wire Line
+	7700 1600 8350 1600
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C651C0A
+P 8250 2400
+F 0 "#PWR?" H 8250 2150 50  0001 C CNN
+F 1 "GNDD" H 8254 2245 50  0000 C CNN
+F 2 "" H 8250 2400 50  0001 C CNN
+F 3 "" H 8250 2400 50  0001 C CNN
+	1    8250 2400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8250 2400 8250 1700
+Wire Wire Line
+	8250 1700 8350 1700
+Wire Wire Line
+	6800 2400 6800 2300
+$Comp
+L power:GNDD #PWR?
+U 1 1 5C656586
+P 6800 2400
+F 0 "#PWR?" H 6800 2150 50  0001 C CNN
+F 1 "GNDD" H 6804 2245 50  0000 C CNN
+F 2 "" H 6800 2400 50  0001 C CNN
+F 3 "" H 6800 2400 50  0001 C CNN
+	1    6800 2400
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R R3
-U 1 1 5C473CC1
-P 8400 1450
-F 0 "R3" H 8470 1602 50  0000 L CNN
-F 1 "10" H 8470 1511 50  0000 L CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8330 1450 50  0001 C CNN
-F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 8400 1450 50  0001 C CNN
-F 4 "Farnell:2329993" V 8400 1450 60  0001 C CNN "Vendor"
-F 5 "TE Connectivity:LR1F10R" V 8400 1450 60  0001 C CNN "Manufacturer"
-F 6 "0.6W" H 8470 1412 60  0000 L CNN "Power"
-F 7 "MF" H 8470 1306 60  0000 L CNN "Type"
-	1    8400 1450
-	1    0    0    -1  
+L Device:CP C?
+U 1 1 5C65658F
+P 6800 2150
+F 0 "C?" H 6682 2241 50  0000 R CNN
+F 1 "10u" H 6682 2150 50  0000 R CNN
+F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 6838 2000 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/1723232.pdf" H 6800 2150 50  0001 C CNN
+F 4 "35V" H 6682 2059 50  0000 R CNN "Voltage"
+F 5 "Multicomp:MCGPR16V106M5X11" H 6800 2150 50  0001 C CNN "Manufacturer"
+F 6 "Farnell:9451056" H 6800 2150 50  0001 C CNN "Supplier1"
+	1    6800 2150
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
-	4100 2000 5000 2000
+	6800 2000 6800 1900
+Connection ~ 6800 1900
 Wire Wire Line
-	4100 3200 4700 3200
-Connection ~ 2900 2000
-Wire Wire Line
-	2900 2000 3050 2000
-Connection ~ 2900 3200
-Wire Wire Line
-	2900 3200 3500 3200
+	6800 1900 7300 1900
 $EndSCHEMATC

@@ -1,25 +1,23 @@
-
 .. contents:: Table of Contents
    :depth: 3
 
 Introduction
 ============
 
-This document shall describe rationales used to design and build audio power
-amplifier modules using LM3886 integrated circuit.
+This document shall describe rationales used to design and build audio
+power amplifier using TDA7293 integrated circuit.
 
 Architecture
 ============
 
-The complete power amplifier consists of three sections:
+The amplifier architecture consists of the following sections:
 
 * Input circuit
 * Power amplifier
 * Power supply
+* Control and Monitoring Unit (CMU)
 
-**Input circuitry** and **Power amplifier** sections are located on single 
-PCB while the **Power supply** is located on separate PCB.
-
+All sections are located on a single PCB.
 
 Input circuit
 =============
@@ -27,45 +25,70 @@ Input circuit
 Input EMI suppression
 ---------------------
 
-To protect the input from EMI we will use the following Zobel network::
+To protect the input from EMI we will use the following Zobel network:
 
-          + Positive input or negative input
+.. code::
+          o Positive input or negative input
+          |
+          |
+        ----- Czi
+        -----
+          |
           |
          +-+  Rzi
          | |
          | |
          +-+
           |
-          |
-        ----- Czi
-        -----
-          |
-          - Signal Ground (SGND)
-         
+         === Ground
+
 For most input cables characteristic impedance falls in range between
-50 and 100ohm impedance. The resistor Rzi is ``Rzi=100ohm`` and the capacitor 
-Czi is ``Czi=220pF``. This network should be placed right at the input 
-connector, not on the main amplifier PCB.
+50 and 100ohm impedance and we are using the 75ohm as the middle value. The
+resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``.
+This network should be placed right at the input connector, not on the
+main amplifier PCB.
+
+Also, a 100n X7R capacitor shall be placed between SGND and chassis right at the
+input connector. This capacitor will shunt radio and other interfirence signal
+into the Chassis Ground potential.
 
 Input low-pass filter
 ---------------------
 
-The input low pass filter consists of two sections. 
+For input filter we choose the frequency between 300kHz and 400kHz.
 
-Differential buffer (optional)
-------------------------------
+.. code::
 
-**NOTE:**
+        +---+ Rlp1    +---+ Rlp2
+    0---+   +----+----+   +---+---o Toward Amplifier IC block
+        +---+    |    +---+   |
+               ----- Clp1   ----- Clp2
+               -----        -----
+                 |            |
+                === Ground   === Ground
 
-* This buffer is needed in case parallel output amplifiers are used.
-* If an input OPAMP is used it should be of JFET type since JFET differential 
-  inputs are more immune to EMI.
 
-The buffer consists of a PNP transistor, a 100ohm resistor and a CCS of 20mA. 
-The resistor is connected between transistor BE pins. This way it is 
-bootstrapped by the transistor Vbe voltage which gives about 6mA constant 
-current flowing into OPAMP output. This technique is used to improve OPAMP 
-output stage linearity.
+Using the 2nd order CR low-pass filter calculator at URL:
+*http://sim.okawa-denshi.jp/en/CRCRtool.php* we arrive at:
+
+.. math::
+
+    Rlp1 = 100 Ohm, Rlp2 = 100 Ohm
+
+    Clp1 = 220pF,   Clp2 = 2.2nF
+
+    fp1 = 352kHz
+
+    fp2 = 14MHz
+
+
+For more details please refer to: http://www.johnhearfield.com/RC/RC4.htm
+
+The ground loop breaker resistor
+--------------------------------
+
+A ground loop breaker resistor is located between SGND and GNDPWR grounds. The
+value of this resistor should be around 10 ohms.
 
 
 Power amplifier
@@ -75,61 +98,131 @@ Output EMI suppression
 ----------------------
 
 Output network consists of upstream and downstream Zobel Network and of output
-coil (Ld) with parallel, damping resistor (Rd). Upstream Zobel network provides
-a low-inductance load for the output stage at very high frequencies and allows
-high-frequency currents to circulate local to the output stage. The downstream
-Zobel network provides a good resistive termination right at the speaker
-terminals at high frequencies, helping to reduce RFI ingress and damp
-resonances with, or reflections from, the speaker cables. 
-The output circuit is the following::
+coil (``Ld``) with parallel, damping resistor (``Rd``). Upstream Zobel network 
+provides a low-inductance load for the output stage at very high frequencies 
+and allows high-frequency currents to circulate local to the output stage. The 
+downstream Zobel network provides a good resistive termination right at the 
+speaker terminals at high frequencies, helping to reduce RFI ingress and damp
+resonances with, or reflections from, the speaker cables.
+The output circuit is the following:
 
-      Ld
-          xxx
-      +--x   x   x--+
-      |       xxx   |
-      |             |
-      |  +-------+  |
-    *-+--|       |--+--*
-  Vout   +-------+  |   Vspeaker
-                    |
-        Rd          |
-                  ----- Cz2 = 100nF
-                  -----
-                    |
-                    |
-                   +-+  Rz1 = 10 Ohm
-                   | |
-                   | |
-                   +-+
-                    |
-                   +++
+.. code::
 
-The output coil Ld provides high frequency isolation of output load from output
-stage in LM3886. The inductance value should be between 2.2uH up to 3.3uH. 
-Output shunt resistor should be between 2.2 Ohm and 4.7 Ohm. See 
-*Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7* 
+    Ld
+             xxx
+        +---x   x   x---+
+        |        xxx    |
+        |               |
+        |   +-------+   |
+    o---+---|       |---+---o
+    Vout    +-------+   |   Vspeaker
+        Rd              |
+                      ----- Cz2 = 100nF
+                      -----
+                        |
+                        |
+                       +-+  Rz1 = 10 Ohm
+                       | |
+                       | |
+                       +-+
+                        |
+                       ===
+
+
+The output coil ``Ld`` provides high frequency isolation of output load from 
+output stage in TDA7293. The inductance value should be between 2uH up to 5uH.
+Output shunt resistor should be between 2 and 5 Ohms. See
+*Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7*
 for effect on power amplifier transfer function.
+
+Paralleling multiple modules
+----------------------------
+
+Power dissipation
+`````````````````
+
+NOTE:
+
+* Try to keep power dissipation to around 40W per IC package.
+
+Fortunately, with music signals the power dissipation should be lower.
+Effective power of music signal is about 2 to 10 times as smaller than
+effective power of sinusoid signal. The power transformer is 200VA, meaning
+that each channel gets 100VA of power.
+
+Maximum voltages at:
+ * Maximum ``Pdiss=50W`` for TDA7293.
+ * Load phase is ``LoadPHI=60degrees``.
+ * Including quiescent current dissipation.
+ * Case temperature is 60C degrees.
+ * Taking into account OPS SOA.
+
+
++-------------+-------------+-----------+--------------+
+| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
++-------------+-------------+-----------+--------------+
+| 16          | 33          | 2.2       | 31.4         |
++-------------+-------------+-----------+--------------+
+| 12          | 29          | 2.3       | 31.6         |
++-------------+-------------+-----------+--------------+
+| 8           | 25          | 2.5       | 34.2         |
++-------------+-------------+-----------+--------------+
+| 6           | 22          | 2.6       | 34.7         |
++-------------+-------------+-----------+--------------+
+| 4           | 19          | 2.9       | 37.4         |
++-------------+-------------+-----------+--------------+
+
+This table tells us that if we want to drive 4ohm load at 33V we need 4 pieces
+of TDA7293 in parallel. This is quite a number of ICs, but fortunately, the
+table presumes that the power supply can produce constant 33V at continuous
+load and the signal is sinusoid. This is not the case with unregulated power
+supply and music signals. We have to take into account how much energy is
+stored in power supply capacitors and how much will the transformer voltages
+sag under these conditions and that music signal has much lower effective power
+comparing to instantaneous power.
+
+Transformer specification for TDA7293 amplifier is the following:
+ * ``S=200VA``, power rating.
+ * ``Usn1=24Veff``, first secondary nominal voltage.
+ * ``Usn2=24Veff``, second secondary nominal voltage.
+ * ``k=5%``, regulation.
+
+Secondary internal resistance is:
+
+.. math::
+
+    Usu=Usn1*(1+(k/100))
+
+    Isn=S/(Usn1+Usn2)
+
+    Ri=(Usn1-Usu)/Isn
+
+Using values from above we get:
+
+.. math::
+
+    Usu=24*(1+(5/100))=25.2Veff
+
+    Isn=4.17Aeff
+
+    Ri=288mOhm
+
+The power supply section is using single bank of 10mF capacitors.
 
 Gain value
 ----------
+
+Using inverted topology since we want to reduce common mode distortion in the
+input stage. But in case of TDA7293 IC it is not easy to use inverted topology
+since the mute circuit is implemented on positive OPAMP input.
 
 The equivalent gain circuit resistance needs to stay below 600ohms. This is so
 because all noise measurements in data-sheet were done with 600ohms or 0ohms.
 
 Using low feedback gain is preferred for several reasons:
-
-* there is more loop gain available to reduce the distortion
-* reduced output noise
-* lower offset at output
-
-The datasheet specifies that the gain should be at least ``G>10`` or greater.
-
-
-Inverting mode
-``````````````
-
-Using inverted topology since we want to reduce common mode distortion in the
-input stage.
+ * there is more loop gain available to reduce the distortion
+ * reduced outout noues
+ * lower offset at output
 
 Nominal gain is:
 
@@ -179,293 +272,37 @@ Using E24 series of resistors:
 +-----------+-----------+---------+
 
 Chosen values for E24 series:
+ * Rf = 8.2kOhm
+ * Rg = 510 Ohm
 
-* Rf = 7.5kOhm
-* Rg = 510 Ohm
-    
 Chosen values for E48 series:
+ * Rf = 8.25kOhm
+ * Rg = 511 Ohm
 
-* Rf = 7.5kOhm
-* Rg = 499 Ohm
- 
 Chosen values when using parallel E24 series (two resistor):
-
-* Rf = 15kOhm
-* Rg = 1kOhm
+ * Rf = 16kOhm
+ * Rg = 1kOhm
 
 Chosen values when using parallel E48 series (two resistor):
-
-* Rf = 15kOhm
-* Rg = 1kOhm
-
-
-Non-inverting mode
-``````````````````
-
-In non-inverting mode we have two resistor networks. At the positive input we
-have a resistor divider network and on the negative input we have negative
-feedback network. Taking into acount both networks we have a total gain of:
-
-.. math::
-
-    Gpos=Rf/(Rf+Rg)
-
-    Gneg=(Rf+Rg)/Rg
-    
-    Gtotal=Gpos*Gneg=Rf/Rg
-
-Using E24 series of resistors:
-
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| 510       |  7.5      | 14.7    |
-+-----------+-----------+---------+
-| *510*     |  *8.2*    | *16.0*  |
-+-----------+-----------+---------+
-| 510       |  9.1      | 17.8    |
-+-----------+-----------+---------+
-| 510       | 10.0      | 19.6    |
-+-----------+-----------+---------+
-| 510       | 11.0      | 21.5    |
-+-----------+-----------+---------+
-
-Using E48 series of resistors:
-
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| *499*     |  7.5      | 15.0    |
-+-----------+-----------+---------+
-
-Paralleling multiple modules
-----------------------------
-
-Ballast resistor
-````````````````
-
-Each amplifier will connect to output bus via ballast resistor. The ballast
-resistor is made of three 1 Ohm resistors wired in parallel, which gives 
-``Rb=0.33 Ohm``.Maximum output current of the power amplifier is:
-
-.. math::
-
-    Io(max)=Uo(max)/Zload(min)
-    
-With Uo(max) approx 30V and Zload(min) equal to 2 Ohms we get:
-
-.. math::
-    
-    Io(max)=15A
-
-This current is divided by the number of modules in the amplifier, given by the
-variable ``N=3``. Maximum power dissipation in ballast resistor is therefore:
-
-.. math::
-
-    Pbdiss(max)=((Io(max)/N)**2*Rb)/3=2.75W
-    
-Resistors with power dissipation of 3 Watts is a good and very conservative
-choice.
-
-Power dissipation
-`````````````````
-
-**NOTE:**
-
-* Try to keep power dissipation to around 40W per IC package. (from PDF
-  document *AN-1192 Overture Series High Power Solutions*) for LM3886.
-
-Fortunately, with music signals the power dissipation should be lower. 
-Effective power of music signal is about 2 to 10 times as smaller than 
-effective power of sinusoid signal. The power transformer is 200VA, meaning 
-that each channel gets 100VA of power. Since the maximum output power at 8ohms 
-is approximately 50W we get that the transformer supports crest factor of 4 
-(see: 
-*https://www.neurochrome.com/taming-the-lm3886-chip-amplifier/power-supply-design*).
-
-This means that effective output power is around ``50W/4 = 12.5W``.
-
-Maximum voltages at:
-
-* Maximum ``Pdiss=50W``
-* Load phase is ``LoadPHI=60degrees``.
-* Including quiescent current dissipation.
-* Case temperature is 60C degrees.
-* Taking into account OPS SOA.
-
-+-------------+-------------+-----------+--------------+
-| Zload [ohm] | Vsupply [V] | Vdrop [V] | Pdiss [W]    |
-+-------------+-------------+-----------+--------------+
-| 16          | 33          | 2.2       | 31.4         |
-+-------------+-------------+-----------+--------------+
-| 12          | 29          | 2.3       | 31.6         |
-+-------------+-------------+-----------+--------------+
-| 8           | 25          | 2.5       | 34.2         |
-+-------------+-------------+-----------+--------------+
-| 6           | 22          | 2.6       | 34.7         |
-+-------------+-------------+-----------+--------------+
-| 4           | 19          | 2.9       | 37.4         |
-+-------------+-------------+-----------+--------------+
-
-This table tells us that if we want to drive 4ohm load at 33V we need 4 pieces
-of LM3886 in parallel. This is quite a number of ICs, but fortunately, the
-table presumes that the power supply can produce constant 33V at continuous
-load and the signal is sinusoid. This is not the case with unregulated power
-supply and music signals. We have to take into account how much energy is
-stored in power supply capacitors and how much will the transformer voltages 
-sag under these conditions and that music signal has much lower effective power
-comparing to instantaneous power.
-
-Transformer specification for LM3886 amplifier is the following:
-
-* ``S=200VA``, power rating.
-* ``Usn1=24Veff``, first secondary nominal voltage.
-* ``Usn2=24Veff``, second secondary nominal voltage.
-* ``k=5%``, regulation.
-
-Secondary internal resistance is:
-
-.. math::
-
-    Usu=Usn1*(1+(k/100))
-    
-    Isn=S/(Usn1+Usn2)
-    
-    Ri=(Usn1-Usu)/Isn
-    
-Using values from above we get:
-
-.. math:: 
-    
-    Usu=24*(1+(5/100))=25.2Veff
-    
-    Isn=4.17Aeff
-
-    Ri=288mOhm
-    
-The power supply section is using two banks of 10mF capacitors with 0.22Ohm
-resistor in series between them. This arrangement gives time constant about
-100ms when going from unloaded to full load state.
-
-Gain errors
-```````````
-
-Nominal absolute gain is:
-
-.. math::
-
-    G=Rf/Rg
-
-Where ``Rf`` is the resistor towards output and ``Rg`` is the resistor towards
-signal source. We are using absolute gain here since it's more natural to work
-with positive numbers. The resistor tolerance is 0.1%. Maximum value for gain
-due to resistor tolerances in this case is:
-
-.. math::
-
-    G(max)=Rf(max)/Rg(min)
-
-    G(max)=(Rf*(1+pp))/(Rg*(1-pp))=G*(1+pp)/(1-pp)
-
-Minimum gain is:
-
-.. math::
-
-    G(min)=Rf(min)/Rg(max)
-
-    G(min)=(Rf*(1-pp))/(Rg*(1+pp))=G*(1-pp)/(1+pp)
-
-Maximum voltage difference by resistor tolerances can be calculated by:
-
-.. math::
-
-    Uin=Uout(max)/G
-
-    Urdiff(max)=G(max)*Uin-G(min)*Uin=Uin*(G(max)-G(min))
-
-    Urdiff(max)=(Uout(max)/G)*(G(max)-G(min))
-
-This approximates to: 
-
-.. math::
-
-    Udiff(max)=Uout(max)*4*pp
-
-For 0.1% the pp is 0.001, so if ``pp=0.001`` and ``uout(max) = 30V``, we get:
-
-.. math::
-
-    Urdiff(max) = 120mV
-
-Maximum voltage difference due to different open loop gains can be calculated,
-too:
-
-.. math::
-
-    Eadiff(max)=uout(max)/A(min)
-
-Typical open loop gain in the data-sheet is 115dB. Minimum open loop gain is
-90dB. This calculates to the difference of input voltage, 90dB is approx.
-30.000:
-
-.. math::
-
-    Eadiff(max)=30/30000=1mV
-
-This calculates to:
-
-.. math::
-
-    Uadiff(max)=Eadiff(max)*g=30mV
-
-Total max difference voltage is sum of voltages created from resistor
-tolerances and a voltage from open loop gain deficiency:
-
-.. math::
-
-    Udiff(max)=Urdiff(max)+Uadiff(max)=120+30=150mV
-
-For this part of circuit there is no advantage of using multiple resistors
-(parallel or series) to get the desired resistance but lower the tolerance.
-The reason the tolerances do not decrease when using multiple resistors is
-because of the involved manufacturing process. Using multiple resistors is
-OK only in situation when wanting bigger power dissipation ability or to get
-a specific non E24 resistance.
-
-The equivalent resistance of the loop gain circuitry must be below 600ohms.
-
-The LM3886 shall be in differential connection. The lower arm of the gain loop
-circuitry shall use 499ohm resistor. Using 470uF we get 0.68Hz lower corner
-frequency. Also, the signal is applied to inverting input. See Bob Cordell
-super gain clone ``.ppt``.
+ * Rf = 16.2kOhm
+ * Rg = 1kOhm
 
 Frequency compensation
 ----------------------
 
-The LM3886 is modeled in the following way:
-
-* ``Aol``, typical open loop gain at DC.
-* ``Fp1``, dominant pole.
-* ``Fp2``, a pole which probably originates from output stage.
-* ``Fp3``, pole which probably originates from input or intermediate stages.
-* ``Fp4 Hz``, pole which probably originates from input or intermediate stages.
-* ``Rops``, open loop output stage impedance. The OPS open loop impedance is 
-  unusually low because the LM3886 uses output inclusive Miller compensation
-  which can be observed on the equivalent schematic in the data-sheet.
-
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-| Chip      | Aol [dB]  | Fp1 [Hz]  | Fp2 [Hz]  | Fp3 [Hz]  | Fp4 [Hz]  | Rops [Ohm]|
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
-| LM3886    | 115       | 15        | 1.7e6     | 9e6       | 10e6      | 240e-3    |
-+-----------+-----------+-----------+-----------+-----------+-----------+-----------+
+The TDA7293 data-sheet does not provide enough of relevant data in order to
+model the IC in AC domain. Since we can't model it there are no optimizations
+available for the negative feedback circuit. But we can safely assume that
+there are high frequency poles present in the TDA7293 transfer function. For
+this reason we will add a few ``pF`` to calculated lead compensation
+capacitor below (see ``Cadd``).
 
 Lead compensation
 `````````````````
 
 Equivalent feedback network with lead compensation circuit::
 
-          + Vout
+          o Vout
           |
           *------+
           |      |
@@ -474,14 +311,14 @@ Equivalent feedback network with lead compensation circuit::
          | |   -----
          +-+     |
    Vf     |      |
-    +-----*------+
+    o-----*------+
           |
          +-+ Rg
          | |
          | |
          +-+
           |
-          + Input
+          o Input
 
 Resistors `Rf` and `Rg` are part of feedback network. Capacitor `Cf` is the
 compensation capacitor. The transfer function of this network is given as:
@@ -494,13 +331,13 @@ compensation capacitor. The transfer function of this network is given as:
 
     H(s)=Vf(s)/Vout(s)=(Rg/(Rf+Rg))*((1+s*Rf*Cl)/(1+s*Re*Cl))
 
-Zero: 
+Zero:
 
 .. math::
 
     wz=1/(Rf*Cl)
 
-Pole: 
+Pole:
 
 .. math::
 
@@ -512,29 +349,12 @@ Where:
 
     Re=Rf||Rg=Rf*Rg/(Rf+Rg)
 
-With this compensation we want to compensate for LM3886 ``fp2`` pole. Although
-the ``fp2`` pole has a high value of it still has quite the effect on the gain 
-phase near unity gain bandwidth (UGBW) value. To compensate for ``fp2``
-pole we can use ``wz`` equation above. 
-
-For LM3886 we get:
+Rough estimation is to put additional 1-3pF in parallel to ``Rf``.
 
 .. math::
-    
-    Rf = 7.5kOhm
-    
-    fp2 = 1.7e6 Hz
-    
-    Cl=1/(2*pi*Rf*fp2)=12.5pF
 
-Outcome:
-
-* By using this compensation we improve the loop gain phase around UGBW point
-  and at higher frequencies.
-* The ``Cf`` in this compensation is known to reduce the closed loop
-  bandwidth. Since the ``Cf`` value is so small the impact to closed loop
-  bandwidth should be minimal.
-
+	Cadd = 3pF
+	
 
 Input pin capacitance compensation
 ``````````````````````````````````
@@ -544,75 +364,74 @@ Input pins have the following parasitic capacitances associated:
 * Cdiff
 * Cm
 * Cstray
- 
-The LM3886 datasheets do not specify any parameter regarding parasitic
-input capacitances. We can use a rough estimation of values based on experience
-on using other audio BJT OPAMPS, and typical values are 2pF for all 3
-parameters. In inverting configurations with `+` input grounded all three
-capacitances are tied in parallel, so the total input capacitance becomes:
+
+The TDA7293 data-sheet does not specify any parameter regarding parasitic
+input capacitances. Voltage feedback OPAMPS usually have both differential and
+common-mode input impedances specified. In the absence of any information, it
+is safe to use the model given in the next figure:
+
+.. code::
+
+                   +----+ Zdiff
+    +input o---+---|    |---+---o -input
+               |   +----+   |
+               |            |
+              +-+ Zcm1     +-+ Zcm2
+              | |          | |
+              | |          | |
+              +-+          +-+
+               |            |
+              ===          ===
+
+We can use a rough estimation of values based on experience on using other 
+audio FET OPAMPS, and typical values are around ``Cdiff=5pF``, ``Cm=4pF`` 
+and ``Cstray=3pF``. All three equivalent capacitors are tied in parallel, 
+so the total input capacitance becomes:
 
 .. math::
 
-    Cinput = Cdiff+Cm+Cstray=2pF+2pF+2pF=6pF
-    
-To mitigate this capacitance we can add capacitance `Csi` parallel to `Rf` 
+    Cinput = Cdiff+Cm+Cstray=5pF+4pF+3pF=12pF
+
+
+To mitigate this capacitance we can add capacitance `Csi` parallel to `Rf`
 resistor. To compensate for this the following equation is applied:
 
 .. math::
 
-    Rf*Csi=Rg*Cinput
-    
-    Csi=Cinput*Rg/Rf=0.4pF
-    
-Since we are already using lead compensation we just add this value to existing
-`Cl` capacitor.
+    Rf*Cf=Rg*Cinput
 
-Also, note that LM3886 model has tree more additional poles: 
+    Csi=Cinput*Rg/Rf=0.5pF
 
-* ``Fp2``, pole which probably originates from input or intermediate 
-  stages.
-* ``Fp3``, pole which probably originates from input or intermediate 
-  stages.
-* A pole from ``Rops``, open loop output stage impedance which in conjunction 
-  with output Zobel and connected load forms another high frequency pole.
-   
-Higher poles compensation
-`````````````````````````
-
-Although all above poles are very high in frequency they still have their
-impact on lower frequency part of transfer function and reduce a few degrees of
-phase margin at UGBW point (approx. at 500kHz). Because of these poles we can
-freely put a bit bigger `Cf` capacitor value in the feedback network. Rough
-estimation is to put additional 1-2pF:
-
-.. math::
-    
-    Chp=2pF
-
-Total Cf capacitance
-````````````````````
-
-The capacitance ``Cf`` is therefore:
+The final ``Cf`` value is:
 
 .. math::
 
-    Cf=Cl+Csi+Chp=12.5+0.4+2=14.9pF
-    
-Since the closest and next bigger standard value of capacitors is 15pF, we 
-choose this value as the final value for `Cl` capacitor:
+    Cf=Cl+Csi+Cadd=0+2+0.5=2.5pF
 
-.. math::
-
-    Cf=15pF 
+Any NP0 based capacitor around ``3pF`` will be good for this purpose.
 
 
 Power supply
 ============
 
+
+Power amplifier power supply
+----------------------------
+
+We are using dual symmetrical supplies from since dual secondaries. The high
+voltage supplies are stabilized using LM317/LM337 regulators and are used to
+feed input sections of TDA7293.
+
+The low voltage supplies are supplied directly from reservoir capacitors. This
+supply powers the high current, high power output sections of TDA7293.
+
+By using dual and independent supplies for input sections and power sections we
+can achieve very good PSRR results.
+
 Before rectifier diodes a snubber RC circuit should be placed to decrease diode
 switching impulse. Recommended values are ``Rsn = 1 Ohm``, ``Csn = 470nF``::
 
-          + Vsupply
+          o Vsupply
           |
           |
         ----- Csn = 470nF
@@ -624,18 +443,279 @@ switching impulse. Recommended values are ``Rsn = 1 Ohm``, ``Csn = 470nF``::
          | |
          +-+
           |
-         +++ Ground
+         === Ground
 
 This snubber may be placed near the IC power supply lines, too.
 
-Using stabilized power supplies, for example by using LT1083 regulator is only
-meaningful at lower output powers. The regulation becomes really expensive when
-used in high power amplifiers. Regulated power supplies are OK when used up to
-powers of 20W-30W @ 8 Ohm.
+AC mains
+--------
 
-**NOTE:**
-
-* On case chassis there should be a safety ground screw just near at the input
-  220V socket.
+NOTE:
+ * On case chassis there should be a safety ground screw just near at the input
+   220V socket.
 
 
+Control and Monitoring Unit
+===========================
+
+Amplifier controller will control and monitor two amplifiers. It has the
+following components:
+
+* Power supply undervoltage protection
+* Power supply overvoltage protection
+* Power supply imbalance protection
+* Output DC offset protection
+* Output clipping protection
+* Over-temperature protection
+* Over-current protection
+
+
+Power supply undervoltage protection
+------------------------------------
+
+Power supply overvoltage protection
+-----------------------------------
+
+Power supply imbalance protection
+---------------------------------
+
+Output DC offset protection
+---------------------------
+
+Output clipping protection
+--------------------------
+
+Over-temperature protection
+---------------------------
+
+Over-current protection
+-----------------------
+
+
+Analog inputs
+-------------
+
+
+.. code::
+
+                o  Vdd
+                |
+               +-+
+               | | R2
+               | |
+         R1    +-+
+        +---+   |
+    o---|   |---+------+---o Analog output (to MCU ADC)
+        +---+   |      |
+    Analog     +-+     |
+    Input      | | R3 --- C1
+               | |    ---
+               +-+     |
+                |      |
+               ===    ===
+
+Enviromental parametars:
+
+* Power supply: Vdd = 5V
+* Analog output impedance: Rout <= 10k
+
+Specification:
+
+* Analog input range: Ain = +/-40V
+* Analog input impedance: Rin >= 10k
+
+Equations:
+ (1) Since for 0V Ain we need 2.5V Aout: R2 = R1 || R3
+ (2) Since we need gain 1/16 (5V/80V) we have: 16 = R1 / (R1 || R2 || R3)
+
+This give as two equations with 3 unknowns:
+
+.. math::
+
+    (1 - Gain - 1)*G1 + G2 + G3 = 0
+
+    Vref * G1 + Vref * G2 + (Vref - Vhigh) * G3 = 0
+
+With Gain = 16, Vreg = 2.5V and Vhigh = 5V we have:
+
+.. math::
+
+    -15G1+G2+G3=0
+
+    2.5G1+2.5G2-2.5G3=0
+
+Start with G3 = 1/10:
+
+.. math::
+
+    -15G1+G2=-0.1
+
+    2.5G1+2.5G2=0.25
+
+    G1=1.25e+3 => R1=80kOhm
+
+    G3=8.75e-2 => R2=11.43kOhm
+
+
+One possibility is to have:
+
+.. math::
+
+    R1 = 110kOhm
+
+    R2 = 10kOhm
+
+    R3 = 11kOhm
+
+This combination has Gain = 22
+
+Monitor MCU pins
+----------------
+
+
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| # / Signal name       | Type          | 40 pin    | 28 pin    | Description                                       |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 1. pa_vcc             | analog in     | RD0       |           | Measures the VCC voltage                          |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 2. pa_vee             | analog in     | RD1       |           | Measures the VEE voltage                          |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 3. pa_ope             | analog in     | RA6       | RA6       | Measures Output Positive Envelope (Both channels) |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 4. pa_one             | analog in     | RA7       | RA7       | Measures Output Negative Envelope (Both channels) |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 5. pa_oal             | analog in     | RA2       | RA2       | Measures Output Average Left                      |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 6. pa_oar             | analog in     | RA4       | RA4       | Measures Output Average Right                     |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 7. pc_ol              | analog/comp in| RA0       | RA0       | Compares Output Left impedance                    |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 8. pc_or              | analog/comp in| RA1       | RA1       | Compares Output Right impedance                   |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 9. pc_ref             | analog/comp in| RA3       | RA3       | Comparator reference voltage                      |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 10. pc_i2c_scl        | i2c scl       | RC3       | RC3       | Sensor network SCL                                |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 11. pc_i2c_sda        | i2c sda       | RC4       | RC4       | Sensor network SDA                                |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 12. pc_uart_rx        | uart rx       | RC7       | RC7       | Service terminal RX (from PIC perspective)        |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 13. pc_uart_tx        | uart tx       | RC6       | RC6       | Service terminal TX (from PIC perspective)        |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 14. po_comp_en        | dig out       | RA5       | RA5       | Enable comparator current sources                 |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 15. po_ctrl_power     | dig out       | RB1       | RB1       | Control power relay                               |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 16. po_ctrl_pbypass   | dig out       | RB2       | RB2       | Control power bypass relay                        |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 17. po_ctrl_mute      | dig out       | RB3       | RB3       | Control mute relay                                |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 18. po_ctrl_enable    | dig out       | RB4       | RB4       | Control power amplifier enable                    |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 19. po_ind_power_a    | dig out       | RB5       | RB5       | Indicator power/status LED, pin A                 |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 20. po_ind_power_b    | dig out       | RD2       |           | Indicator power/status LED, pin B                 |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 21. po_ind_overload   | dig out       | RB6       | RB6       | Indicator overload LED                            |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 22. po_status         | dig out       | RB7       | RB7       | Status LED on board                               |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 23. pi_key_power      | dig in        | RB0       | RB0       | Power key                                         |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 24. pi_key_mute       | dig in        | RC5       | RC5       | Mute key                                          |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 25. pi_det_ac_power   | dig in        | RC0       | RC0       | AC power detection                                |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 26. pi_det_overload   | dig in        | RC1       | RC1       | Overload detection                                |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 27. pi_det_signal     | dig in        | RC2       | RC2       | Signal detection                                  |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 28. pi_cfg_power      | dig in        | RD3       |           | Configure power control mode                      |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 29. pi_cfg_ac_power   | dig in        | RD4       |           | Configure AC power detection mode                 |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 30. pi_cfg_impedance  | dig in        | RD5       |           | Configure Impedance monitoring mode               |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 31. pi_cfg_sensors    | dig in        | RD6       |           | Configure sensors mode                            |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 32.                   |               | RD7       |           |                                                   |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 33.                   |               | RE0       |           |                                                   |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 34.                   |               | RE1       |           |                                                   |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+| 35.                   |               | RE2       |           |                                                   |
++-----------------------+---------------+-----------+-----------+---------------------------------------------------+
+
+
+Hardware configurations
+-----------------------
+
+Power control mode
+
+* 0 - Disabled, always on
+* 1 - Enabled, wait for Power on event
+
+AC power detection mode:
+
+* 0 - Disabled, AC always present
+* 1 - Enabled, AC detect on
+
+Impedance monitoring mode:
+
+* 0 - Disabled, always allow power on
+* 1 - Enabled, dissallow power on when impedance is out of minimal limit
+
+Sensors mode:
+
+* 0 - Disabled, all temperature sensors are ignored
+* 1 - Enabled, read all temperature sensors
+
+
+Software configurations
+-----------------------
+
+Power supply:
+
+* nominal value: 20V
+* minimal value: 15V
+* maximum value: 25V
+* imbalance value: 10V
+* bypass time: 500ms
+* post bypass time: 500ms
+* mode, same as HW configuration 1
+
+Clipping detector:
+
+* clipping min voltage 4: 5
+* clipping min voltage 8: 3
+* hold off: 1000ms
+* timeout to mute: 10s
+* timeout to shutdown: 20s
+* mode:
+
+  * 0 - Disabled,
+  * 1 - Enabled
+
+AC detector:
+
+* num of cycles missing: 4
+* mode, same as HW configuration 2
+
+Impedance detector:
+
+* mode, same as HW configuration 3
+
+Temperature detector:
+
+* mode
+
+Chassis
+=======
+
+Component height
+----------------
+
+Power supply capacitors on amplifier boards:
+
+* 30mm (10mF)
