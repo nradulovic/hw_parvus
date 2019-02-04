@@ -101,7 +101,7 @@ F 1 "TDA7293" H 6441 3055 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical" H 6000 3100 50  0001 C CIN
 F 3 "http://www.farnell.com/datasheets/1761334.pdf" H 6000 3100 50  0001 C CNN
 F 4 "ST:TDA7293V" H 2100 600 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:1366582" H 2100 600 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 1366582" H 2100 600 50  0001 C CNN "Supplier1"
 	1    6000 3100
 	1    0    0    -1  
 $EndComp
@@ -304,8 +304,8 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4030 3550
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 4100 3550 50  0001 C CNN
 F 4 "0.6W" H 4030 3595 50  0000 R CNN "Power"
 F 5 "MF" H 4030 3686 50  0000 R CNN "Type"
-F 6 "TE Connectivity:LR1F12K" H 4100 3550 50  0001 C CNN "Manufacturer"
-F 7 "Farnell:2330007" H 4100 3550 50  0001 C CNN "Supplier1"
+F 6 "TE Connectivity: LR1F12K" H 4100 3550 50  0001 C CNN "Manufacturer"
+F 7 "Farnell: 2330007" H 4100 3550 50  0001 C CNN "Supplier1"
 	1    4100 3550
 	-1   0    0    1   
 $EndComp
@@ -339,8 +339,6 @@ F 7 "Farnell: 1890123" H 2800 6250 50  0001 C CNN "Supplier1"
 	1    2800 6250
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	1600 6500 1900 6500
 Text Notes 6450 5350 0    50   ~ 0
 Return to supply bypass \ncapacitor ground
 Text Notes 1900 7350 0    50   ~ 0
@@ -355,7 +353,7 @@ F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 3438 3050 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 3400 3200 50  0001 C CNN
 F 4 "10V" V 3745 3200 50  0000 C CNN "Voltage"
 F 5 "Rybicon:10YXJ470M6.3X11 " V 3400 3200 50  0001 C CNN "Manufacturer"
-F 6 "Farnel: 2346252" V 3400 3200 50  0001 C CNN "Supplier1"
+F 6 "Farnell: 2346252" V 3400 3200 50  0001 C CNN "Supplier1"
 	1    3400 3200
 	0    1    1    0   
 $EndComp
@@ -451,8 +449,8 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 3730 3200
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 3800 3200 50  0001 C CNN
 F 4 "0.6W" V 4097 3200 50  0000 C CNN "Power"
 F 5 "MF" V 4188 3200 50  0000 C CNN "Type"
-F 6 "TE Connectivity:LR1F499R" V 3800 3200 50  0001 C CNN "Manufacturer"
-F 7 "Farnell:2330163" V 3800 3200 50  0001 C CNN "Supplier1"
+F 6 "TE Connectivity: LR1F499R" V 3800 3200 50  0001 C CNN "Manufacturer"
+F 7 "Farnell: 2330163" V 3800 3200 50  0001 C CNN "Supplier1"
 	1    3800 3200
 	0    1    1    0   
 $EndComp
@@ -467,7 +465,7 @@ F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 4700 3550 50  0001 C CNN
 F 4 "0.6W" H 4770 3505 50  0000 L CNN "Power"
 F 5 "MF" H 4770 3414 50  0000 L CNN "Type"
 F 6 "TE Connectivity:LR1F12K" H 4700 3550 50  0001 C CNN "Manufacturer"
-F 7 "Farnell:2330007" H 4700 3550 50  0001 C CNN "Supplier1"
+F 7 "Farnell: 2330007" H 4700 3550 50  0001 C CNN "Supplier1"
 	1    4700 3550
 	1    0    0    -1  
 $EndComp
@@ -590,7 +588,7 @@ F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2238 6100 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2200 6250 50  0001 C CNN
 F 4 "50V" H 2082 6159 50  0000 R CNN "Voltage"
 F 5 "Rybicon: 50YXJ2200M16X35.5" V 2200 6250 50  0001 C CNN "Manufacturer"
-F 6 "Farnel: 2346272" V 2200 6250 50  0001 C CNN "Supplier1"
+F 6 "Farnell: 2346272" V 2200 6250 50  0001 C CNN "Supplier1"
 	1    2200 6250
 	-1   0    0    -1  
 $EndComp
@@ -845,19 +843,14 @@ Wire Wire Line
 $Comp
 L power:GNDD #PWR012
 U 1 1 5C76C62A
-P 1900 6600
-F 0 "#PWR012" H 1900 6350 50  0001 C CNN
-F 1 "GNDD" H 1904 6445 50  0000 C CNN
-F 2 "" H 1900 6600 50  0001 C CNN
-F 3 "" H 1900 6600 50  0001 C CNN
-	1    1900 6600
-	1    0    0    -1  
+P 5150 5300
+F 0 "#PWR012" H 5150 5050 50  0001 C CNN
+F 1 "GNDD" V 5154 5190 50  0000 R CNN
+F 2 "" H 5150 5300 50  0001 C CNN
+F 3 "" H 5150 5300 50  0001 C CNN
+	1    5150 5300
+	0    -1   -1   0   
 $EndComp
-Wire Wire Line
-	1900 6600 1900 6500
-Connection ~ 1900 6500
-Wire Wire Line
-	1900 6500 2200 6500
 Wire Wire Line
 	8800 3500 8800 1500
 Wire Wire Line
@@ -985,7 +978,7 @@ F 0 "D2" V 9954 1229 50  0000 L CNN
 F 1 "BZX79C15" V 10045 1229 50  0000 L CNN
 F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10000 1150 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2299521.pdf" H 10000 1150 50  0001 C CNN
-F 4 "ON Semuconductor: BZX79C15" V 10000 1150 50  0001 C CNN "Manufacturer"
+F 4 "ON Semiconductor: BZX79C15" V 10000 1150 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 1467595" V 10000 1150 50  0001 C CNN "Supplier1"
 	1    10000 1150
 	0    1    1    0   
@@ -1019,8 +1012,8 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 2380 2950
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 2450 2950 50  0001 C CNN
 F 4 "0.6W" H 2380 2995 50  0000 R CNN "Power"
 F 5 "MF" H 2380 3086 50  0000 R CNN "Type"
-F 6 "TE Connectivity:LR1F12K" H 2450 2950 50  0001 C CNN "Manufacturer"
-F 7 "Farnell:2330007" H 2450 2950 50  0001 C CNN "Supplier1"
+F 6 "TE Connectivity: LR1F12K" H 2450 2950 50  0001 C CNN "Manufacturer"
+F 7 "Farnell: 2330007" H 2450 2950 50  0001 C CNN "Supplier1"
 	1    2450 2950
 	-1   0    0    1   
 $EndComp
@@ -1127,7 +1120,7 @@ F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2238 6600 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2200 6750 50  0001 C CNN
 F 4 "50V" H 2082 6659 50  0000 R CNN "Voltage"
 F 5 "Rybicon: 50YXJ2200M16X35.5" V 2200 6750 50  0001 C CNN "Manufacturer"
-F 6 "Farnel: 2346272" V 2200 6750 50  0001 C CNN "Supplier1"
+F 6 "Farnell: 2346272" V 2200 6750 50  0001 C CNN "Supplier1"
 	1    2200 6750
 	-1   0    0    -1  
 $EndComp
@@ -1177,7 +1170,7 @@ Wire Wire Line
 	4100 4100 5900 4100
 Text Notes 2950 2300 0    50   ~ 0
 7.2M LP
-Text Notes 9450 2550 0    50   ~ 0
+Text Notes 9450 2600 0    50   ~ 0
 Matching connector:\nManufacturer: Molex 16-02-0082\nSupplier1: Farnell: 1756731\nManufactuer: Molex 50-57-9004\nSupplier1: Farnell: 1756895
 Text Notes 1550 1600 0    50   ~ 0
 Matching connector:\nManufacturer: Phoenix 1862865 (MCVW 1,5/ 3-ST-3,5)\nSupplier1: Farnell: 5089165
@@ -1189,4 +1182,98 @@ Text Label 6500 1300 0    50   ~ 0
 mute
 Text Label 6500 1600 0    50   ~ 0
 stby
+$Comp
+L Device:Net-Tie_2 NT1
+U 1 1 5C55F742
+P 4850 5300
+F 0 "NT1" H 4850 5478 50  0000 C CNN
+F 1 "Net-Tie_2" H 4850 5387 50  0000 C CNN
+F 2 "NetTie:NetTie-2_SMD_Pad2.0mm" H 4850 5300 50  0001 C CNN
+F 3 "~" H 4850 5300 50  0001 C CNN
+	1    4850 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR013
+U 1 1 5C55FC9C
+P 4750 5300
+F 0 "#PWR013" H 4750 5100 50  0001 C CNN
+F 1 "GNDPWR" V 4754 5191 50  0000 R CNN
+F 2 "" H 4750 5250 50  0001 C CNN
+F 3 "" H 4750 5250 50  0001 C CNN
+	1    4750 5300
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	1600 6500 2200 6500
+Wire Wire Line
+	4950 5300 5050 5300
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 5C56B7AF
+P 5050 5300
+F 0 "#FLG0101" H 5050 5375 50  0001 C CNN
+F 1 "PWR_FLAG" H 5050 5474 50  0000 C CNN
+F 2 "" H 5050 5300 50  0001 C CNN
+F 3 "~" H 5050 5300 50  0001 C CNN
+	1    5050 5300
+	1    0    0    -1  
+$EndComp
+Connection ~ 5050 5300
+Wire Wire Line
+	5050 5300 5150 5300
+Wire Notes Line
+	8550 5100 10850 5100
+Wire Notes Line
+	10850 5450 8550 5450
+Wire Notes Line
+	8550 5450 8550 5100
+Wire Notes Line
+	10850 3100 9800 3100
+Wire Notes Line
+	10850 3100 10850 5450
+Wire Notes Line
+	9400 2150 10800 2150
+Wire Notes Line
+	10800 2150 10800 2650
+Wire Notes Line
+	10800 2650 9400 2650
+Wire Notes Line
+	9400 2650 9400 1600
+Wire Notes Line
+	4400 7300 6700 7300
+Wire Notes Line
+	6700 7300 6700 7650
+Wire Notes Line
+	4400 7650 4400 7300
+Wire Notes Line
+	1000 7650 1000 6700
+Wire Notes Line
+	1000 7650 6700 7650
+Wire Notes Line
+	1500 1300 3750 1300
+Wire Notes Line
+	3750 1300 3750 1650
+Wire Notes Line
+	3750 1650 1500 1650
+Wire Notes Line
+	1500 1300 1500 2600
+Wire Notes Line
+	9450 1200 9600 1200
+Wire Notes Line
+	9600 1200 9600 1300
+Wire Notes Line
+	9600 1300 9450 1300
+Text Notes 8700 750  0    50   ~ 0
+Place jumper on pins 1 & 2\nto enable the amplifier.
+Wire Notes Line
+	8650 550  9850 550 
+Wire Notes Line
+	9850 800  8650 800 
+Wire Notes Line
+	8650 800  8650 550 
+Wire Notes Line
+	9850 1200 9650 1200
+Wire Notes Line
+	9850 550  9850 1200
 $EndSCHEMATC
