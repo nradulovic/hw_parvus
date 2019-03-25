@@ -102,6 +102,7 @@ F 2 "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical" H
 F 3 "http://www.farnell.com/datasheets/1761334.pdf" H 6000 3100 50  0001 C CNN
 F 4 "ST:TDA7293V" H 2100 600 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 1366582" H 2100 600 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 511-TDA7293V" H 6000 3100 50  0001 C CNN "Supplier2"
 	1    6000 3100
 	1    0    0    -1  
 $EndComp
@@ -121,6 +122,7 @@ F 4 "200V" H 5415 3505 50  0000 L CNN "Voltage"
 F 5 "NP0" H 5415 3414 50  0000 L CNN "Type"
 F 6 "Kemet: C315C339D2G5TA" V 5300 3550 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2819636" V 5300 3550 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 80-C315C339D2G" H 0   0   50  0001 C CNN "Supplier2"
 	1    5300 3550
 	1    0    0    -1  
 $EndComp
@@ -138,8 +140,10 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7530 4050
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 7600 4050 50  0001 C CNN
 F 4 "0.6W" H 7670 4005 50  0000 L CNN "Power"
 F 5 "MF" H 7670 3914 50  0000 L CNN "Type"
-F 6 "TE Connectivity: LR1F3R9" H 7600 4050 50  0001 C CNN "Manufacturer"
-F 7 "Farnell: 2330141" H 7600 4050 50  0001 C CNN "Supplier1"
+F 6 "TE Connectivity: LR1F3R9" H 7600 4050 50  0001 C CNN "Manufacturer1"
+F 7 "Vishay/BC Components: PR01000103908JR500" H 7600 4050 50  0001 C CNN "Manufacturer2"
+F 8 "Farnell: 2330141" H 7600 4050 50  0001 C CNN "Supplier1"
+F 9 "Mouser: 594-5073NW3R900J" H 0   0   50  0001 C CNN "Supplier2"
 	1    7600 4050
 	1    0    0    -1  
 $EndComp
@@ -155,6 +159,7 @@ F 4 "63V" H 7715 4405 50  0000 L CNN "Voltage"
 F 5 "PET" H 7715 4314 50  0000 L CNN "Type"
 F 6 "WIMA: MKS0C031000C00KSSD" H 2700 600 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1006004" H 2700 600 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 505-MKS02.1/63/10 " H 0   0   50  0001 C CNN "Supplier2"
 	1    7600 4450
 	1    0    0    -1  
 $EndComp
@@ -233,6 +238,7 @@ F 2 "Diode_THT:D_DO-201AD_P12.70mm_Horizontal" H 6800 2650 50  0001 C CNN
 F 3 "http://www.onsemi.com/PowerSolutions/supportDoc.do?type=models&rpn=1N5404" H 6800 2650 50  0001 C CNN
 F 4 "ON Semiconductor: 1N5404RL" V 6800 2650 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 9556141" V 6800 2650 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 863-1N5404RLG" H 0   0   50  0001 C CNN "Supplier2"
 	1    6800 2650
 	0    -1   1    0   
 $EndComp
@@ -306,6 +312,7 @@ F 4 "0.6W" H 4030 3595 50  0000 R CNN "Power"
 F 5 "MF" H 4030 3686 50  0000 R CNN "Type"
 F 6 "TE Connectivity: LR1F12K" H 4100 3550 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2330007" H 4100 3550 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F12K" H 0   0   50  0001 C CNN "Supplier2"
 	1    4100 3550
 	-1   0    0    1   
 $EndComp
@@ -321,6 +328,7 @@ F 4 "100V" H 8215 4405 50  0000 L CNN "Voltage"
 F 5 "X7R" H 8215 4314 50  0000 L CNN "Type"
 F 6 "AVX: SR211C104KAR" H 2700 600 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1100408" H 2700 600 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 581-SR211C104KAR" H 0   0   50  0001 C CNN "Supplier2"
 	1    8100 4450
 	1    0    0    -1  
 $EndComp
@@ -336,6 +344,7 @@ F 4 "63V" H 2915 6205 50  0000 L CNN "Voltage"
 F 5 "PET" H 2915 6114 50  0000 L CNN "Type"
 F 6 "WIMA: MKS0C032200C00KSSD" H 2800 6250 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1890123" H 2800 6250 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 505-MKS0C032200C00KS" H 0   0   50  0001 C CNN "Supplier2"
 	1    2800 6250
 	1    0    0    -1  
 $EndComp
@@ -399,8 +408,11 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 8180 1600 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 8250 1600 50  0001 C CNN
 F 4 "1/8" V 8547 1600 50  0000 C CNN "Power"
 F 5 "C" V 8638 1600 50  0000 C CNN "Type"
-F 6 "Multicomp: MF12 30K" V 8250 1600 50  0001 C CNN "Manufacturer"
+F 6 "" V 8250 1600 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 9343008" V 8250 1600 50  0001 C CNN "Supplier1"
+F 8 "Multicomp: MF12 30K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 9 "Yageo: CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 10 "Mouser: 603-CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Supplier2"
 	1    8250 1600
 	0    1    1    0   
 $EndComp
@@ -451,6 +463,7 @@ F 4 "0.6W" V 4097 3200 50  0000 C CNN "Power"
 F 5 "MF" V 4188 3200 50  0000 C CNN "Type"
 F 6 "TE Connectivity: LR1F499R" V 3800 3200 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2330163" V 3800 3200 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F499R" H 0   0   50  0001 C CNN "Supplier2"
 	1    3800 3200
 	0    1    1    0   
 $EndComp
@@ -464,8 +477,9 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 4630 3550
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 4700 3550 50  0001 C CNN
 F 4 "0.6W" H 4770 3505 50  0000 L CNN "Power"
 F 5 "MF" H 4770 3414 50  0000 L CNN "Type"
-F 6 "TE Connectivity:LR1F12K" H 4700 3550 50  0001 C CNN "Manufacturer"
+F 6 "TE Connectivity: LR1F12K" H 4700 3550 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2330007" H 4700 3550 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F12K" H 0   0   50  0001 C CNN "Supplier2"
 	1    4700 3550
 	1    0    0    -1  
 $EndComp
@@ -479,8 +493,11 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 7780 3100
 F 3 "http://www.farnell.com/datasheets/1723855.pdf" H 7850 3100 50  0001 C CNN
 F 4 "0.6W" V 8200 3100 50  0000 C CNN "Power"
 F 5 "MF" V 8300 3100 50  0000 C CNN "Type"
-F 6 "TE Connectivity: LR1F3R9" H 7850 3100 50  0001 C CNN "Manufacturer"
+F 6 "" H 7850 3100 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2330141" H 7850 3100 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 594-5073NW3R900J" H 0   0   50  0001 C CNN "Supplier2"
+F 9 "TE Connectivity: LR1F3R9" H 0   0   50  0001 C CNN "Manufacturer1"
+F 10 "Vishay/BC Components: PR01000103908JR500" H 0   0   50  0001 C CNN "Manufacturer2"
 	1    7850 3100
 	0    1    1    0   
 $EndComp
@@ -496,6 +513,7 @@ F 4 "0.6W" H 8170 4005 50  0000 L CNN "Power"
 F 5 "MF" H 8170 3914 50  0000 L CNN "Type"
 F 6 "TE Connectivity: LR1F10R" H 8100 4050 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2329993" H 8100 4050 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F10R" H 0   0   50  0001 C CNN "Supplier2"
 	1    8100 4050
 	1    0    0    -1  
 $EndComp
@@ -538,8 +556,11 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7780 1300 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7850 1300 50  0001 C CNN
 F 4 "1/8" V 7600 1300 50  0000 C CNN "Power"
 F 5 "C" V 7700 1300 50  0000 C CNN "Type"
-F 6 "Multicomp: MF12 47K" V 7850 1300 50  0001 C CNN "Manufacturer"
+F 6 "" V 7850 1300 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 9343261" V 7850 1300 50  0001 C CNN "Supplier1"
+F 8 "Multicomp: MF12 47K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 9 "Yageo: CFR-25JR-52-47K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 10 "Mouser: 603-CFR-25JR-5247K" H 0   0   50  0001 C CNN "Supplier2"
 	1    7850 1300
 	0    1    1    0   
 $EndComp
@@ -562,6 +583,7 @@ F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 8250 1000 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1934602.pdf" H 8250 1000 50  0001 C CNN
 F 4 "ON Semiconductor: 1N4148TA" H 8250 1000 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 2322485" H 8250 1000 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 512-1N4148TA" H 0   0   50  0001 C CNN "Supplier2"
 	1    8250 1000
 	-1   0    0    1   
 $EndComp
@@ -608,6 +630,7 @@ F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_3-G-3.81_1x03_P3.81mm_Vertical"
 F 3 "http://www.farnell.com/datasheets/2138271.pdf" H 1000 6500 50  0001 C CNN
 F 4 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 1000 6500 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 3913089" H 1000 6500 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 651-1803439" H 0   0   50  0001 C CNN "Supplier2"
 	1    1000 6500
 	-1   0    0    -1  
 $EndComp
@@ -721,6 +744,7 @@ F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_3-G-3.5_1x03_P3.50mm_Vertical" 
 F 3 "http://www.farnell.com/datasheets/2309782.pdf" H 1550 2800 50  0001 C CNN
 F 4 "Phoenix: 1843619 (MCV 1,5/ 3-G-3,81)" H 1550 2800 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 3704828" H 1550 2800 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 651-1843619" H 0   0   50  0001 C CNN "Supplier2"
 	1    1550 2800
 	-1   0    0    -1  
 $EndComp
@@ -867,6 +891,7 @@ F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical"
 F 3 "http://www.farnell.com/datasheets/2133308.pdf" H 9400 3000 50  0001 C CNN
 F 4 "Phoenix: 1803426 (MCV 1,5/ 2-G-3,81)" H 9400 3000 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 3913077" H 9400 3000 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 651-1803426" H 0   0   50  0001 C CNN "Supplier2"
 	1    9400 3000
 	1    0    0    -1  
 $EndComp
@@ -912,6 +937,7 @@ F 4 "63V" H 3515 6205 50  0000 L CNN "Voltage"
 F 5 "PET" H 3515 6114 50  0000 L CNN "Type"
 F 6 "WIMA: MKS0C022200B00KSSD" H 3400 6250 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1006001" H 3400 6250 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 505-MKS02.022/63/10" H 0   0   50  0001 C CNN "Supplier2"
 	1    3400 6250
 	1    0    0    -1  
 $EndComp
@@ -938,8 +964,11 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9930 1650
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 10000 1650 50  0001 C CNN
 F 4 "1/4" H 9930 1695 50  0000 R CNN "Power"
 F 5 "C" H 9930 1786 50  0000 R CNN "Type"
-F 6 "Multicomp: MF25 10K" V 10000 1650 50  0001 C CNN "Manufacturer"
+F 6 "" V 10000 1650 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 9341110" V 10000 1650 50  0001 C CNN "Supplier1"
+F 8 "Multicomp: MF25 10K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 9 "Yageo: CFR-25JR-52-10K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 10 "Mouser: 603-CFR-25JR-5210K" H 0   0   50  0001 C CNN "Supplier2"
 	1    10000 1650
 	-1   0    0    1   
 $EndComp
@@ -965,8 +994,11 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7280 1300 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7350 1300 50  0001 C CNN
 F 4 "1/8" V 7143 1300 50  0000 C CNN "Power"
 F 5 "C" V 7234 1300 50  0000 C CNN "Type"
-F 6 "Multicomp: MF12 15K" V 7350 1300 50  0001 C CNN "Manufacturer"
+F 6 "" V 7350 1300 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 9342630" V 7350 1300 50  0001 C CNN "Supplier1"
+F 8 "Multicomp: MF12 15K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 9 "Yageo: CFR-25JR-52-15K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 10 "Mouser: 603-CFR-25JR-5215K" H 0   0   50  0001 C CNN "Supplier2"
 	1    7350 1300
 	0    1    1    0   
 $EndComp
@@ -980,6 +1012,7 @@ F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 10000 1150 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2299521.pdf" H 10000 1150 50  0001 C CNN
 F 4 "ON Semiconductor: BZX79C15" V 10000 1150 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 1467595" V 10000 1150 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 512-BZX79C15" H 0   0   50  0001 C CNN "Supplier2"
 	1    10000 1150
 	0    1    1    0   
 $EndComp
@@ -999,6 +1032,7 @@ F 4 "200V" H 3065 2905 50  0000 L CNN "Voltage"
 F 5 "NP0" H 3065 2814 50  0000 L CNN "Type"
 F 6 "Kemet: C315C221K2G5TA" V 2950 2950 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2819626" V 2950 2950 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 80-C315C221K2G" H 0   0   50  0001 C CNN "Supplier2"
 	1    2950 2950
 	1    0    0    -1  
 $EndComp
@@ -1014,6 +1048,7 @@ F 4 "0.6W" H 2380 2995 50  0000 R CNN "Power"
 F 5 "MF" H 2380 3086 50  0000 R CNN "Type"
 F 6 "TE Connectivity: LR1F12K" H 2450 2950 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2330007" H 2450 2950 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F12K" H 0   0   50  0001 C CNN "Supplier2"
 	1    2450 2950
 	-1   0    0    1   
 $EndComp
@@ -1050,6 +1085,7 @@ F 4 "0.6W" H 2520 3405 50  0000 L CNN "Power"
 F 5 "MF" H 2520 3314 50  0000 L CNN "Type"
 F 6 "TE Connectivity: LR1F10R" H 2450 3450 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2329993" H 2450 3450 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F10R" H 0   0   50  0001 C CNN "Supplier2"
 	1    2450 3450
 	1    0    0    -1  
 $EndComp
@@ -1077,6 +1113,7 @@ F 2 "Diode_THT:D_DO-201AD_P12.70mm_Horizontal" H 6800 4150 50  0001 C CNN
 F 3 "http://www.onsemi.com/PowerSolutions/supportDoc.do?type=models&rpn=1N5404" H 6800 4150 50  0001 C CNN
 F 4 "ON Semiconductor: 1N5404RL" V 6800 4150 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 9556141" V 6800 4150 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 863-1N5404RLG" H 0   0   50  0001 C CNN "Supplier2"
 	1    6800 4150
 	0    -1   1    0   
 $EndComp
@@ -1092,6 +1129,7 @@ F 4 "63V" H 3515 6705 50  0000 L CNN "Voltage"
 F 5 "PET" H 3515 6614 50  0000 L CNN "Type"
 F 6 "WIMA: MKS0C022200B00KSSD" H 3400 6750 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1006001" H 3400 6750 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 505-MKS02.022/63/10" H 0   0   50  0001 C CNN "Supplier2"
 	1    3400 6750
 	1    0    0    -1  
 $EndComp
@@ -1107,6 +1145,7 @@ F 4 "63V" H 2915 6705 50  0000 L CNN "Voltage"
 F 5 "PET" H 2915 6614 50  0000 L CNN "Type"
 F 6 "WIMA: MKS0C032200C00KSSD" H 2800 6750 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 1890123" H 2800 6750 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 505-MKS0C032200C00KS" H 0   0   50  0001 C CNN "Supplier2"
 	1    2800 6750
 	1    0    0    -1  
 $EndComp
@@ -1142,6 +1181,7 @@ F 4 "0.6W" V 2493 2700 50  0000 C CNN "Power"
 F 5 "MF" V 2584 2700 50  0000 C CNN "Type"
 F 6 "TE Connectivity: LR1F100R" V 2700 2700 50  0001 C CNN "Manufacturer"
 F 7 "Farnell: 2329988" V 2700 2700 50  0001 C CNN "Supplier1"
+F 8 "Mouser: 279-LR1F100R" H 0   0   50  0001 C CNN "Supplier2"
 	1    2700 2700
 	0    1    1    0   
 $EndComp
