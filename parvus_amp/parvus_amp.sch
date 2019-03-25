@@ -6,7 +6,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Parvus Power Amplifier"
-Date "2018-08-02"
+Date "2019-03-25"
 Rev "1.0"
 Comp "Real-Time Consulting"
 Comment1 "Author: Nenad Radulovic"
@@ -415,11 +415,10 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 8180 1600 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 8250 1600 50  0001 C CNN
 F 4 "1/8" V 8547 1600 50  0000 C CNN "Power"
 F 5 "C" V 8638 1600 50  0000 C CNN "Type"
-F 6 "" V 8250 1600 50  0001 C CNN "Manufacturer"
-F 7 "Farnell: 9343008" V 8250 1600 50  0001 C CNN "Supplier1"
-F 8 "Multicomp: MF12 30K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 6 "Farnell: 9343008" V 8250 1600 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MF12 30K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Mouser: 603-CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Supplier2"
 F 9 "Yageo: CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Manufacturer2"
-F 10 "Mouser: 603-CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Supplier2"
 	1    8250 1600
 	0    1    1    0   
 $EndComp
@@ -565,11 +564,10 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7780 1300 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7850 1300 50  0001 C CNN
 F 4 "1/8" V 7600 1300 50  0000 C CNN "Power"
 F 5 "C" V 7700 1300 50  0000 C CNN "Type"
-F 6 "" V 7850 1300 50  0001 C CNN "Manufacturer"
-F 7 "Farnell: 9343261" V 7850 1300 50  0001 C CNN "Supplier1"
-F 8 "Multicomp: MF12 47K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 6 "Farnell: 9343261" V 7850 1300 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MF12 47K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Mouser: 603-CFR-25JR-5247K" H 0   0   50  0001 C CNN "Supplier2"
 F 9 "Yageo: CFR-25JR-52-47K" H 0   0   50  0001 C CNN "Manufacturer2"
-F 10 "Mouser: 603-CFR-25JR-5247K" H 0   0   50  0001 C CNN "Supplier2"
 	1    7850 1300
 	0    1    1    0   
 $EndComp
@@ -674,8 +672,8 @@ F 0 "J1" H 9480 1342 50  0000 L CNN
 F 1 "ctrl" H 9480 1251 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 9400 1300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2697192.pdf" H 9400 1300 50  0001 C CNN
-F 4 "~" H 9400 1300 50  0001 C CNN "Manufacturer"
-F 5 "~" H 9400 1300 50  0001 C CNN "Supplier1"
+F 4 "Molex:  171856-0004" H 9400 1300 50  0001 C CNN "Manufacturer1"
+F 5 "Mouser: 538-171856-0004" H 9400 1300 50  0001 C CNN "Supplier1"
 	1    9400 1300
 	1    0    0    -1  
 $EndComp
@@ -975,11 +973,10 @@ F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9930 1650
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 10000 1650 50  0001 C CNN
 F 4 "1/4" H 9930 1695 50  0000 R CNN "Power"
 F 5 "C" H 9930 1786 50  0000 R CNN "Type"
-F 6 "" V 10000 1650 50  0001 C CNN "Manufacturer"
-F 7 "Farnell: 9341110" V 10000 1650 50  0001 C CNN "Supplier1"
-F 8 "Multicomp: MF25 10K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 6 "Farnell: 9341110" V 10000 1650 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MF25 10K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Mouser: 603-CFR-25JR-5210K" H 0   0   50  0001 C CNN "Supplier2"
 F 9 "Yageo: CFR-25JR-52-10K" H 0   0   50  0001 C CNN "Manufacturer2"
-F 10 "Mouser: 603-CFR-25JR-5210K" H 0   0   50  0001 C CNN "Supplier2"
 	1    10000 1650
 	-1   0    0    1   
 $EndComp
@@ -1005,11 +1002,10 @@ F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7280 1300 
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7350 1300 50  0001 C CNN
 F 4 "1/8" V 7143 1300 50  0000 C CNN "Power"
 F 5 "C" V 7234 1300 50  0000 C CNN "Type"
-F 6 "" V 7350 1300 50  0001 C CNN "Manufacturer"
-F 7 "Farnell: 9342630" V 7350 1300 50  0001 C CNN "Supplier1"
-F 8 "Multicomp: MF12 15K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 6 "Farnell: 9342630" V 7350 1300 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MF12 15K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Mouser: 603-CFR-25JR-5215K" H 0   0   50  0001 C CNN "Supplier2"
 F 9 "Yageo: CFR-25JR-52-15K" H 0   0   50  0001 C CNN "Manufacturer2"
-F 10 "Mouser: 603-CFR-25JR-5215K" H 0   0   50  0001 C CNN "Supplier2"
 	1    7350 1300
 	0    1    1    0   
 $EndComp
@@ -1226,14 +1222,14 @@ Wire Wire Line
 	4100 4100 5900 4100
 Text Notes 2950 2300 0    50   ~ 0
 7.2M LP
-Text Notes 9450 2600 0    50   ~ 0
-Matching connector:\nManufacturer: Molex 16-02-0082\nSupplier1: Farnell: 1756731\nManufactuer: Molex 50-57-9004\nSupplier1: Farnell: 1756895
-Text Notes 1550 1600 0    50   ~ 0
-Matching connector:\nManufacturer: Phoenix 1862865 (MCVW 1,5/ 3-ST-3,5)\nSupplier1: Farnell: 5089165
-Text Notes 8600 5400 0    50   ~ 0
-Matching connector:\nManufacturer: Phoenix 1826979 (MCVW 1,5/ 2-ST-3,81)\nSupplier1: Farnell: 3705080
+Text Notes 9450 2850 0    50   ~ 0
+Matching connector:\nManufacturer: Molex 16-02-0082\nSupplier1: Farnell: 1756731\nManufactuer: Molex 50-57-9004\nSupplier1: Farnell: 1756895\nManufacturer2: Molex 22013047\nSupplier2: Mouser: 22-01-3047\nManufacturer2: Molex 08-50-0113\nSupplier2: Mouser: 538-08-50-0113-CT
+Text Notes 1550 1650 0    50   ~ 0
+Matching connector:\nManufacturer: Phoenix 1862865 (MCVW 1,5/ 3-ST-3,5)\nSupplier1: Farnell: 5089165\nSupplier2: Mouser: 651-1862865 
+Text Notes 8600 5450 0    50   ~ 0
+Matching connector:\nManufacturer: Phoenix 1826979 (MCVW 1,5/ 2-ST-3,81)\nSupplier1: Farnell: 3705080\nSupplier2: Mouser: 651-1826979
 Text Notes 4450 7600 0    50   ~ 0
-Matching connector:\nManufacturer: Phoenix 1826982 (MCVW 1,5/ 3-ST-3,81)\nSupplier1: Farnell: 3705092
+Matching connector:\nManufacturer: Phoenix 1826982 (MCVW 1,5/ 3-ST-3,81)\nSupplier1: Farnell: 3705092\nSupplier2: Mouser: 651-1826982 
 Text Label 6500 1300 0    50   ~ 0
 mute
 Text Label 6500 1600 0    50   ~ 0
@@ -1281,27 +1277,27 @@ Wire Wire Line
 Wire Notes Line
 	8550 5100 10850 5100
 Wire Notes Line
-	10850 5450 8550 5450
+	10850 5500 8550 5500
 Wire Notes Line
-	8550 5450 8550 5100
+	8550 5500 8550 5100
 Wire Notes Line
 	10850 3100 9800 3100
 Wire Notes Line
-	10850 3100 10850 5450
+	10850 3100 10850 5500
 Wire Notes Line
-	9400 2150 10800 2150
+	9400 2100 11100 2100
 Wire Notes Line
-	10800 2150 10800 2650
+	11100 2100 11100 2900
 Wire Notes Line
-	10800 2650 9400 2650
+	11100 2900 9400 2900
 Wire Notes Line
-	9400 2650 9400 1600
+	9400 2900 9400 1550
 Wire Notes Line
-	4400 7300 6700 7300
+	4400 7250 6700 7250
 Wire Notes Line
-	6700 7300 6700 7650
+	6700 7250 6700 7650
 Wire Notes Line
-	4400 7650 4400 7300
+	4400 7650 4400 7250
 Wire Notes Line
 	1000 7650 1000 6700
 Wire Notes Line
@@ -1309,9 +1305,9 @@ Wire Notes Line
 Wire Notes Line
 	1500 1300 3750 1300
 Wire Notes Line
-	3750 1300 3750 1650
+	3750 1300 3750 1700
 Wire Notes Line
-	3750 1650 1500 1650
+	3750 1700 1500 1700
 Wire Notes Line
 	1500 1300 1500 2600
 Wire Notes Line
