@@ -19,6 +19,16 @@ The amplifier architecture consists of the following sections:
 
 All sections are located on a single PCB.
 
+.. image:: images/3d_all.png
+
+.. image:: images/3s_rendr_top.png
+
+.. image:: images/3s_rendr_bottom.png
+
+.. image:: images/pcb_silkscreen.png
+
+.. image:: images/schematic.png
+
 Input circuit
 =============
 
