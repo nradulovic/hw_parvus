@@ -358,11 +358,13 @@ U 1 1 5C5E5E74
 P 3400 3200
 F 0 "C7" V 3563 3200 50  0000 C CNN
 F 1 "470u" V 3654 3200 50  0000 C CNN
-F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 3438 3050 50  0001 C CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P3.50mm" H 3438 3050 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 3400 3200 50  0001 C CNN
 F 4 "10V" V 3745 3200 50  0000 C CNN "Voltage"
-F 5 "Rybicon:10YXJ470M6.3X11 " V 3400 3200 50  0001 C CNN "Manufacturer"
-F 6 "Farnell: 2346252" V 3400 3200 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 2346252" V 3400 3200 50  0001 C CNN "Supplier1"
+F 6 "Rybicon:10YXJ470M6.3X11 " H 0   0   50  0001 C CNN "Manufacturer1"
+F 7 "Nichicon: UPW0J471MPD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser:  647-UPW0J471MPD" H 0   0   50  0001 C CNN "Supplier2"
 	1    3400 3200
 	0    1    1    0   
 $EndComp
@@ -375,8 +377,11 @@ F 1 "10u" H 6982 1850 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 7138 1700 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1723232.pdf" H 7100 1850 50  0001 C CNN
 F 4 "35V" H 6982 1759 50  0000 R CNN "Voltage"
-F 5 "Multicomp: MCGPR35V106M5X11" H 7100 1850 50  0001 C CNN "Manufacturer"
+F 5 "" H 7100 1850 50  0001 C CNN "Manufacturer"
 F 6 "Farnell: 9451242" H 7100 1850 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MCGPR35V106M5X11" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Nichicon: UVZ1V100MDD1TD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 9 "Mouser:  647-UVZ1V100MDD1TD" H 0   0   50  0001 C CNN "Supplier2"
 	1    7100 1850
 	-1   0    0    -1  
 $EndComp
@@ -393,8 +398,10 @@ F 1 "3u3" V 3146 2700 50  0000 C CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 3438 2550 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 3400 2700 50  0001 C CNN
 F 4 "50V" V 3237 2700 50  0000 C CNN "Voltage"
-F 5 "Rybicon: 50YXJ3R3M5X11" H 3400 2700 50  0001 C CNN "Manufacturer"
-F 6 "Farnell: 2346267" H 3400 2700 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 2346267" H 3400 2700 50  0001 C CNN "Supplier1"
+F 6 "Rybicon: 50YXJ3R3M5X11" H 0   0   50  0001 C CNN "Manufacturer1"
+F 7 "Nichicon: UPW2A3R3MDD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser:  647-UPW2A3R3MDD " H 0   0   50  0001 C CNN "Supplier2"
 	1    3400 2700
 	0    1    1    0   
 $EndComp
@@ -446,8 +453,10 @@ F 1 "47u" H 6382 2650 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D6.3mm_P2.50mm" H 6538 2500 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 6500 2650 50  0001 C CNN
 F 4 "63V" H 6382 2559 50  0000 R CNN "Voltage"
-F 5 "Rybicon: 63YXJ47M6.3X11" H 6500 2650 50  0001 C CNN "Manufacturer"
-F 6 "Farnell: 2346274" H 6500 2650 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 2346274" H 6500 2650 50  0001 C CNN "Supplier1"
+F 6 "Rybicon: 63YXJ47M6.3X11" H 6500 2650 50  0001 C CNN "Manufacturer1"
+F 7 "Mouser:  647-UPW1H470MED" H 6500 2650 50  0001 C CNN "Supplier2"
+F 8 "Nichicon: UPW1H470MED" H 6500 2650 50  0001 C CNN "Manufacturer2"
 	1    6500 2650
 	-1   0    0    -1  
 $EndComp
@@ -609,8 +618,10 @@ F 1 "2m2" H 2082 6250 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2238 6100 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2200 6250 50  0001 C CNN
 F 4 "50V" H 2082 6159 50  0000 R CNN "Voltage"
-F 5 "Rybicon: 50YXJ2200M16X35.5" V 2200 6250 50  0001 C CNN "Manufacturer"
-F 6 "Farnell: 2346272" V 2200 6250 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 2346272" V 2200 6250 50  0001 C CNN "Supplier1"
+F 6 "Rybicon: 50YXJ2200M16X35.5" H 0   0   50  0001 C CNN "Manufacturer1"
+F 7 "Nichicon: UPW1V222MHD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser:  647-UPW1V222MHD" H 0   0   50  0001 C CNN "Supplier2"
 	1    2200 6250
 	-1   0    0    -1  
 $EndComp
@@ -1098,8 +1109,11 @@ F 1 "10u" H 7482 1850 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.00mm" H 7638 1700 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1723232.pdf" H 7600 1850 50  0001 C CNN
 F 4 "35V" H 7482 1759 50  0000 R CNN "Voltage"
-F 5 "Multicomp: MCGPR35V106M5X11" H 7600 1850 50  0001 C CNN "Manufacturer"
+F 5 "" H 7600 1850 50  0001 C CNN "Manufacturer"
 F 6 "Farnell: 9451242" H 7600 1850 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MCGPR35V106M5X11" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Nichicon: UVZ1V100MDD1TD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 9 "Mouser:  647-UVZ1V100MDD1TD" H 0   0   50  0001 C CNN "Supplier2"
 	1    7600 1850
 	-1   0    0    -1  
 $EndComp
@@ -1158,8 +1172,10 @@ F 1 "2m2" H 2082 6750 50  0000 R CNN
 F 2 "Capacitor_THT:CP_Radial_D16.0mm_P7.50mm" H 2238 6600 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2321616.pdf" H 2200 6750 50  0001 C CNN
 F 4 "50V" H 2082 6659 50  0000 R CNN "Voltage"
-F 5 "Rybicon: 50YXJ2200M16X35.5" V 2200 6750 50  0001 C CNN "Manufacturer"
-F 6 "Farnell: 2346272" V 2200 6750 50  0001 C CNN "Supplier1"
+F 5 "Farnell: 2346272" V 2200 6750 50  0001 C CNN "Supplier1"
+F 6 "Rybicon: 50YXJ2200M16X35.5" H 0   0   50  0001 C CNN "Manufacturer1"
+F 7 "Nichicon: UPW1V222MHD" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser:  647-UPW1V222MHD" H 0   0   50  0001 C CNN "Supplier2"
 	1    2200 6750
 	-1   0    0    -1  
 $EndComp
