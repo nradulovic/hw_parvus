@@ -96,8 +96,8 @@ U 1 1 5C37C649
 P 6000 3100
 AR Path="/5C37C649" Ref="U1"  Part="1" 
 AR Path="/5C37BC7C/5C37C649" Ref="U?"  Part="1" 
-F 0 "U1" H 6441 3146 50  0000 L CNN
-F 1 "TDA7293" H 6441 3055 50  0000 L CNN
+F 0 "U1" H 5250 3800 50  0000 L CNN
+F 1 "TDA7293" H 5250 3700 50  0000 L CNN
 F 2 "Package_TO_SOT_THT:TO-220-15_P2.54x2.54mm_StaggerOdd_Lead4.58mm_Vertical" H 6000 3100 50  0001 C CIN
 F 3 "http://www.farnell.com/datasheets/1761334.pdf" H 6000 3100 50  0001 C CNN
 F 4 "ST:TDA7293V" H 2100 600 50  0001 C CNN "Manufacturer"
@@ -351,7 +351,7 @@ $EndComp
 Text Notes 6450 5350 0    50   ~ 0
 Return to supply bypass \ncapacitor ground
 Text Notes 1900 7350 0    50   ~ 0
-Place the capacitors as\nclose as possible to IC\npins
+Place the capacitors as\nclose as possible to IC\npower supply pins.
 $Comp
 L Device:CP C7
 U 1 1 5C5E5E74
@@ -1238,8 +1238,8 @@ $Comp
 L Device:Net-Tie_2 NT1
 U 1 1 5C55F742
 P 4850 5300
-F 0 "NT1" H 4850 5478 50  0000 C CNN
-F 1 "Net-Tie_2" H 4850 5387 50  0000 C CNN
+F 0 "NT1" H 4850 5250 50  0000 C CNN
+F 1 "Net-Tie_2" H 4850 5150 50  0000 C CNN
 F 2 "NetTie:NetTie-2_SMD_Pad2.0mm" H 4850 5300 50  0001 C CNN
 F 3 "~" H 4850 5300 50  0001 C CNN
 	1    4850 5300

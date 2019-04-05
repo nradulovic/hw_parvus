@@ -2,7 +2,7 @@
 
   (general
     (thickness 1.6)
-    (drawings 62)
+    (drawings 63)
     (tracks 177)
     (zones 0)
     (modules 45)
@@ -3688,6 +3688,18 @@
     )
   )
 
+  (dimension 5 (width 0.3) (layer Margin)
+    (gr_text "5.000 mm" (at 90 109.52) (layer Margin)
+      (effects (font (size 1.5 1.5) (thickness 0.3)))
+    )
+    (feature1 (pts (xy 92.5 102.42) (xy 92.5 108.006421)))
+    (feature2 (pts (xy 87.5 102.42) (xy 87.5 108.006421)))
+    (crossbar (pts (xy 87.5 107.42) (xy 92.5 107.42)))
+    (arrow1a (pts (xy 92.5 107.42) (xy 91.373496 108.006421)))
+    (arrow1b (pts (xy 92.5 107.42) (xy 91.373496 106.833579)))
+    (arrow2a (pts (xy 87.5 107.42) (xy 88.626504 108.006421)))
+    (arrow2b (pts (xy 87.5 107.42) (xy 88.626504 106.833579)))
+  )
   (gr_text "Board grid origin: pin 8 of U1 component" (at 213.94 43.26) (layer Cmts.User)
     (effects (font (size 1.5 1.5) (thickness 0.3)))
   )
