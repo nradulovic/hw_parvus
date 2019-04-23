@@ -17,7 +17,7 @@ The amplifier architecture consists of the following sections:
 * Power supply
 * Control and Monitoring Unit (CMU)
 
-All sections are located on a single PCB.
+Each of these sections are implemented as a separate PCB.
 
 .. image:: images/3d_all.png
 
