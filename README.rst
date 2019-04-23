@@ -162,68 +162,30 @@ Using low feedback gain is preferred for several reasons:
  * reduced outout noues
  * lower offset at output
 
-Nominal gain is:
+Nominal gain of an non-inverting amplifier is:
 
 .. math::
 
-    G=-Rf/Rg
+    G=Rf/Rg+1
 
+Since we have a voltage divider with same resistors in the front of the 
+amplifier the total gain becomes:
 
-Using E24 series of resistors:
+.. math::
 
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| 510       |  7.5      | -14.7   |
-+-----------+-----------+---------+
-| *510*     |  *8.2*    | *-16.0* |
-+-----------+-----------+---------+
-| 510       |  9.1      | -17.8   |
-+-----------+-----------+---------+
-| 510       | 10.0      | -19.6   |
-+-----------+-----------+---------+
-| 510       | 11.0      | -21.5   |
-+-----------+-----------+---------+
+    G=Rf/Rg
 
-Using E24 series of resistors:
-
-+-----------+-----------+---------+
-| Rf [Ohm]  | Rg [kOhm] | G [V/V] |
-+-----------+-----------+---------+
-| 511       |  7.50     | -14.7   |
-+-----------+-----------+---------+
-| 511       |  7.87     | -15.4   |
-+-----------+-----------+---------+
-| *511*     |  *8.25*   | *-16.1* |
-+-----------+-----------+---------+
-| 511       |  8.66     | -16.9   |
-+-----------+-----------+---------+
-| 511       |  9.09     | -17.8   |
-+-----------+-----------+---------+
-| 511       |  9.53     | -18.6   |
-+-----------+-----------+---------+
-| 511       | 10.00     | -19.6   |
-+-----------+-----------+---------+
-| 511       | 10.50     | -20.5   |
-+-----------+-----------+---------+
-| 511       | 11.00     | -21.5   |
-+-----------+-----------+---------+
+The minimum gain specified in the TDA7293 datasheet is 26dB or 20 times. Just
+to be on the safe side we choose 10% bigger value: 22
 
 Chosen values for E24 series:
- * Rf = 8.2kOhm
+ * Rf = 12kOhm
  * Rg = 510 Ohm
 
 Chosen values for E48 series:
- * Rf = 8.25kOhm
- * Rg = 511 Ohm
+ * Rf = 11kOhm
+ * Rg = 499 Ohm
 
-Chosen values when using parallel E24 series (two resistor):
- * Rf = 16kOhm
- * Rg = 1kOhm
-
-Chosen values when using parallel E48 series (two resistor):
- * Rf = 16.2kOhm
- * Rg = 1kOhm
 
 Frequency compensation
 ----------------------
