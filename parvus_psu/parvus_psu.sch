@@ -1,4 +1,5 @@
 EESchema Schematic File Version 4
+LIBS:parvus_psu-cache
 EELAYER 26 0
 EELAYER END
 $Descr A4 11693 8268
@@ -628,67 +629,67 @@ Wire Wire Line
 $Comp
 L Mechanical:MountingHole MH1
 U 1 1 5B8B0A69
-P 8500 4000
-F 0 "MH1" H 8600 4046 50  0000 L CNN
-F 1 "MountingHole" H 8600 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 8500 4000 50  0001 C CNN
-F 3 "~" H 8500 4000 50  0001 C CNN
-	1    8500 4000
+P 4600 6700
+F 0 "MH1" H 4700 6746 50  0000 L CNN
+F 1 "MountingHole" H 4700 6655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4600 6700 50  0001 C CNN
+F 3 "~" H 4600 6700 50  0001 C CNN
+	1    4600 6700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole MH2
 U 1 1 5B8B0C63
-P 8500 4400
-F 0 "MH2" H 8600 4446 50  0000 L CNN
-F 1 "MountingHole" H 8600 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 8500 4400 50  0001 C CNN
-F 3 "~" H 8500 4400 50  0001 C CNN
-	1    8500 4400
+P 4600 7100
+F 0 "MH2" H 4700 7146 50  0000 L CNN
+F 1 "MountingHole" H 4700 7055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 4600 7100 50  0001 C CNN
+F 3 "~" H 4600 7100 50  0001 C CNN
+	1    4600 7100
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole MH3
 U 1 1 5B8B373F
-P 9200 4000
-F 0 "MH3" H 9300 4046 50  0000 L CNN
-F 1 "MountingHole" H 9300 3955 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 9200 4000 50  0001 C CNN
-F 3 "~" H 9200 4000 50  0001 C CNN
-	1    9200 4000
+P 5300 6700
+F 0 "MH3" H 5400 6746 50  0000 L CNN
+F 1 "MountingHole" H 5400 6655 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5300 6700 50  0001 C CNN
+F 3 "~" H 5300 6700 50  0001 C CNN
+	1    5300 6700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Mechanical:MountingHole MH4
 U 1 1 5B8B3745
-P 9200 4400
-F 0 "MH4" H 9300 4446 50  0000 L CNN
-F 1 "MountingHole" H 9300 4355 50  0000 L CNN
-F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 9200 4400 50  0001 C CNN
-F 3 "~" H 9200 4400 50  0001 C CNN
-	1    9200 4400
+P 5300 7100
+F 0 "MH4" H 5400 7146 50  0000 L CNN
+F 1 "MountingHole" H 5400 7055 50  0000 L CNN
+F 2 "MountingHole:MountingHole_3.2mm_M3_ISO7380_Pad" H 5300 7100 50  0001 C CNN
+F 3 "~" H 5300 7100 50  0001 C CNN
+	1    5300 7100
 	1    0    0    -1  
 $EndComp
 $Comp
 L Graphic:Logo_Open_Hardware_Small LOGO1
 U 1 1 5B8B640D
-P 10150 4000
-F 0 "LOGO1" H 10150 4275 50  0001 C CNN
-F 1 "Kicad_Logo" H 10150 4294 50  0000 C CNN
-F 2 "Symbol:KiCad-Logo_5mm_Copper" H 10150 4000 50  0001 C CNN
-F 3 "~" H 10150 4000 50  0001 C CNN
-	1    10150 4000
+P 6250 6700
+F 0 "LOGO1" H 6250 6975 50  0001 C CNN
+F 1 "Kicad_Logo" H 6250 6994 50  0000 C CNN
+F 2 "Symbol:KiCad-Logo_5mm_Copper" H 6250 6700 50  0001 C CNN
+F 3 "~" H 6250 6700 50  0001 C CNN
+	1    6250 6700
 	1    0    0    -1  
 $EndComp
 $Comp
 L Graphic:Logo_Open_Hardware_Small LOGO2
 U 1 1 5B8B650F
-P 10150 4500
-F 0 "LOGO2" H 10150 4775 50  0001 C CNN
-F 1 "Kicad_Logo" H 10150 4794 50  0000 C CNN
-F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 10150 4500 50  0001 C CNN
-F 3 "~" H 10150 4500 50  0001 C CNN
-	1    10150 4500
+P 6250 7200
+F 0 "LOGO2" H 6250 7475 50  0001 C CNN
+F 1 "Kicad_Logo" H 6250 7494 50  0000 C CNN
+F 2 "Symbol:OSHW-Logo2_7.3x6mm_SilkScreen" H 6250 7200 50  0001 C CNN
+F 3 "~" H 6250 7200 50  0001 C CNN
+	1    6250 7200
 	1    0    0    -1  
 $EndComp
 Text Label 2150 1100 0    50   ~ 0
@@ -798,4 +799,351 @@ F 5 "Phoenix: MKDS1/ 3-3,5" H 1400 2000 50  0001 C CNN "Manufacturer"
 	1    1400 2000
 	-1   0    0    -1  
 $EndComp
+$Comp
+L Device:D D3
+U 1 1 5CD06103
+P 5100 3750
+F 0 "D3" V 5146 3671 50  0000 R CNN
+F 1 "1N4148" V 5055 3671 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 5100 3750 50  0001 C CNN
+F 3 "~" H 5100 3750 50  0001 C CNN
+	1    5100 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:D D4
+U 1 1 5CD06AFA
+P 5600 3750
+F 0 "D4" V 5646 3671 50  0000 R CNN
+F 1 "1N4148" V 5555 3671 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 5600 3750 50  0001 C CNN
+F 3 "~" H 5600 3750 50  0001 C CNN
+	1    5600 3750
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:R R7
+U 1 1 5CD06CA7
+P 5600 5250
+F 0 "R7" H 5670 5387 50  0000 L CNN
+F 1 "10k" H 5670 5296 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5530 5250 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 5600 5250 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 5600 5250 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 5600 5250 50  0001 C CNN "Supplier1"
+F 6 "0.4W" H 5670 5205 50  0000 L CNN "Power"
+F 7 "MF" H 5670 5114 50  0000 L CNN "Type"
+	1    5600 5250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R6
+U 1 1 5CD06DB7
+P 5600 4250
+F 0 "R6" H 5670 4387 50  0000 L CNN
+F 1 "100k" H 5670 4296 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 5530 4250 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 5600 4250 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 5600 4250 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 5600 4250 50  0001 C CNN "Supplier1"
+F 6 "0.4W" H 5670 4205 50  0000 L CNN "Power"
+F 7 "MF" H 5670 4114 50  0000 L CNN "Type"
+	1    5600 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Q_NPN_CBE Q1
+U 1 1 5CD06F11
+P 6000 5000
+F 0 "Q1" H 6191 5046 50  0000 L CNN
+F 1 "BC546B" H 6191 4955 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92_Inline_Wide" H 6200 5100 50  0001 C CNN
+F 3 "~" H 6000 5000 50  0001 C CNN
+	1    6000 5000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R9
+U 1 1 5CD0A05E
+P 6100 3700
+F 0 "R9" H 6170 3837 50  0000 L CNN
+F 1 "47k" H 6170 3746 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 6030 3700 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 6100 3700 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 6100 3700 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 6100 3700 50  0001 C CNN "Supplier1"
+F 6 "0.4W" H 6170 3655 50  0000 L CNN "Power"
+F 7 "MF" H 6170 3564 50  0000 L CNN "Type"
+	1    6100 3700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5600 5400 5600 5500
+Wire Wire Line
+	5600 5500 6100 5500
+Wire Wire Line
+	5600 5100 5600 5000
+Wire Wire Line
+	5800 5000 5600 5000
+Connection ~ 5600 5000
+Wire Wire Line
+	5600 5000 5600 4400
+Wire Wire Line
+	6100 4800 6100 4500
+Wire Wire Line
+	5600 4100 5600 4000
+Wire Wire Line
+	5100 3900 5100 4000
+Wire Wire Line
+	5100 4000 5600 4000
+Connection ~ 5600 4000
+Wire Wire Line
+	5600 4000 5600 3900
+Wire Wire Line
+	6100 5200 6100 5500
+Connection ~ 6100 5500
+Wire Wire Line
+	6100 3550 6100 3500
+Text GLabel 2100 1000 1    50   Output ~ 0
+acs_p
+Text GLabel 2100 3000 3    50   Output ~ 0
+acs_n
+Wire Wire Line
+	2100 3000 2100 2900
+Connection ~ 2100 2900
+Wire Wire Line
+	2100 1000 2100 1100
+Connection ~ 2100 1100
+Text GLabel 5600 3500 1    50   Input ~ 0
+acs_n
+Text GLabel 5100 3500 1    50   Input ~ 0
+acs_p
+Wire Wire Line
+	5100 3500 5100 3600
+Wire Wire Line
+	5600 3500 5600 3600
+$Comp
+L Connector_Generic:Conn_01x04 J?
+U 1 1 5CDFD1CE
+P 10700 5300
+F 0 "J?" H 10620 5617 50  0000 C CNN
+F 1 "left_power" H 10620 5526 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 10700 5300 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2138271.pdf" H 10700 5300 50  0001 C CNN
+F 4 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 10700 5300 50  0001 C CNN "Manufacturer"
+F 5 "Farnell: 3913089" H 10700 5300 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 651-1803439" H 10700 5300 50  0001 C CNN "Supplier2"
+	1    10700 5300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x03 J?
+U 1 1 5CDFDA0E
+P 10700 4400
+F 0 "J?" H 10620 4717 50  0000 C CNN
+F 1 "left_power" H 10620 4626 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 10700 4400 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2138271.pdf" H 10700 4400 50  0001 C CNN
+F 4 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 10700 4400 50  0001 C CNN "Manufacturer"
+F 5 "Farnell: 3913089" H 10700 4400 50  0001 C CNN "Supplier1"
+F 6 "Mouser: 651-1803439" H 10700 4400 50  0001 C CNN "Supplier2"
+	1    10700 4400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR?
+U 1 1 5CE10132
+P 5600 5600
+F 0 "#PWR?" H 5600 5400 50  0001 C CNN
+F 1 "GNDPWR" V 5604 5491 50  0000 R CNN
+F 2 "" H 5600 5550 50  0001 C CNN
+F 3 "" H 5600 5550 50  0001 C CNN
+	1    5600 5600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9100 3500 9100 1500
+Wire Wire Line
+	9100 1500 9000 1500
+Wire Wire Line
+	5600 1500 5600 2000
+Connection ~ 9100 3500
+Wire Wire Line
+	5600 5600 5600 5500
+Connection ~ 5600 5500
+$Comp
+L Device:R R?
+U 1 1 5CE1DA85
+P 9850 4500
+F 0 "R?" V 9965 4500 50  0000 C CNN
+F 1 "10k" V 10056 4500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9780 4500 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 9850 4500 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 9850 4500 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 9850 4500 50  0001 C CNN "Supplier1"
+F 6 "0.4W" V 10147 4500 50  0000 C CNN "Power"
+F 7 "MF" V 10238 4500 50  0000 C CNN "Type"
+	1    9850 4500
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CE31138
+P 10100 4750
+F 0 "R?" H 10030 4613 50  0000 R CNN
+F 1 "10k" H 10030 4704 50  0000 R CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10030 4750 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 10100 4750 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 10100 4750 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 10100 4750 50  0001 C CNN "Supplier1"
+F 6 "0.4W" H 10030 4795 50  0000 R CNN "Power"
+F 7 "MF" H 10030 4886 50  0000 R CNN "Type"
+	1    10100 4750
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	10100 4300 10500 4300
+Wire Wire Line
+	10100 4600 10100 4300
+Wire Wire Line
+	10100 4900 10100 5200
+Wire Wire Line
+	9100 3500 9600 3500
+Wire Wire Line
+	9600 3500 9600 4400
+Wire Wire Line
+	9600 4400 10500 4400
+Wire Wire Line
+	9600 4500 9600 5400
+Wire Wire Line
+	9600 5400 10500 5400
+Wire Wire Line
+	9600 4500 9700 4500
+Wire Wire Line
+	10000 4500 10500 4500
+Wire Wire Line
+	10100 5200 10500 5200
+NoConn ~ 10500 5300
+$Comp
+L Device:R R?
+U 1 1 5CEC3866
+P 8850 1500
+F 0 "R?" V 8965 1500 50  0000 C CNN
+F 1 "10k" V 9056 1500 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 8780 1500 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 8850 1500 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 8850 1500 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 8850 1500 50  0001 C CNN "Supplier1"
+F 6 "0.4W" V 9147 1500 50  0000 C CNN "Power"
+F 7 "MF" V 9238 1500 50  0000 C CNN "Type"
+	1    8850 1500
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	8700 1500 5600 1500
+$Comp
+L Timer:NE555 U?
+U 1 1 5CEC458E
+P 8300 4700
+F 0 "U?" H 8300 5278 50  0000 C CNN
+F 1 "NE555" H 8300 5187 50  0000 C CNN
+F 2 "" H 8300 4700 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/ne555.pdf" H 8300 4700 50  0001 C CNN
+	1    8300 4700
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R?
+U 1 1 5CECFCBB
+P 9100 3850
+F 0 "R?" H 9170 3987 50  0000 L CNN
+F 1 "47k" H 9170 3896 50  0000 L CNN
+F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9030 3850 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 9100 3850 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 9100 3850 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 9100 3850 50  0001 C CNN "Supplier1"
+F 6 "0.4W" H 9170 3805 50  0000 L CNN "Power"
+F 7 "MF" H 9170 3714 50  0000 L CNN "Type"
+	1    9100 3850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6100 3500 7100 3500
+Wire Wire Line
+	8300 4300 8300 3500
+Connection ~ 8300 3500
+Wire Wire Line
+	8300 3500 9100 3500
+Wire Wire Line
+	7800 4900 7100 4900
+Wire Wire Line
+	7100 4900 7100 3500
+Connection ~ 7100 3500
+Wire Wire Line
+	7100 3500 8300 3500
+$Comp
+L Device:C C?
+U 1 1 5CEE4411
+P 7100 5250
+F 0 "C?" H 7215 5387 50  0000 L CNN
+F 1 "470n" H 7215 5296 50  0000 L CNN
+F 2 "Capacitor_THT:C_Rect_L7.2mm_W8.5mm_P5.00mm_FKP2_FKP2_MKS2_MKP2" H 7138 5100 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/815363.pdf" H 7100 5250 50  0001 C CNN
+F 4 "WIMA: MKS2D034701E00KSSD" H 7100 5250 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:1006037" H 7100 5250 50  0001 C CNN "Supplier1"
+F 6 "PET" H 7215 5205 50  0000 L CNN "Type"
+F 7 "100V" H 7215 5114 50  0000 L CNN "Voltage"
+	1    7100 5250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 4700 7600 4700
+Wire Wire Line
+	7600 4700 7100 5100
+Wire Wire Line
+	7100 5400 7100 5500
+Connection ~ 7100 5500
+Wire Wire Line
+	7100 5500 8300 5500
+Wire Wire Line
+	8300 5100 8300 5500
+Connection ~ 8300 5500
+Wire Wire Line
+	8300 5500 10500 5500
+Wire Wire Line
+	6100 4500 6600 4500
+Wire Wire Line
+	6100 5500 7100 5500
+Connection ~ 6100 4500
+Wire Wire Line
+	6100 3850 6100 4500
+Wire Wire Line
+	9000 6000 6600 6000
+Wire Wire Line
+	6600 6000 6600 4500
+Connection ~ 6600 4500
+Wire Wire Line
+	6600 4500 7800 4500
+$Comp
+L Device:D D?
+U 1 1 5CF58B4F
+P 9000 5250
+F 0 "D?" V 9046 5171 50  0000 R CNN
+F 1 "1N4148" V 8955 5171 50  0000 R CNN
+F 2 "Diode_THT:D_DO-35_SOD27_P7.62mm_Horizontal" H 9000 5250 50  0001 C CNN
+F 3 "~" H 9000 5250 50  0001 C CNN
+	1    9000 5250
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	9000 5400 9000 6000
+Wire Wire Line
+	9000 4700 8800 4700
+Wire Wire Line
+	8800 4900 9000 4900
+Wire Wire Line
+	9000 4700 9000 4900
+Connection ~ 9000 4900
+Wire Wire Line
+	9000 4900 9000 5100
 $EndSCHEMATC
