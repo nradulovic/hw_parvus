@@ -410,15 +410,15 @@ L Device:R R3
 U 1 1 5C4F9DF0
 P 8250 1600
 F 0 "R3" V 8365 1600 50  0000 C CNN
-F 1 "30k" V 8456 1600 50  0000 C CNN
+F 1 "10k" V 8456 1600 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 8180 1600 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 8250 1600 50  0001 C CNN
 F 4 "1/8" V 8547 1600 50  0000 C CNN "Power"
 F 5 "C" V 8638 1600 50  0000 C CNN "Type"
 F 6 "Farnell: 9343008" V 8250 1600 50  0001 C CNN "Supplier1"
 F 7 "Multicomp: MF12 30K" H 0   0   50  0001 C CNN "Manufacturer1"
-F 8 "Mouser: 603-CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Supplier2"
-F 9 "Yageo: CFR-25JR-52-30K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser: 603-CFR-12JB-52-10K" H 0   0   50  0001 C CNN "Supplier2"
+F 9 "Yageo: CFR-12JB-52-10K" H 0   0   50  0001 C CNN "Manufacturer2"
 	1    8250 1600
 	0    1    1    0   
 $EndComp
@@ -559,15 +559,15 @@ L Device:R R2
 U 1 1 5C583D8F
 P 7850 1300
 F 0 "R2" V 7400 1300 50  0000 C CNN
-F 1 "47k" V 7500 1300 50  0000 C CNN
+F 1 "18k" V 7500 1300 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7780 1300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7850 1300 50  0001 C CNN
-F 4 "1/8" V 7600 1300 50  0000 C CNN "Power"
+F 4 "1/4" V 7600 1300 50  0000 C CNN "Power"
 F 5 "C" V 7700 1300 50  0000 C CNN "Type"
-F 6 "Farnell: 9343261" V 7850 1300 50  0001 C CNN "Supplier1"
-F 7 "Multicomp: MF12 47K" H 0   0   50  0001 C CNN "Manufacturer1"
-F 8 "Mouser: 603-CFR-25JR-5247K" H 0   0   50  0001 C CNN "Supplier2"
-F 9 "Yageo: CFR-25JR-52-47K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 6 "Farnell: 9342745" V 7850 1300 50  0001 C CNN "Supplier1"
+F 7 "Multicomp: MF12 18K" H 0   0   50  0001 C CNN "Manufacturer1"
+F 8 "Mouser: 603-CFR-12JB-52-18K" H 0   0   50  0001 C CNN "Supplier2"
+F 9 "Yageo: CFR-12JB-52-18K" H 0   0   50  0001 C CNN "Manufacturer2"
 	1    7850 1300
 	0    1    1    0   
 $EndComp
@@ -997,15 +997,15 @@ L Device:R R1
 U 1 1 5C3D1E61
 P 7350 1300
 F 0 "R1" V 6961 1300 50  0000 C CNN
-F 1 "15k" V 7052 1300 50  0000 C CNN
+F 1 "2k" V 7052 1300 50  0000 C CNN
 F 2 "Resistor_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal" V 7280 1300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/1716726.pdf" H 7350 1300 50  0001 C CNN
 F 4 "1/8" V 7143 1300 50  0000 C CNN "Power"
 F 5 "C" V 7234 1300 50  0000 C CNN "Type"
 F 6 "Farnell: 9342630" V 7350 1300 50  0001 C CNN "Supplier1"
 F 7 "Multicomp: MF12 15K" H 0   0   50  0001 C CNN "Manufacturer1"
-F 8 "Mouser: 603-CFR-25JR-5215K" H 0   0   50  0001 C CNN "Supplier2"
-F 9 "Yageo: CFR-25JR-52-15K" H 0   0   50  0001 C CNN "Manufacturer2"
+F 8 "Mouser: 603-CFR-25JB-52-2K" H 0   0   50  0001 C CNN "Supplier2"
+F 9 "Yageo: CFR-25JB-52-2K" H 0   0   50  0001 C CNN "Manufacturer2"
 	1    7350 1300
 	0    1    1    0   
 $EndComp
