@@ -939,7 +939,7 @@ U 1 1 5CDFDA0E
 P 10800 2300
 F 0 "J7" H 10720 2617 50  0000 C CNN
 F 1 "signal" H 10720 2526 50  0000 C CNN
-F 2 "Connector_PinHeader_2.54mm:PinHeader_1x04_P2.54mm_Vertical" H 10800 2300 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 10800 2300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2138271.pdf" H 10800 2300 50  0001 C CNN
 F 4 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 10800 2300 50  0001 C CNN "Manufacturer"
 F 5 "Farnell: 3913089" H 10800 2300 50  0001 C CNN "Supplier1"
@@ -950,12 +950,12 @@ $EndComp
 $Comp
 L power:GNDPWR #PWR08
 U 1 1 5CE10132
-P 9700 6200
-F 0 "#PWR08" H 9700 6000 50  0001 C CNN
-F 1 "GNDPWR" V 9704 6091 50  0000 R CNN
-F 2 "" H 9700 6150 50  0001 C CNN
-F 3 "" H 9700 6150 50  0001 C CNN
-	1    9700 6200
+P 10200 6200
+F 0 "#PWR08" H 10200 6000 50  0001 C CNN
+F 1 "GNDPWR" V 10204 6091 50  0000 R CNN
+F 2 "" H 10200 6150 50  0001 C CNN
+F 3 "" H 10200 6150 50  0001 C CNN
+	1    10200 6200
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -966,30 +966,15 @@ L Device:R R21
 U 1 1 5CE1DA85
 P 9950 2400
 F 0 "R21" V 10065 2400 50  0000 C CNN
-F 1 "10k" V 10156 2400 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 9880 2400 50  0001 C CNN
+F 1 "4k7" V 10156 2400 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 9880 2400 50  0001 C CNN
 F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 9950 2400 50  0001 C CNN
 F 4 "Vishay: SFR2500001002JA500" H 9950 2400 50  0001 C CNN "Manufacturer"
 F 5 "Farnell:9476539" H 9950 2400 50  0001 C CNN "Supplier1"
-F 6 "0.4W" V 10247 2400 50  0000 C CNN "Power"
+F 6 "0.5W" V 10247 2400 50  0000 C CNN "Power"
 F 7 "MF" V 10338 2400 50  0000 C CNN "Type"
 	1    9950 2400
 	0    1    1    0   
-$EndComp
-$Comp
-L Device:R R22
-U 1 1 5CE31138
-P 10350 2200
-F 0 "R22" V 10739 2200 50  0000 C CNN
-F 1 "10k" V 10648 2200 50  0000 C CNN
-F 2 "Resistor_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal" V 10280 2200 50  0001 C CNN
-F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 10350 2200 50  0001 C CNN
-F 4 "Vishay: SFR2500001002JA500" H 10350 2200 50  0001 C CNN "Manufacturer"
-F 5 "Farnell:9476539" H 10350 2200 50  0001 C CNN "Supplier1"
-F 6 "0.4W" V 10557 2200 50  0000 C CNN "Power"
-F 7 "MF" V 10466 2200 50  0000 C CNN "Type"
-	1    10350 2200
-	0    -1   -1   0   
 $EndComp
 NoConn ~ 10600 4600
 Wire Wire Line
@@ -1001,7 +986,7 @@ L Device:CP1 C12
 U 1 1 5CDC50C4
 P 6100 5950
 F 0 "C12" H 6215 6041 50  0000 L CNN
-F 1 "1u" H 6215 5950 50  0000 L CNN
+F 1 "2u2" H 6215 5950 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 6100 5950 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2045874.pdf" H 6100 5950 50  0001 C CNN
 F 4 "Vishay: MAL225630682E3" H 6100 5950 50  0001 C CNN "Manufacturer"
@@ -1069,7 +1054,7 @@ L Device:CP1 C14
 U 1 1 5CDECFEB
 P 7600 5950
 F 0 "C14" H 7715 6041 50  0000 L CNN
-F 1 "1u" H 7715 5950 50  0000 L CNN
+F 1 "2u2" H 7715 5950 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 7600 5950 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2045874.pdf" H 7600 5950 50  0001 C CNN
 F 4 "Vishay: MAL225630682E3" H 7600 5950 50  0001 C CNN "Manufacturer"
@@ -1100,7 +1085,7 @@ $EndComp
 Wire Wire Line
 	7100 4600 7100 5000
 $Comp
-L Device:Q_PNP_BCE Q7
+L Device:Q_PNP_CBE Q7
 U 1 1 5CDF6E6A
 P 9000 4200
 F 0 "Q7" H 9191 4154 50  0000 L CNN
@@ -1224,19 +1209,8 @@ F 3 "~" H 9350 4700 50  0001 C CNN
 $EndComp
 Wire Wire Line
 	9600 4700 9500 4700
-$Comp
-L power:GNDPWR #PWR09
-U 1 1 5CE73A93
-P 10100 6300
-F 0 "#PWR09" H 10100 6100 50  0001 C CNN
-F 1 "GNDPWR" V 10104 6191 50  0000 R CNN
-F 2 "" H 10100 6250 50  0001 C CNN
-F 3 "" H 10100 6250 50  0001 C CNN
-	1    10100 6300
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
-	10100 6300 10100 5400
+	10100 6200 10100 5400
 Wire Wire Line
 	10100 4800 10600 4800
 Wire Wire Line
@@ -1296,7 +1270,7 @@ Connection ~ 7600 4700
 Wire Wire Line
 	7600 4700 7600 5800
 $Comp
-L Device:Q_PNP_BCE Q8
+L Device:Q_PNP_CBE Q8
 U 1 1 5CEE7338
 P 9500 5200
 F 0 "Q8" H 9691 5154 50  0000 L CNN
@@ -1359,7 +1333,7 @@ L Device:CP1 C13
 U 1 1 5CF4BA50
 P 7600 2950
 F 0 "C13" H 7715 3041 50  0000 L CNN
-F 1 "1u" H 7715 2950 50  0000 L CNN
+F 1 "4u7" H 7715 2950 50  0000 L CNN
 F 2 "Capacitor_THT:CP_Radial_D5.0mm_P2.50mm" H 7600 2950 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2045874.pdf" H 7600 2950 50  0001 C CNN
 F 4 "Vishay: MAL225630682E3" H 7600 2950 50  0001 C CNN "Manufacturer"
@@ -1390,7 +1364,7 @@ $EndComp
 Wire Wire Line
 	7100 1600 7100 2000
 $Comp
-L Device:Q_PNP_BCE Q6
+L Device:Q_PNP_CBE Q6
 U 1 1 5CF4BA66
 P 9000 1200
 F 0 "Q6" H 9191 1154 50  0000 L CNN
@@ -1581,7 +1555,7 @@ Wire Wire Line
 	6600 1100 6600 2200
 Connection ~ 6600 2200
 Wire Wire Line
-	9700 6200 9600 6200
+	10200 6200 10100 6200
 Connection ~ 9600 6200
 Wire Wire Line
 	6600 4600 6600 5200
@@ -1652,4 +1626,54 @@ Wire Wire Line
 Connection ~ 6100 700 
 Wire Wire Line
 	6100 700  6600 700 
+$Comp
+L Device:R R22
+U 1 1 5CE0308D
+P 10350 2200
+F 0 "R22" V 9961 2200 50  0000 C CNN
+F 1 "4k7" V 10052 2200 50  0000 C CNN
+F 2 "Resistor_THT:R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal" V 10280 2200 50  0001 C CNN
+F 3 "https://export.farnell.com/c/passive-components/resistors-fixed-value/through-hole-resistors?product-range=sfr125-series" H 10350 2200 50  0001 C CNN
+F 4 "Vishay: SFR2500001002JA500" H 10350 2200 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:9476539" H 10350 2200 50  0001 C CNN "Supplier1"
+F 6 "0.5W" V 10143 2200 50  0000 C CNN "Power"
+F 7 "MF" V 10234 2200 50  0000 C CNN "Type"
+	1    10350 2200
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:CP1 C15
+U 1 1 5CE0402B
+P 4100 950
+F 0 "C15" H 4215 1041 50  0000 L CNN
+F 1 "10u" H 4215 950 50  0000 L CNN
+F 2 "Capacitor_THT:CP_Radial_D8.0mm_P2.50mm" H 4100 950 50  0001 C CNN
+F 3 "http://www.farnell.com/datasheets/2045874.pdf" H 4100 950 50  0001 C CNN
+F 4 "Vishay: MAL225630682E3" H 4100 950 50  0001 C CNN "Manufacturer"
+F 5 "Farnell:2474575" H 4100 950 50  0001 C CNN "Supplier1"
+F 6 "35V" H 4215 859 50  0000 L CNN "Voltage"
+	1    4100 950 
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GNDPWR #PWR0101
+U 1 1 5CE04114
+P 4100 1200
+F 0 "#PWR0101" H 4100 1000 50  0001 C CNN
+F 1 "GNDPWR" V 4104 1091 50  0000 R CNN
+F 2 "" H 4100 1150 50  0001 C CNN
+F 3 "" H 4100 1150 50  0001 C CNN
+	1    4100 1200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4100 1200 4100 1100
+Wire Wire Line
+	4100 800  4100 700 
+Wire Wire Line
+	4100 700  4600 700 
+Connection ~ 4600 700 
+Connection ~ 10100 6200
+Wire Wire Line
+	10100 6200 9600 6200
 $EndSCHEMATC
