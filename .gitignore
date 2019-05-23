@@ -26,3 +26,6 @@ _autosave-*
 # Exported BOM files
 *.xml
 *.csv
+
+# Helper python scripts
+__pycache__
