@@ -21,9 +21,9 @@ Each of these sections are implemented as a separate PCB.
 
 .. image:: images/3d_all.png
 
-.. image:: images/3s_rendr_top.png
+.. image:: images/3d_rendr_top.png
 
-.. image:: images/3s_rendr_bottom.png
+.. image:: images/3d_rendr_bottom.png
 
 .. image:: images/pcb_silkscreen.png
 
