@@ -94,15 +94,17 @@ Using the 2nd order CR low-pass filter calculator at URL:
 
 For more details please refer to: http://www.johnhearfield.com/RC/RC4.htm
 
+
+Power amplifier
+===============
+
+
 The ground loop breaker resistor
 --------------------------------
 
 A ground loop breaker resistor is located between SGND and GNDPWR grounds. The
 value of this resistor should be around 10 ohms.
 
-
-Power amplifier
-===============
 
 Output EMI suppression
 ----------------------
@@ -146,6 +148,7 @@ Output shunt resistor should be between 2 and 5 Ohms. See
 for effect on power amplifier transfer function.
 
 The power supply section is using single bank of 10mF capacitors.
+
 
 Gain value
 ----------
@@ -314,6 +317,7 @@ Any NP0 based capacitor around ``3pF`` will be good for this purpose.
 Power supply
 ============
 
+
 Power amplifier power supply
 ----------------------------
 
@@ -341,6 +345,7 @@ switching impulse. Recommended values are ``Rsn = 1 Ohm``, ``Csn = 470nF``::
 
 This snubber may be placed near the IC power supply lines, too.
 
+
 AC mains
 --------
 
@@ -348,8 +353,10 @@ NOTE:
  * On case chassis there should be a safety ground screw just near at the input
    220V socket.
 
+
 Chassis
 =======
+
 
 Component height
 ----------------
