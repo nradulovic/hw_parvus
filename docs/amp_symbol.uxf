@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>9</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>612</x>
+      <y>387</y>
+      <w>180</w>
+      <h>252</h>
+    </coordinates>
+    <panel_attributes>symbol=component
+AMP (left)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>585</y>
+      <w>297</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=[PSI]&lt;-[...]
+Power Supply Input</panel_attributes>
+    <additional_attributes>300.0;20.0;20.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>549</y>
+      <w>297</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=[...]&lt;-&gt;[CMS]
+Control and Mute Slave</panel_attributes>
+    <additional_attributes>20.0;20.0;300.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>405</y>
+      <w>297</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=[...]&lt;-[SPO]
+Speaker Output</panel_attributes>
+    <additional_attributes>20.0;20.0;300.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>477</y>
+      <w>297</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>lt=[SGI]&lt;-[...]
+Signal Input</panel_attributes>
+    <additional_attributes>300.0;20.0;20.0;20.0</additional_attributes>
+  </element>
+</diagram>

@@ -1,13 +1,12 @@
 EESchema Schematic File Version 4
-LIBS:parvus_amp-cache
-EELAYER 26 0
+EELAYER 30 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title "Parvus Power Amplifier"
-Date "2019-03-25"
-Rev "1.0"
+Date "2020-09-27"
+Rev "1.03"
 Comp "Real-Time Consulting"
 Comment1 "Author: Nenad Radulovic"
 Comment2 ""
@@ -576,8 +575,8 @@ $Comp
 L Connector_Generic:Conn_01x03 J2
 U 1 1 5C6276A7
 P 1000 6500
-F 0 "J2" H 920 6817 50  0000 C CNN
-F 1 "power" H 920 6726 50  0000 C CNN
+F 0 "J2" H 1500 6950 50  0000 R CNN
+F 1 "psi" H 1500 6850 50  0000 R CNN
 F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_3-G-3.81_1x03_P3.81mm_Vertical" H 1000 6500 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2138271.pdf" H 1000 6500 50  0001 C CNN
 F 4 "" H 1000 6500 50  0001 C CNN "Manufacturer"
@@ -585,6 +584,7 @@ F 5 "Farnell: 3913089" H 1000 6500 50  0001 C CNN "Supplier1"
 F 6 "Mouser: 651-1803439" H 0   0   50  0001 C CNN "Supplier2"
 F 7 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 0   0   50  0001 C CNN "Manufacturer1"
 F 8 "Phoenix: 1803439 (MCV 1,5/ 3-G-3,81)" H 0   0   50  0001 C CNN "Manufacturer2"
+F 9 "Power Supply Input" H 1500 6750 50  0000 R CNN "Name"
 	1    1000 6500
 	-1   0    0    -1  
 $EndComp
@@ -613,12 +613,13 @@ $Comp
 L Connector_Generic:Conn_01x04 J5
 U 1 1 5C64A606
 P 8900 1300
-F 0 "J5" H 8980 1292 50  0000 L CNN
-F 1 "ctrl" H 8980 1201 50  0000 L CNN
+F 0 "J5" H 8750 1000 50  0000 L CNN
+F 1 "cms" H 8750 900 50  0000 L CNN
 F 2 "Connector_Molex:Molex_KK-254_AE-6410-04A_1x04_P2.54mm_Vertical" H 8900 1300 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2697192.pdf" H 8900 1300 50  0001 C CNN
 F 4 "Molex:  171856-0004" H -500 -100 50  0001 C CNN "Manufacturer1"
 F 5 "Mouser: 538-171856-0004" H -500 -100 50  0001 C CNN "Supplier1"
+F 6 "Control and Mute Slave" H 8750 800 50  0000 L CNN "Name"
 	1    8900 1300
 	1    0    0    -1  
 $EndComp
@@ -686,8 +687,8 @@ $Comp
 L Connector_Generic:Conn_01x03 J1
 U 1 1 5C60BCB9
 P 900 2500
-F 0 "J1" H 820 2817 50  0000 C CNN
-F 1 "input" H 820 2726 50  0000 C CNN
+F 0 "J1" H 850 2950 50  0000 R CNN
+F 1 "sgi" H 850 2850 50  0000 R CNN
 F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_3-G-3.5_1x03_P3.50mm_Vertical" H 900 2500 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2309782.pdf" H 900 2500 50  0001 C CNN
 F 4 "" H 900 2500 50  0001 C CNN "Manufacturer"
@@ -695,6 +696,7 @@ F 5 "Farnell: 3704828" H 900 2500 50  0001 C CNN "Supplier1"
 F 6 "Mouser: 651-1843619" H -650 -300 50  0001 C CNN "Supplier2"
 F 7 "Phoenix: 1843619 (MCV 1,5/ 3-G-3,50)" H -100 -300 50  0001 C CNN "Manufacturer1"
 F 8 "Phoenix: 1843619 (MCV 1,5/ 3-G-3,50)" H -100 -300 50  0001 C CNN "Manufacturer2"
+F 9 "Signal input" H 850 2750 50  0000 R CNN "Name"
 	1    900  2500
 	-1   0    0    -1  
 $EndComp
@@ -823,8 +825,8 @@ $Comp
 L Connector_Generic:Conn_01x02 J3
 U 1 1 5C7997DF
 P 7800 3000
-F 0 "J3" H 7880 2992 50  0000 L CNN
-F 1 "output" H 7880 2901 50  0000 L CNN
+F 0 "J3" H 7500 3450 50  0000 L CNN
+F 1 "spo" H 7500 3350 50  0000 L CNN
 F 2 "Connector_Phoenix_MC:PhoenixContact_MCV_1,5_2-G-3.81_1x02_P3.81mm_Vertical" H 7800 3000 50  0001 C CNN
 F 3 "http://www.farnell.com/datasheets/2133308.pdf" H 7800 3000 50  0001 C CNN
 F 4 "" H 7800 3000 50  0001 C CNN "Manufacturer"
@@ -832,6 +834,7 @@ F 5 "Farnell: 3913077" H 7800 3000 50  0001 C CNN "Supplier1"
 F 6 "Mouser: 651-1803426" H -1600 0   50  0001 C CNN "Supplier2"
 F 7 "Phoenix: 1803426 (MCV 1,5/ 2-G-3,81)" H -1600 0   50  0001 C CNN "Manufacturer1"
 F 8 "Phoenix: 1803426 (MCV 1,5/ 2-G-3,81)" H -1600 0   50  0001 C CNN "Manufacturer2"
+F 9 "Speaker Output" H 7500 3250 50  0000 L CNN "Name"
 	1    7800 3000
 	1    0    0    -1  
 $EndComp
@@ -1084,9 +1087,9 @@ Matching connector:\nManufacturer1: Phoenix 1826979 (MCVW 1,5/ 2-ST-3,81)\nManuf
 Text Notes 4450 7600 0    50   ~ 0
 Matching connector:\nManufacturer1: Phoenix: 1826982 (MCVW 1,5/ 3-ST-3,81)\nManufacturer2: Phoenix: 1826982 (MCVW 1,5/ 3-ST-3,81)\nSupplier1: Farnell: 3705092\nSupplier2: Mouser: 651-1826982 
 Text Label 5800 1200 0    50   ~ 0
-mute
+ic_mute
 Text Label 5800 1600 0    50   ~ 0
-stby
+ic_stby
 $Comp
 L Device:Net-Tie_2 NT1
 U 1 1 5C55F742
@@ -1122,7 +1125,7 @@ Wire Notes Line
 Wire Notes Line
 	10700 4700 8900 4700
 Wire Notes Line
-	8900 4700 8900 1600
+	8900 4700 8900 1850
 Wire Notes Line
 	4400 7150 6800 7150
 Wire Notes Line
@@ -1215,7 +1218,7 @@ L Connector_Generic:Conn_01x03 J4
 U 1 1 5D5AAA5F
 P 8900 800
 F 0 "J4" H 8980 792 50  0000 L CNN
-F 1 "ctrl_override" H 8980 701 50  0000 L CNN
+F 1 "cms_override" H 8980 701 50  0000 L CNN
 F 2 "Connector_PinHeader_2.54mm:PinHeader_1x03_P2.54mm_Vertical" H 8900 800 50  0001 C CNN
 F 3 "https://www.molex.com/webdocs/datasheets/pdf/en-us/0022284031_PCB_HEADERS.pdf" H 8900 800 50  0001 C CNN
 F 4 "Molex: 22-28-4031" H -500 -2200 50  0001 C CNN "Manufacturer1"
@@ -1433,13 +1436,13 @@ Wire Wire Line
 	7350 1200 7800 1200
 Connection ~ 7800 800 
 Wire Wire Line
-	8600 1300 8700 1300
+	8000 1300 8700 1300
 Wire Wire Line
 	7800 800  8700 800 
 Wire Wire Line
-	8600 1300 8600 900 
+	8000 1300 8000 900 
 Wire Wire Line
-	8600 900  8700 900 
+	8000 900  8700 900 
 $Comp
 L Device:Q_PNP_CBE Q1
 U 1 1 5D6518BC
@@ -1480,9 +1483,7 @@ Wire Notes Line
 Wire Notes Line
 	11000 3400 9200 3400
 Wire Notes Line
-	9200 1000 9000 1000
-Wire Notes Line
-	9200 1000 9200 3400
+	9200 1850 9200 3400
 Wire Wire Line
 	5100 3450 5100 4200
 Wire Wire Line
@@ -1490,10 +1491,10 @@ Wire Wire Line
 Wire Wire Line
 	4900 6000 4950 6000
 $Comp
-L power:PWR_FLAG #FLG?
+L power:PWR_FLAG #FLG0101
 U 1 1 5D75B8F2
 P 4950 5950
-F 0 "#FLG?" H 4950 6025 50  0001 C CNN
+F 0 "#FLG0101" H 4950 6025 50  0001 C CNN
 F 1 "PWR_FLAG" H 4950 6123 50  0000 C CNN
 F 2 "" H 4950 5950 50  0001 C CNN
 F 3 "~" H 4950 5950 50  0001 C CNN
@@ -1505,4 +1506,28 @@ Wire Wire Line
 Connection ~ 4950 6000
 Wire Wire Line
 	4950 6000 5000 6000
+Text Notes 10300 1300 0    50   ~ 0
+16V zener
+Text Notes 9200 850  0    50   ~ 0
+1-2: Auto on\n2-3: Ctrl on
+Text Label 8250 1400 0    50   ~ 0
+clip
+Text Label 8250 1200 0    50   ~ 0
+psense
+Text Label 8250 1300 0    50   ~ 0
+mute
+Text Label 8250 800  0    50   ~ 0
+mute_ctrl
+Wire Notes Line
+	9200 1700 9200 1000
+Wire Notes Line
+	9200 1000 8900 1000
+Wire Notes Line
+	9100 850  9750 850 
+Wire Notes Line
+	9750 850  9750 650 
+Wire Notes Line
+	9750 650  9200 650 
+Wire Notes Line
+	9200 650  9200 850 
 $EndSCHEMATC
