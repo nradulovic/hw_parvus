@@ -12,62 +12,59 @@ Architecture
 
 The amplifier architecture consists of the following sections:
 
-* Input circuit
-* Power amplifier
-* Power supply
-* Control and Monitoring Unit (CMU)
+The amplifier consists of the following section:
+ - Amplifier (AMP) board (left and right channels)
+ - Input/output filtering and Interface (IOI) board
+ - Power supply and control (PSC) board
+ 
+.. image:: images/board_overview.png
 
-Each of these sections are implemented as a separate PCB.
+Each of these sections are implemented as a separate board.
+
+Amplifier (AMP) board
+=====================
+
+Connections
+-----------
+
+The board features the following conntectors:
+
+ - Power Supply Input - PSI: Vcc, GND, Vee
+ - Speaker Output - SPO: Out, GND
+ - Signal Input - SGI: In, SGND
+ - Control and Mute Slave - CMS: Power sense, Mute, Clip, GND
+
+.. image:: images/amp_symbol.png
+
+3D Render with components
+-------------------------
 
 .. image:: images/3d_all.png
 
+3D Render of board top layer
+----------------------------
+
 .. image:: images/3d_rendr_top.png
+
+3D Render of board bottom layer
+-------------------------------
 
 .. image:: images/3d_rendr_bottom.png
 
+PCB Silkscreen plan
+-------------------
+
 .. image:: images/pcb_silkscreen.png
 
+Schematic
+---------
+
 .. image:: images/schematic.png
-
-Input circuit
-=============
-
-Input EMI suppression
----------------------
-
-To protect the input from EMI we will use the following Zobel network:
-
-.. code::
-          o Positive input or negative input
-          |
-          |
-        ----- Czi
-        -----
-          |
-          |
-         +-+  Rzi
-         | |
-         | |
-         +-+
-          |
-         === Ground
-
-For most input cables characteristic impedance falls in range between
-50 and 100ohm impedance and we are using the 75ohm as the middle value. The
-resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``.
-This network should be placed right at the input connector, not on the
-main amplifier PCB.
-
-Also, a 100n X7R capacitor shall be placed between SGND and chassis right at the
-input connector. This capacitor will shunt radio and other interfirence signal
-into the Chassis Ground potential.
 
 Input low-pass filter
 ---------------------
 
-For input filter we choose the frequency between 300kHz and 400kHz.
-
-.. code::
+For input filter we choose the frequency between 300kHz and 400kHz::
 
         +---+ Rlp1    +---+ Rlp2
     0---+   +----+----+   +---+---o Toward Amplifier IC block
@@ -94,60 +91,11 @@ Using the 2nd order CR low-pass filter calculator at URL:
 
 For more details please refer to: http://www.johnhearfield.com/RC/RC4.htm
 
-
-Power amplifier
-===============
-
-
 The ground loop breaker resistor
 --------------------------------
 
 A ground loop breaker resistor is located between SGND and GNDPWR grounds. The
 value of this resistor should be around 10 ohms.
-
-
-Output EMI suppression
-----------------------
-
-Output network consists of upstream and downstream Zobel Network and of output
-coil (``Ld``) with parallel, damping resistor (``Rd``). Upstream Zobel network 
-provides a low-inductance load for the output stage at very high frequencies 
-and allows high-frequency currents to circulate local to the output stage. The 
-downstream Zobel network provides a good resistive termination right at the 
-speaker terminals at high frequencies, helping to reduce RFI ingress and damp
-resonances with, or reflections from, the speaker cables.
-The output circuit is the following:
-
-.. code::
-
-    Ld
-             xxx
-        +---x   x   x---+
-        |        xxx    |
-        |               |
-        |   +-------+   |
-    o---+---|       |---+---o
-    Vout    +-------+   |   Vspeaker
-        Rd              |
-                      ----- Cz2 = 100nF
-                      -----
-                        |
-                        |
-                       +-+  Rz1 = 10 Ohm
-                       | |
-                       | |
-                       +-+
-                        |
-                       ===
-
-
-The output coil ``Ld`` provides high frequency isolation of output load from 
-output stage in TDA7293. The inductance value should be between 2uH up to 5uH.
-Output shunt resistor should be between 2 and 5 Ohms. See
-*Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7*
-for effect on power amplifier transfer function.
-
-The power supply section is using single bank of 10mF capacitors.
 
 
 Gain value
@@ -201,7 +149,7 @@ this reason we will add a few ``pF`` to calculated lead compensation
 capacitor below (see ``Cadd``).
 
 Lead compensation
-`````````````````
+^^^^^^^^^^^^^^^^^
 
 Equivalent feedback network with lead compensation circuit::
 
@@ -271,9 +219,7 @@ Input pins have the following parasitic capacitances associated:
 The TDA7293 data-sheet does not specify any parameter regarding parasitic
 input capacitances. Voltage feedback OPAMPS usually have both differential and
 common-mode input impedances specified. In the absence of any information, it
-is safe to use the model given in the next figure:
-
-.. code::
+is safe to use the model given in the next figure::
 
                    +----+ Zdiff
     +input o---+---|    |---+---o -input
@@ -313,13 +259,91 @@ The final ``Cf`` value is:
 
 Any NP0 based capacitor around ``3pF`` will be good for this purpose.
 
+Input/output filtering and Interface (IOI) board
+================================================
+
+Input circuit
+-------------
+
+Input EMI suppression
+^^^^^^^^^^^^^^^^^^^^^
+
+To protect the input from EMI we will use the following Zobel network::
+
+          o Positive input or negative input
+          |
+          |
+        ----- Czi
+        -----
+          |
+          |
+         +-+  Rzi
+         | |
+         | |
+         +-+
+          |
+         === Ground
+
+For most input cables characteristic impedance falls in range between
+50 and 100ohm impedance and we are using the 75ohm as the middle value. The
+resistor Rzi is ``Rzi=75ohm`` and the capacitor Czi is ``Czi=220pF``.
+This network should be placed right at the input connector, not on the
+main amplifier PCB.
+
+Also, a 100n X7R capacitor shall be placed between SGND and chassis right at the
+input connector. This capacitor will shunt radio and other interfirence signal
+into the Chassis Ground potential.
+
+Output circuit
+--------------
+
+Output EMI suppression
+^^^^^^^^^^^^^^^^^^^^^^
+
+Output network consists of upstream and downstream Zobel Network and of output
+coil (``Ld``) with parallel, damping resistor (``Rd``). Upstream Zobel network 
+provides a low-inductance load for the output stage at very high frequencies 
+and allows high-frequency currents to circulate local to the output stage. The 
+downstream Zobel network provides a good resistive termination right at the 
+speaker terminals at high frequencies, helping to reduce RFI ingress and damp
+resonances with, or reflections from, the speaker cables.
+The output circuit is the following::
+
+             Ld
+             xxx
+        +---x   x   x---+
+        |        xxx    |
+        |               |
+        |   +-------+   |
+    o---+---|       |---+---o
+    Vout    +-------+   |   Vspeaker
+        Rd              |
+                      ----- Cz2 = 100nF
+                      -----
+                        |
+                        |
+                       +-+  Rz1 = 10 Ohm
+                       | |
+                       | |
+                       +-+
+                        |
+                       ===
+
+
+The output coil ``Ld`` provides high frequency isolation of output load from 
+output stage in TDA7293. The inductance value should be between 2uH up to 5uH.
+Output shunt resistor should be between 2 and 5 Ohms. See
+*Douglas Self - Audio Power Amplifier Design Handbook, 3rd Ed., Output networks, chapter 7*
+for effect on power amplifier transfer function.
+
 
 Power supply
 ============
 
-
 Power amplifier power supply
 ----------------------------
+
+The power supply section is using single bank of 10mF capacitors.
 
 We are using dual symmetrical supplies from since dual secondaries.
 
